@@ -1463,7 +1463,7 @@ a {
 }
 .article-entry pre,
 .article-entry .highlight {
-  background: #272822;
+  background: #242424;
   margin: 10px 0;
   padding: 10px 10px;
   overflow: auto;
@@ -1540,7 +1540,7 @@ a {
   border-style: solid;
   border-color: #ddd;
   border-width: 1px 0;
-  background: #272822;
+  background: #242424;
   padding: 15px 20px 15px 0;
 }
 .article-entry .gist .gist-file {
@@ -1566,7 +1566,7 @@ a {
   border: none;
 }
 .article-entry .gist .gist-file .gist-meta {
-  background: #272822;
+  background: #242424;
   color: highlight-comment;
   font: 0.85em "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-shadow: 0 0;
