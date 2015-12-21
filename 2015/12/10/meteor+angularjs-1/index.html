@@ -24,7 +24,7 @@ Meteor is an open-source platform for building top-quality web apps in a fractio
 <meta property="og:image" content="http://7xp1k3.com1.z0.glb.clouddn.com/20151209215348.png">
 <meta property="og:image" content="http://7xp1k3.com1.z0.glb.clouddn.com/20151209221415.png">
 <meta property="og:image" content="http://7xp1k3.com1.z0.glb.clouddn.com/1449322982021.png">
-<meta property="og:updated_time" content="2015-12-17T17:52:08.823Z">
+<meta property="og:updated_time" content="2015-12-21T01:08:08.854Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Meteor+angularjs 实现轻论坛系列一">
 <meta name="twitter:description" content="Meteor的官网( Meteor )这样介绍这个框架：
@@ -303,7 +303,7 @@ Meteor is an open-source platform for building top-quality web apps in a fractio
 <ul>
 <li>$touch index.ng.html </li>
 </ul>
-<p>这里，我们用了.ng.html 的后缀，为了不让Meteor的默认模板（Blaze）就不会便宜到这个文件，Angular就可以使用这个文件了，然后敲入代码<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">p</span>&gt;</span>Yzz Angular!<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>这里，我们用了.ng.html 的后缀，为了不让Meteor的默认模板（Blaze）就不会编译到这个文件，Angular就可以使用这个文件了，然后敲入代码<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">p</span>&gt;</span>Yzz Angular!<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>修改 index.html 的代码 </p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">ng-include</span>=<span class="value">"'index.ng.html'"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p> 这里使用了Angular的一个指令，ng-include用于引入外部HTML文件，注意这里的双引号里面还有单引号。然后在创建一个app.js文件，并输入如下代码<br> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (Meteor.isClient) &#123;</span><br><span class="line"><span class="comment">// 创建 Angular module</span></span><br><span class="line"><span class="comment">// 并添加 angular-meteor 包依赖</span></span><br><span class="line">angular.module(<span class="string">'Yzz'</span>, [<span class="string">'angular-meteor'</span>]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
