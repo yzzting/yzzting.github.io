@@ -24,7 +24,7 @@ Meteor is an open-source platform for building top-quality web apps in a fractio
 <meta property="og:image" content="http://7xp1k3.com1.z0.glb.clouddn.com/20151209215348.png">
 <meta property="og:image" content="http://7xp1k3.com1.z0.glb.clouddn.com/20151209221415.png">
 <meta property="og:image" content="http://7xp1k3.com1.z0.glb.clouddn.com/1449322982021.png">
-<meta property="og:updated_time" content="2015-12-21T01:08:08.854Z">
+<meta property="og:updated_time" content="2016-01-08T04:36:24.639Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Meteor+angularjs 实现轻论坛系列一">
 <meta name="twitter:description" content="Meteor的官网( Meteor )这样介绍这个框架：
@@ -125,7 +125,7 @@ Meteor is an open-source platform for building top-quality web apps in a fractio
 					        
 								<a class="weibo" target="_blank" href="http://weibo.com/yzzting" title="weibo">weibo</a>
 					        
-								<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/yang-zi-zi-6-68" title="zhihu">zhihu</a>
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/yang-zi-zi-1995" title="zhihu">zhihu</a>
 					        
 								<a class="rss" target="_blank" href="/" title="rss">rss</a>
 					        
@@ -136,7 +136,7 @@ Meteor is an open-source platform for building top-quality web apps in a fractio
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Angular/" style="font-size: 10px;">Angular</a> <a href="/tags/AngularJS/" style="font-size: 10px;">AngularJS</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/ukulele/" style="font-size: 10px;">ukulele</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/年度总结/" style="font-size: 10px;">年度总结</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
+						<a href="/tags/AngularJS/" style="font-size: 15px;">AngularJS</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/ukulele/" style="font-size: 10px;">ukulele</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/年度总结/" style="font-size: 10px;">年度总结</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
 					</div>
 				</section>
 				
@@ -201,7 +201,7 @@ Meteor is an open-source platform for building top-quality web apps in a fractio
 			        
 						<a class="weibo" target="_blank" href="http://weibo.com/yzzting" title="weibo">weibo</a>
 			        
-						<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/yang-zi-zi-6-68" title="zhihu">zhihu</a>
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/yang-zi-zi-1995" title="zhihu">zhihu</a>
 			        
 						<a class="rss" target="_blank" href="/" title="rss">rss</a>
 			        
@@ -254,8 +254,7 @@ Meteor is an open-source platform for building top-quality web apps in a fractio
 <p>按我自己的理解来说，Meteor是互联网江湖里面的<strong>倚天剑</strong>，<strong>屠龙刀</strong>。不同的是，不是<strong>孤品</strong>，人人可以有，就连我这个js菜鸟的可以比划几下</p>
 <a id="more"></a>
 <p>首先讲一下我的开发环境（ubuntu15.10 + sublime text 3）</p>
-<p>#<strong>环境搭建</strong></p>
-<p>ubuntu环境下安装meteor特别容易</p>
+<h1 id="u73AF_u5883_u642D_u5EFA"><a href="#u73AF_u5883_u642D_u5EFA" class="headerlink" title="<strong>环境搭建</strong>"></a><strong>环境搭建</strong></h1><p>ubuntu环境下安装meteor特别容易</p>
 <ul>
 <li><p>$ curl <a href="https://install.meteor.com/" target="_blank" rel="external">https://install.meteor.com/</a> | sh</p>
 </li>
@@ -303,7 +302,8 @@ Meteor is an open-source platform for building top-quality web apps in a fractio
 <ul>
 <li>$touch index.ng.html </li>
 </ul>
-<p>这里，我们用了.ng.html 的后缀，为了不让Meteor的默认模板（Blaze）就不会编译到这个文件，Angular就可以使用这个文件了，然后敲入代码<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">p</span>&gt;</span>Yzz Angular!<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>这里，我们用了.ng.html 的后缀，为了不让Meteor的默认模板（Blaze）就不会编译到这个文件，Angular就可以使用这个文件了，然后敲入代码</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">p</span>&gt;</span>Yzz Angular!<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>修改 index.html 的代码 </p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">ng-include</span>=<span class="value">"'index.ng.html'"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p> 这里使用了Angular的一个指令，ng-include用于引入外部HTML文件，注意这里的双引号里面还有单引号。然后在创建一个app.js文件，并输入如下代码<br> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (Meteor.isClient) &#123;</span><br><span class="line"><span class="comment">// 创建 Angular module</span></span><br><span class="line"><span class="comment">// 并添加 angular-meteor 包依赖</span></span><br><span class="line">angular.module(<span class="string">'Yzz'</span>, [<span class="string">'angular-meteor'</span>]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -311,7 +311,7 @@ Meteor is an open-source platform for building top-quality web apps in a fractio
 <p><strong>Meteor</strong> </p>
 <p><img src="http://7xp1k3.com1.z0.glb.clouddn.com/1449322982021.png" alt=""></p>
 <p>额。。报错了，代码并没写错。。为什么？？<br>   别急。</p>
-<p>  <strong> Meteor 1.2.1 </strong> 在angular模板这一块更新了二个组件 查看<a href="http://www.angular-meteor.com/tutorials/socially/angular1/bootstrapping" target="_blank" rel="external">官方文档</a> 在add Angular 1 这一块刚好写到 </p>
+<p><strong> Meteor 1.2.1 </strong> 在angular模板这一块更新了二个组件 查看<a href="http://www.angular-meteor.com/tutorials/socially/angular1/bootstrapping" target="_blank" rel="external">官方文档</a> 在add Angular 1 这一块刚好写到 </p>
 <blockquote>
 <p>It’s time to add Angular 1 to our stack!</p>
 <p>Because we decided to work with AngularJS in the client side, we need to remove the default UI package of Meteor, called Blaze.</p>
@@ -324,10 +324,10 @@ Meteor is an open-source platform for building top-quality web apps in a fractio
 <p>This package takes care of connecting Angular 1 to Meteor and includes the latest Angular 1 library code into our app.</p>
 <p>That’s it! Now we can use Angular 1’s power in our Meteor app.</p>
 </blockquote>
-<p> ok,因为html，有两个插件都在处理html文件， 所以产生了冲突，angular-templates, templating，删掉blaze-html-templates，就保留了angular-templates</p>
-<p> 另外js meteor 1.2.0.x 官方推荐用的是ecmascript，他是es6的转码器，不过angular-meteor自带的是angular-babel，用了angular-meteor还是照着它的文档来吧！</p>
-<p> ok 现在meteor它，没问题！</p>
-<p> <strong>官方文档</strong>说meteor是根据文件夹来区别是服务端还是客户端，所以我们将项目目录整理一下</p>
+<p>ok,因为html，有两个插件都在处理html文件， 所以产生了冲突，angular-templates, templating，删掉blaze-html-templates，就保留了angular-templates</p>
+<p>另外js meteor 1.2.0.x 官方推荐用的是ecmascript，他是es6的转码器，不过angular-meteor自带的是angular-babel，用了angular-meteor还是照着它的文档来吧！</p>
+<p>ok 现在meteor它，没问题！</p>
+<p><strong>官方文档</strong>说meteor是根据文件夹来区别是服务端还是客户端，所以我们将项目目录整理一下</p>
 <ul>
 <li><p>server：此文件夹下的代码只会在服务器端运行</p>
 </li>
@@ -343,7 +343,7 @@ Meteor is an open-source platform for building top-quality web apps in a fractio
 </ul>
 <p>因为app.js 现在在client文件夹下面并在客户端运行，所以我们不用 <strong>Meteor.isClient </strong></p>
 <p>index.html文件中ng-include引入的文件路径必须完整，修改index.html代码如下所示<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">ng-include</span>=<span class="value">"'client/index.ng.html'"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p> ok,运行它 meteor</p>
+<p>ok,运行它 meteor</p>
 <p>嗯，效果一样！，但是项目结构我们清晰了！</p>
 <p>至此，我们成功的搭建了Meteor，并整合了angularjs，下一次将完成论坛用户模块！</p>
 
@@ -355,11 +355,11 @@ Meteor is an open-source platform for building top-quality web apps in a fractio
     
 <nav id="article-nav">
   
-    <a href="/2015/12/13/杨滋滋的由来/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2015/12/18/Angular-js实现即时搜索/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          杨滋滋的由来
+          Angular.js实现即时搜索
         
       </div>
     </a>
@@ -377,18 +377,27 @@ Meteor is an open-source platform for building top-quality web apps in a fractio
 
 
 <div class="share">
-	<!-- JiaThis Button BEGIN -->
-	<div class="jiathis_style">
-		<span class="jiathis_txt">分享到：</span>
-		<a class="jiathis_button_tsina"></a>
-		<a class="jiathis_button_cqq"></a>
-		<a class="jiathis_button_douban"></a>
-		<a class="jiathis_button_weixin"></a>
-		<a class="jiathis_button_tumblr"></a>
-		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
-	</div>
-	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
-	<!-- JiaThis Button END -->
+<!-- JiaThis Button BEGIN -->
+<div class="jiathis_style_32x32">
+<a class="jiathis_button_tsina"></a>
+<a class="jiathis_button_pocket"></a>
+<a class="jiathis_button_googleplus"></a>
+<a class="jiathis_button_weixin"></a>
+<a class="jiathis_button_fav"></a>
+<a href="http://www.jiathis.com/share?uid=2080588" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+	data_track_clickback:true,
+	summary:"",
+	shortUrl:true,
+	hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=2080588" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
 </div>
 
 
@@ -420,7 +429,7 @@ Meteor is an open-source platform for building top-quality web apps in a fractio
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2015 Yzz
+    		&copy; 2016 Yzz
     	</div>
   
     </div>

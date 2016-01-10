@@ -6,16 +6,16 @@
   <title>Angular.js实现即时搜索 | YzzTing Blog</title>
   <meta name="baidu-site-verification" content="UDSAIWEHdt" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="现在是2015.12.18凌晨24点31分，突然想起之前做过一个Angular写的即时搜索，就当是一个复习吧，在这篇博文里把实现过程记下来！">
+  <meta name="description" content="Angular.js实现即时搜索现在是2015.12.18凌晨24点31分，突然想起之前做过一个Angular写的即时搜索，就当是一个复习吧，在这篇博文里把实现过程记下来！">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Angular.js实现即时搜索">
 <meta property="og:url" content="http://www.yzz1995.cn/2015/12/18/Angular-js实现即时搜索/index.html">
 <meta property="og:site_name" content="YzzTing Blog">
-<meta property="og:description" content="现在是2015.12.18凌晨24点31分，突然想起之前做过一个Angular写的即时搜索，就当是一个复习吧，在这篇博文里把实现过程记下来！">
-<meta property="og:updated_time" content="2015-12-17T18:07:36.099Z">
+<meta property="og:description" content="Angular.js实现即时搜索现在是2015.12.18凌晨24点31分，突然想起之前做过一个Angular写的即时搜索，就当是一个复习吧，在这篇博文里把实现过程记下来！">
+<meta property="og:updated_time" content="2016-01-08T04:28:32.693Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Angular.js实现即时搜索">
-<meta name="twitter:description" content="现在是2015.12.18凌晨24点31分，突然想起之前做过一个Angular写的即时搜索，就当是一个复习吧，在这篇博文里把实现过程记下来！">
+<meta name="twitter:description" content="Angular.js实现即时搜索现在是2015.12.18凌晨24点31分，突然想起之前做过一个Angular写的即时搜索，就当是一个复习吧，在这篇博文里把实现过程记下来！">
   
     <link rel="alternative" href="/atom.xml" title="YzzTing Blog" type="application/atom+xml">
   
@@ -109,7 +109,7 @@
 					        
 								<a class="weibo" target="_blank" href="http://weibo.com/yzzting" title="weibo">weibo</a>
 					        
-								<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/yang-zi-zi-6-68" title="zhihu">zhihu</a>
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/yang-zi-zi-1995" title="zhihu">zhihu</a>
 					        
 								<a class="rss" target="_blank" href="/" title="rss">rss</a>
 					        
@@ -120,7 +120,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Angular/" style="font-size: 10px;">Angular</a> <a href="/tags/AngularJS/" style="font-size: 10px;">AngularJS</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/ukulele/" style="font-size: 10px;">ukulele</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/年度总结/" style="font-size: 10px;">年度总结</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
+						<a href="/tags/AngularJS/" style="font-size: 15px;">AngularJS</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/ukulele/" style="font-size: 10px;">ukulele</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/年度总结/" style="font-size: 10px;">年度总结</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
 					</div>
 				</section>
 				
@@ -185,7 +185,7 @@
 			        
 						<a class="weibo" target="_blank" href="http://weibo.com/yzzting" title="weibo">weibo</a>
 			        
-						<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/yang-zi-zi-6-68" title="zhihu">zhihu</a>
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/yang-zi-zi-1995" title="zhihu">zhihu</a>
 			        
 						<a class="rss" target="_blank" href="/" title="rss">rss</a>
 			        
@@ -220,7 +220,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Angular/">Angular</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AngularJS/">AngularJS</a></li></ul>
 	</div>
 
         
@@ -231,26 +231,29 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>现在是2015.12.18凌晨24点31分，突然想起之前做过一个Angular写的即时搜索，就当是一个复习吧，在这篇博文里把实现过程记下来！<br><a id="more"></a><br>我还在学Angular1.x这个版本中，听说Angular2 beta版已经放出来了！啦啦啦啦啦，不过我对于es6，Typescript，还是傻乎乎的~~~<br><strong>MrSunny</strong>在这篇文章里写到<a href="http://zhuanlan.zhihu.com/FrontendMagazine/20058966" target="_blank" rel="external">Angular2 简介</a></p>
+        <h1 id="Angular-js_u5B9E_u73B0_u5373_u65F6_u641C_u7D22"><a href="#Angular-js_u5B9E_u73B0_u5373_u65F6_u641C_u7D22" class="headerlink" title="Angular.js实现即时搜索"></a>Angular.js实现即时搜索</h1><p>现在是2015.12.18凌晨24点31分，突然想起之前做过一个Angular写的即时搜索，就当是一个复习吧，在这篇博文里把实现过程记下来！<br><a id="more"></a><br>我还在学Angular1.x这个版本中，听说Angular2 beta版已经放出来了！啦啦啦啦啦，不过我对于es6，Typescript，还是傻乎乎的~~~<br><strong>MrSunny</strong>在这篇文章里写到<a href="http://zhuanlan.zhihu.com/FrontendMagazine/20058966" target="_blank" rel="external">Angular2 简介</a></p>
 <blockquote>
 <p>我希望你学习 Angular 2 能比学图片中的单词还要快 :)</p>
 </blockquote>
 <p>希望真的如此吧！:)</p>
 <p>好了，进入干货！</p>
-<h2 id="23_u670D_u52A1_u6846_u67B6"><a href="#23_u670D_u52A1_u6846_u67B6" class="headerlink" title="#<strong>服务框架</strong>"></a>#<strong>服务框架</strong></h2><p>为了让项目可以跟后台通信，这里我们采用Nodejs的Express框架来搭建。<br>老规矩 </p>
+<h1 id="u670D_u52A1_u6846_u67B6"><a href="#u670D_u52A1_u6846_u67B6" class="headerlink" title="<strong>服务框架</strong>"></a><strong>服务框架</strong></h1><hr>
+<p>为了让项目可以跟后台通信，这里我们采用Nodejs的Express框架来搭建。<br>老规矩 </p>
 <p><code>$sudo npm install express</code> </p>
 <p>在express4.0以上的版本，必须装多express的命令行工具，否则，express不了项目。</p>
 <p><code>$sudo npm install express-generator</code></p>
 <p>然后create一个项目- <code>$ express -e search</code></p>
 <p>我偷懒了，直接 <code>$ npm start</code> </p>
 <p>嗯，项目启动了！</p>
-<h2 id="23_23bower"><a href="#23_23bower" class="headerlink" title="##<strong>bower</strong>"></a>##<strong>bower</strong></h2><p>现在github上很多例程都使用<a href="http://bower.io/" target="_blank" rel="external">bower</a>来管理前端的通用依赖库，比如jquery, bootstarp, angularjs等等。一句命令，可以把我们需要的库，导入项目中，特别方便！</p>
+<h2 id="bower"><a href="#bower" class="headerlink" title="<strong>bower</strong>"></a><strong>bower</strong></h2><hr>
+<p>现在github上很多例程都使用<a href="http://bower.io/" target="_blank" rel="external">bower</a>来管理前端的通用依赖库，比如jquery, bootstarp, angularjs等等。一句命令，可以把我们需要的库，导入项目中，特别方便！</p>
 <p><strong>这里要说一下通过bower下载库，说到底就是在git clone。所以对于linux系统没什么好说，先装个git，然后没问题了。对于window，装完git后，最好用git bash 来执行bower install，或者把git目录加入windows的环境变量中，再在命令行中执行bower install命令，不要问我为什么，window好多游戏好好玩！</strong></p>
 <p>先cd到search/public 目录下，然后通过bower来安装Angular.js<br><code>$bower install angualr --save</code></p>
 <p>–save 参数可以把bower依赖添加到bower.json</p>
 <p>在views/index.ejs 文件里引入Angular.js（再说点别的，可以在项目根目录，建一个.bowerrc的文件，写入<code>{&quot;directory&quot;:&quot;public/components&quot;}</code><br>指定依赖库的安装路径）</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"public/components/angular/angular.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="23_23_u7EC4_u4EF6_u5217_u8868"><a href="#23_23_u7EC4_u4EF6_u5217_u8868" class="headerlink" title="##<strong>组件列表</strong>"></a>##<strong>组件列表</strong></h2><ul>
+<h2 id="u7EC4_u4EF6_u5217_u8868"><a href="#u7EC4_u4EF6_u5217_u8868" class="headerlink" title="<strong>组件列表</strong>"></a><strong>组件列表</strong></h2><hr>
+<ul>
 <li><p>指令</p>
 </li>
 <li><p>控制器<br><strong>ng-controller: 定义应用程序的控制器；<br>ng-init: 初始化应用程序数据；<br>ng-click: 定义元素被点击的行为；<br>ng-show: 控制元素显示(true)、隐藏(false)；<br>ng-hide: 控制元素显示(false)、隐藏(true);</strong></p>
@@ -258,7 +261,8 @@
 <li>过滤器<br><strong>下面将会定义一个rule的自定义过滤器</strong></li>
 <li>$http 通信</li>
 </ul>
-<h2 id="23_23_u5B8C_u6574_u4EE3_u7801"><a href="#23_23_u5B8C_u6574_u4EE3_u7801" class="headerlink" title="##<strong>完整代码</strong>"></a>##<strong>完整代码</strong></h2><ul>
+<h2 id="u5B8C_u6574_u4EE3_u7801"><a href="#u5B8C_u6574_u4EE3_u7801" class="headerlink" title="<strong>完整代码</strong>"></a><strong>完整代码</strong></h2><hr>
+<ul>
 <li>index.ejs</li>
 </ul>
 <figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="doctype">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">title</span>&gt;</span><span class="tag">&lt;<span class="title">%=</span> <span class="attribute">title</span> %&gt;</span><span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">href</span>=<span class="value">"/stylesheets/style.css"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"public/components/angular/angular.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"public/javascripts/app.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">ng-app</span>=<span class="value">"yzzApp"</span> <span class="attribute">ng-controller</span>=<span class="value">"searchCtrl"</span> <span class="attribute">class</span>=<span class="value">"container"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">ng-model</span>=<span class="value">"rule"</span> <span class="attribute">ng-change</span>=<span class="value">"switch()"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">ng-show</span>=<span class="value">"show"</span> <span class="attribute">class</span>=<span class="value">"list"</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!-- 遍历数据集合，并通过过滤器筛选 --&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">div</span> <span class="attribute">ng-repeat</span>=<span class="value">"x in people | filter:rule"</span> <span class="attribute">class</span>=<span class="value">"list-item"</span>&gt;</span></span><br><span class="line">                </span><span class="expression">&#123;&#123; <span class="variable">x.name</span> + '<span class="variable">-</span>' + <span class="variable">x.age</span> &#125;&#125;</span><span class="xml"></span><br><span class="line">            <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
@@ -266,15 +270,14 @@
 <li>app.js</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> app = angular.module(<span class="string">'yzzApp'</span>, []);</span><br><span class="line">       <span class="keyword">var</span> peopleArr = [];</span><br><span class="line">       <span class="comment">// 在控制器中引入 http 服务</span></span><br><span class="line">       app.controller(<span class="string">'searchCtrl'</span>,[<span class="string">'$scope'</span>, <span class="string">'$http'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">$scope, $http</span>) </span>&#123;</span><br><span class="line">           $scope.show = <span class="literal">false</span>;</span><br><span class="line">           $scope.rule = <span class="string">''</span>;</span><br><span class="line">           $scope.people = [];</span><br><span class="line">           $scope.switch = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">              <span class="keyword">if</span>($scope.rule.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                   $scope.show = <span class="literal">true</span>;</span><br><span class="line">                   $scope.people = peopleArr;</span><br><span class="line">              &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                   $scope.show = <span class="literal">false</span>;</span><br><span class="line">                   $scope.people = [];</span><br><span class="line">              &#125;</span><br><span class="line">           &#125;</span><br><span class="line"></span><br><span class="line">           <span class="comment">// 使用 http 服务获取数据</span></span><br><span class="line">           $http(&#123;</span><br><span class="line">               method: <span class="string">'GET'</span>,</span><br><span class="line">               url: <span class="string">'/data/data.json'</span></span><br><span class="line">           &#125;).then(<span class="function"><span class="keyword">function</span> <span class="title">successCallback</span>(<span class="params">res</span>) </span>&#123;</span><br><span class="line">               res.data.people.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">i</span>) </span>&#123;</span><br><span class="line">                   peopleArr.push(i);</span><br><span class="line">               &#125;)</span><br><span class="line">           &#125;,<span class="function"><span class="keyword">function</span> <span class="title">error</span>(<span class="params">res</span>) </span>&#123;</span><br><span class="line">               <span class="built_in">console</span>.log(res);</span><br><span class="line">           &#125;)</span><br><span class="line">       &#125;])</span><br></pre></td></tr></table></figure>
-<h2 id="23_23_u4E3A_u4E86_u6A21_u62DF_u5B9E_u9645_u4E1A_u52A1_u573A_u666F_uFF0C_u6211_u4EEC_u5728public/data_u6587_u4EF6_u91CC_uFF0Cnew_u4E00_u4E2Adata-json__u6587_u4EF6_u7528_u4E8E_u4FDD_u5B58_u4E1A_u52A1_u6570_u636E"><a href="#23_23_u4E3A_u4E86_u6A21_u62DF_u5B9E_u9645_u4E1A_u52A1_u573A_u666F_uFF0C_u6211_u4EEC_u5728public/data_u6587_u4EF6_u91CC_uFF0Cnew_u4E00_u4E2Adata-json__u6587_u4EF6_u7528_u4E8E_u4FDD_u5B58_u4E1A_u52A1_u6570_u636E" class="headerlink" title="##<strong>为了模拟实际业务场景，我们在public/data文件里，new一个data.json 文件用于保存业务数据</strong>"></a>##<strong>为了模拟实际业务场景，我们在public/data文件里，new一个data.json 文件用于保存业务数据</strong></h2><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    "<span class="attribute">people</span>": <span class="value">[</span><br><span class="line">        &#123;</span><br><span class="line">            "<span class="attribute">name</span>":<span class="value"><span class="string">"james"</span></span>,"<span class="attribute">age</span>":<span class="value"><span class="number">12</span></span><br><span class="line">        </span>&#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            "<span class="attribute">name</span>":<span class="value"><span class="string">"jack"</span></span>,"<span class="attribute">age</span>":<span class="value"><span class="number">22</span></span><br><span class="line">        </span>&#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            "<span class="attribute">name</span>":<span class="value"><span class="string">"tony"</span></span>,"<span class="attribute">age</span>":<span class="value"><span class="number">21</span></span><br><span class="line">        </span>&#125;,</span><br><span class="line">        &#123;</span><br><span class="line">           "<span class="attribute">name</span>":<span class="value"><span class="string">"Yzz"</span></span>,"<span class="attribute">age</span>":<span class="value"><span class="number">31</span></span><br><span class="line">        </span>&#125;，</span><br><span class="line">        &#123;</span><br><span class="line">            "<span class="attribute">name</span>":<span class="value"><span class="string">"alex"</span></span>,"<span class="attribute">age</span>":<span class="value"><span class="number">25</span></span><br><span class="line">        </span>&#125;</span><br><span class="line">    ]</span><br><span class="line"></span>&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="u4E3A_u4E86_u6A21_u62DF_u5B9E_u9645_u4E1A_u52A1_u573A_u666F_uFF0C_u6211_u4EEC_u5728public/data_u6587_u4EF6_u91CC_uFF0Cnew_u4E00_u4E2Adata-json__u6587_u4EF6_u7528_u4E8E_u4FDD_u5B58_u4E1A_u52A1_u6570_u636E"><a href="#u4E3A_u4E86_u6A21_u62DF_u5B9E_u9645_u4E1A_u52A1_u573A_u666F_uFF0C_u6211_u4EEC_u5728public/data_u6587_u4EF6_u91CC_uFF0Cnew_u4E00_u4E2Adata-json__u6587_u4EF6_u7528_u4E8E_u4FDD_u5B58_u4E1A_u52A1_u6570_u636E" class="headerlink" title="<strong>为了模拟实际业务场景，我们在public/data文件里，new一个data.json 文件用于保存业务数据</strong>"></a><strong>为了模拟实际业务场景，我们在public/data文件里，new一个data.json 文件用于保存业务数据</strong></h2><hr>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    "<span class="attribute">people</span>": <span class="value">[</span><br><span class="line">        &#123;</span><br><span class="line">            "<span class="attribute">name</span>":<span class="value"><span class="string">"james"</span></span>,"<span class="attribute">age</span>":<span class="value"><span class="number">12</span></span><br><span class="line">        </span>&#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            "<span class="attribute">name</span>":<span class="value"><span class="string">"jack"</span></span>,"<span class="attribute">age</span>":<span class="value"><span class="number">22</span></span><br><span class="line">        </span>&#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            "<span class="attribute">name</span>":<span class="value"><span class="string">"tony"</span></span>,"<span class="attribute">age</span>":<span class="value"><span class="number">21</span></span><br><span class="line">        </span>&#125;,</span><br><span class="line">        &#123;</span><br><span class="line">           "<span class="attribute">name</span>":<span class="value"><span class="string">"Yzz"</span></span>,"<span class="attribute">age</span>":<span class="value"><span class="number">31</span></span><br><span class="line">        </span>&#125;，</span><br><span class="line">        &#123;</span><br><span class="line">            "<span class="attribute">name</span>":<span class="value"><span class="string">"alex"</span></span>,"<span class="attribute">age</span>":<span class="value"><span class="number">25</span></span><br><span class="line">        </span>&#125;</span><br><span class="line">    ]</span><br><span class="line"></span>&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>style.css</li>
 </ul>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.container</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">50px</span> <span class="number">0</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">text-align</span>:<span class="value"> center</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="class">.container</span> <span class="tag">input</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">200px</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">border-radius</span>:<span class="value"> <span class="number">5px</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1px</span> solid <span class="hexcolor">#ccc</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">5px</span> <span class="number">10px</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="class">.list</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">220px</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">text-align</span>:<span class="value"> left</span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1px</span> solid <span class="hexcolor">#ccc</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span> auto</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="class">.list</span> <span class="class">.list-item</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">border-bottom</span>:<span class="value"> <span class="number">1px</span> solid <span class="hexcolor">#eee</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">5px</span> <span class="number">10px</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="class">.list</span> <span class="class">.list-item</span><span class="pseudo">:hover</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">background-color</span>:<span class="value"> <span class="hexcolor">#eee</span></span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
-<p>##<strong>一个最简陋的Angular.js即时搜索就完成了</strong></p>
-<p>28行代码搞定，也许这就是<strong>angular</strong>的魅力所在吧！</p>
-<p>#<strong>晚安</strong></p>
-
+<h2 id="u4E00_u4E2A_u6700_u7B80_u964B_u7684Angular-js_u5373_u65F6_u641C_u7D22_u5C31_u5B8C_u6210_u4E86"><a href="#u4E00_u4E2A_u6700_u7B80_u964B_u7684Angular-js_u5373_u65F6_u641C_u7D22_u5C31_u5B8C_u6210_u4E86" class="headerlink" title="<strong>一个最简陋的Angular.js即时搜索就完成了</strong>"></a><strong>一个最简陋的Angular.js即时搜索就完成了</strong></h2><p>28行代码搞定，也许这就是<strong>angular</strong>的魅力所在吧！</p>
+<h1 id="u665A_u5B89"><a href="#u665A_u5B89" class="headerlink" title="<strong>晚安</strong>"></a><strong>晚安</strong></h1>
       
     </div>
     
@@ -293,8 +296,8 @@
     </a>
   
   
-    <a href="/2015/12/13/杨滋滋的由来/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">杨滋滋的由来</div>
+    <a href="/2015/12/10/meteor+angularjs-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Meteor+angularjs 实现轻论坛系列一</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -305,18 +308,27 @@
 
 
 <div class="share">
-	<!-- JiaThis Button BEGIN -->
-	<div class="jiathis_style">
-		<span class="jiathis_txt">分享到：</span>
-		<a class="jiathis_button_tsina"></a>
-		<a class="jiathis_button_cqq"></a>
-		<a class="jiathis_button_douban"></a>
-		<a class="jiathis_button_weixin"></a>
-		<a class="jiathis_button_tumblr"></a>
-		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
-	</div>
-	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
-	<!-- JiaThis Button END -->
+<!-- JiaThis Button BEGIN -->
+<div class="jiathis_style_32x32">
+<a class="jiathis_button_tsina"></a>
+<a class="jiathis_button_pocket"></a>
+<a class="jiathis_button_googleplus"></a>
+<a class="jiathis_button_weixin"></a>
+<a class="jiathis_button_fav"></a>
+<a href="http://www.jiathis.com/share?uid=2080588" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+	data_track_clickback:true,
+	summary:"",
+	shortUrl:true,
+	hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=2080588" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
 </div>
 
 
@@ -348,7 +360,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2015 Yzz
+    		&copy; 2016 Yzz
     	</div>
   
     </div>
