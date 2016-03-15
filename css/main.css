@@ -13,34 +13,39 @@ ul {
   list-style: none;
 }
 .blog-header {
-  display: inline-block;
-  text-align: center;
   font-family: 'Source Han Sans', 'Microsoft YaHei', Helvetica, Arial, sans-serif;
   font-size: 16px;
   height: 21px;
-  margin-top: 15px;
-  width: 1160px;
   opacity: 0.6;
-  margin-left: 57px;
+  margin: 25px 100px 0;
+  padding: 0 23% 0;
 }
-.blog-header li a {
+.blog-header .nav-list-item {
+  display: inline-block;
   background-color: rgba(246, 74, 182, 0.66);
   color: #FFF;
   font-size: 16px;
   cursor: auto;
   text-transform: capitalize;
-  padding: 6px 10px;
-  float: right;
+  padding: 9px 10px;
 }
-.blog-header li a:hover {
+.blog-header .nav-list-item a {
+  color: #FFF;
+}
+.blog-header .nav-list-item:hover {
   text-decoration: underline;
   font-weight: 900;
-  background: #FFF;
+  background: #fff;
+}
+.blog-header .nav-list-item:hover a {
   color: #000;
 }
-.blog-header .logo {
+.logo-link {
   color: rgba(246, 74, 182, 0.66);
-  font-size: 43px;
+  font-size: 67px;
+  float: right;
+  margin-top: -34px;
+  font-family: Microsoft YaHei;
 }
 .article-entry pre,
 .article-entry .highlight {
@@ -287,27 +292,25 @@ pre .css ~ * .id {
 .con .older-posts-link {
   margin-top: 94px;
   float: right;
-  border: 1px solid #bfc8cd;
-  background-color: rgba(0, 0, 0, 0);
-  color: #bfc8cd;
+  background-color: rgba(246, 74, 182, 0.66);
   border-radius: 4px;
   height: 35px;
   width: 120px;
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 1;
+  opacity: 0.7;
 }
 .con .older-posts-link:hover {
-  color: #889093;
+  color: #000;
   opacity: 3;
-  border-color: #98a0a4;
+  border-color: #fff;
 }
 .con .older-posts-link .page-number {
   display: none;
 }
 .con .older-posts-link a {
-  color: #bfc8cd;
+  color: #fff;
 }
 .toTop {
   position: fixed;
@@ -329,16 +332,16 @@ pre .css ~ * .id {
   left: 15px;
   top: 15px;
   border-radius: 1px;
-  background-color: #aaa;
+  background-color: rgba(246, 74, 182, 0.66);
 }
 .toTop > .arrow {
   position: absolute;
   left: 10px;
-  top: -1px;
+  top: -3.1px;
   width: 0;
   height: 0;
   border: 9px solid rgba(126, 27, 27, 0);
-  border-bottom-color: #aaa;
+  border-bottom-color: rgba(246, 74, 182, 0.66);
 }
 .blog-footer {
   display: block;

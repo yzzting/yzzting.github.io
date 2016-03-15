@@ -4,12 +4,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>YzzTing Blog</title>
-     
-    <!-- 主css -->
-    <link rel="stylesheet" href="/css/main.css">
-    <!-- seo -->
-    <meta name="description" content="Yzz写字的地方">
+    <title>
+        
+                    YzzTing Blog
+    </title>
+    
+        <!-- 主css -->
+        <style>
+            #forkongithub a {
+                background: rgba(246, 74, 182, 0.66);
+                color: #fff;
+                text-decoration: none;
+                font-family: arial, sans-serif;
+                text-align: center;
+                font-weight: bold;
+                padding: 5px 40px;
+                font-size: 1rem;
+                line-height: 2rem;
+                position: relative;
+                transition: 0.5s;
+            }
+
+            #forkongithub a:hover {
+                background: #FFF;
+                color: #000;
+                text-decoration: underline;
+            }
+
+            #forkongithub a::before,
+            #forkongithub a::after {
+                content: "";
+                width: 100%;
+                display: block;
+                position: absolute;
+                top: 1px;
+                left: 0;
+                height: 1px;
+                background: #fff;
+            }
+
+            #forkongithub a::after {
+                bottom: 1px;
+                top: auto;
+            }
+
+            @media screen and (min-width:800px) {
+                #forkongithub {
+                    position: absolute;
+                    display: block;
+                    top: 0;
+                    left: 0;
+                    width: 200px;
+                    overflow: hidden;
+                    height: 200px;
+                    z-index: 9999;
+                }
+                #forkongithub a {
+                    width: 200px;
+                    position: absolute;
+                    top: 60px;
+                    left: -60px;
+                    transform: rotate(-45deg);
+                    -webkit-transform: rotate(-45deg);
+                    -ms-transform: rotate(-45deg);
+                    -moz-transform: rotate(-45deg);
+                    -o-transform: rotate(-45deg);
+                    box-shadow: 4px 4px 4px #fff;
+                }
+            }
+        </style>
+        <link rel="stylesheet" href="/css/main.css">
+        <!-- seo -->
+        <meta name="description" content="Yzz写字的地方">
 <meta property="og:type" content="website">
 <meta property="og:title" content="YzzTing Blog">
 <meta property="og:url" content="http://www.yzz1995.cn/tags/随笔/index.html">
@@ -18,31 +84,32 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="YzzTing Blog">
 <meta name="twitter:description" content="Yzz写字的地方">
-    <!-- facicon -->
-    
-    <!-- <link rel="stylesheet" href="/css/mian.css" type="text/css"> -->
-    <!-- <script src="js/toTop.js"></script> -->
+            <!-- facicon -->
+            
+                    <!-- <link rel="stylesheet" href="/css/mian.css" type="text/css"> -->
+                    <!-- <script src="js/toTop.js"></script> -->
 </head>
 
 
 	<body>
 		<header>
+    <span id="forkongithub"><a href="https://github.com/yzzting/hexo-theme-MyFairLady">Fork me on GitHub</a></span>
     <div class="blog-header">
-        <a href="/" class="logo">yzz</a>
+        <a href="/" class="logo-link">Yzz</a>
         
                 
-        <ul class="list-style">
-        <li><a href="/"  class="navHeader">home</a></li>
+        <ul class="nav nav-list">
+        <li class="nav-list-item"><a href="/">home</a></li>
         
 
         
     
                 
-        <li><a href="/about"  class="navHeader">about me</a></li>
+        <li class="nav-list-item"><a href="/about">about me</a></li>
         
     
                 
-        <li><a href="/archives"  class="navHeader">archives</a></li>
+        <li class="nav-list-item"><a href="/archives">archives</a></li>
         
     
     </ul>
