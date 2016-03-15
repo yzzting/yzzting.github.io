@@ -1,230 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>nodejs命令行小玩意 | YzzTing Blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一个用nodejs写的一个命令行的小玩意大家新年好，这里给大家拜个晚年啦！（不跑题了">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>YzzTing Blog</title>
+     
+    <!-- 主css -->
+    <link rel="stylesheet" href="/css/main.css">
+    <!-- seo -->
+    <meta name="description" content="一个用nodejs写的一个命令行的小玩意大家新年好，这里给大家拜个晚年啦！（不跑题了">
 <meta property="og:type" content="article">
 <meta property="og:title" content="nodejs命令行小玩意">
 <meta property="og:url" content="http://www.yzz1995.cn/2016/02/14/nodejs命令行小玩意/index.html">
 <meta property="og:site_name" content="YzzTing Blog">
 <meta property="og:description" content="一个用nodejs写的一个命令行的小玩意大家新年好，这里给大家拜个晚年啦！（不跑题了">
-<meta property="og:updated_time" content="2016-02-13T16:26:37.779Z">
+<meta property="og:updated_time" content="2016-02-13T08:26:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nodejs命令行小玩意">
 <meta name="twitter:description" content="一个用nodejs写的一个命令行的小玩意大家新年好，这里给大家拜个晚年啦！（不跑题了">
-  
-  
-    <link rel="icon" href="http://7xp1k3.com1.z0.glb.clouddn.com/octocat-de-los-muertos.jpg">
-  
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <!-- facicon -->
+    
+    <!-- <link rel="stylesheet" href="/css/mian.css" type="text/css"> -->
+    <!-- <script src="js/toTop.js"></script> -->
 </head>
 
-<body>
-  <div id="container">
-    <div class="left-col">
-    <div class="overlay"></div>
-<div class="intrude-less">
-	<header id="header" class="inner">
-		<a href="/" class="profilepic">
-			
-			<img lazy-src="http://7xp1k3.com1.z0.glb.clouddn.com/octocat-de-los-muertos.jpg" class="js-avatar">
-			
-		</a>
 
-		<hgroup>
-		  <h1 class="header-author"><a href="/">Yzz</a></h1>
-		</hgroup>
+	<body>
+		<header>
+    <div class="blog-header">
+        
+                
+        <a href="/" class="navHeader">home</a>
+        
 
-		
-		<p class="header-subtitle">脑子转不过弯的杨滋滋</p>
-		
-
-		
-			<div class="switch-btn">
-				<div class="icon">
-					<div class="icon-ctn">
-						<div class="icon-wrap icon-house" data-idx="0">
-							<div class="birdhouse"></div>
-							<div class="birdhouse_holes"></div>
-						</div>
-						<div class="icon-wrap icon-ribbon hide" data-idx="1">
-							<div class="ribbon"></div>
-						</div>
-						
-						<div class="icon-wrap icon-link hide" data-idx="2">
-							<div class="loopback_l"></div>
-							<div class="loopback_r"></div>
-						</div>
-						
-						
-						<div class="icon-wrap icon-me hide" data-idx="3">
-							<div class="user"></div>
-							<div class="shoulder"></div>
-						</div>
-						
-					</div>
-					
-				</div>
-				<div class="tips-box hide">
-					<div class="tips-arrow"></div>
-					<ul class="tips-inner">
-						<li>菜单</li>
-						<li>标签</li>
-						
-						<li>友情链接</li>
-						
-						
-						<li>关于我</li>
-						
-					</ul>
-				</div>
-			</div>
-		
-
-		<div class="switch-area">
-			<div class="switch-wrap">
-				<section class="switch-part switch-part1">
-					<nav class="header-menu">
-						<ul>
-						
-							<li><a href="/">首页</a></li>
-				        
-							<li><a href="/tags/随笔">随笔</a></li>
-				        
-						</ul>
-					</nav>
-					<nav class="header-nav">
-						<div class="social">
-							
-								<a class="github" target="_blank" href="https://github.com/yzzting" title="github">github</a>
-					        
-								<a class="weibo" target="_blank" href="http://weibo.com/yzzting" title="weibo">weibo</a>
-					        
-								<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/yang-zi-zi-1995" title="zhihu">zhihu</a>
-					        
-						</div>
-					</nav>
-				</section>
-				
-				
-				<section class="switch-part switch-part2">
-					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/AngularJS/" style="font-size: 15px;">AngularJS</a> <a href="/tags/nodejs/" style="font-size: 15px;">nodejs</a> <a href="/tags/prompt/" style="font-size: 10px;">prompt</a> <a href="/tags/ukulele/" style="font-size: 10px;">ukulele</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/年度总结/" style="font-size: 10px;">年度总结</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
-					</div>
-				</section>
-				
-				
-				
-				<section class="switch-part switch-part3">
-					<div id="js-friends">
-					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.ahonn.me">ahonn的博客</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://henbukexue.science">刘帆帆的博客</a>
-			        
-			        </div>
-				</section>
-				
-
-				
-				
-				<section class="switch-part switch-part4">
-				
-					<div id="js-aboutme">我叫杨挺，也可以叫杨滋滋，Yzz。非典型前端路上的码畜</div>
-				</section>
-				
-			</div>
-		</div>
-	</header>				
-</div>
-
+        
+    
+                
+        <a href="/about" class="navHeader">about me</a>
+        
+    
+                
+        <a href="/archives" class="navHeader">archives</a>
+        
+    
     </div>
-    <div class="mid-col">
-      <nav id="mobile-nav">
-  	<div class="overlay">
-  		<div class="slider-trigger"></div>
-  		<h1 class="header-author js-mobile-header hide">Yzz</h1>
-  	</div>
-	<div class="intrude-less">
-		<header id="header" class="inner">
-			<div class="profilepic">
-			
-				<img lazy-src="http://7xp1k3.com1.z0.glb.clouddn.com/octocat-de-los-muertos.jpg" class="js-avatar">
-			
-			</div>
-			<hgroup>
-			  <h1 class="header-author">Yzz</h1>
-			</hgroup>
-			
-			<p class="header-subtitle">脑子转不过弯的杨滋滋</p>
-			
-			<nav class="header-menu">
-				<ul>
-				
-					<li><a href="/">首页</a></li>
-		        
-					<li><a href="/tags/随笔">随笔</a></li>
-		        
-		        <div class="clearfix"></div>
-				</ul>
-			</nav>
-			<nav class="header-nav">
-				<div class="social">
-					
-						<a class="github" target="_blank" href="https://github.com/yzzting" title="github">github</a>
-			        
-						<a class="weibo" target="_blank" href="http://weibo.com/yzzting" title="weibo">weibo</a>
-			        
-						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/yang-zi-zi-1995" title="zhihu">zhihu</a>
-			        
-				</div>
-			</nav>
-		</header>				
-	</div>
-</nav>
+</header>
 
-      <div class="body-wrap"><article id="post-nodejs命令行小玩意" class="article article-type-post" itemscope itemprop="blogPost">
-  
+		<div class="con">
+    <div class="blog-mian">
+        <article class="article-main"  itemscope itemprop="blogPost">
+    <header class="article-header">
+        <h1 itemprop="name">
+            <a href="/2016/02/14/nodejs命令行小玩意/" class="article-title">nodejs命令行小玩意</a>
+        </h1>
+    </header>
     <div class="article-meta">
-      <a href="/2016/02/14/nodejs命令行小玩意/" class="article-date">
-  	<time datetime="2016-02-13T16:02:08.000Z" itemprop="datePublished">2016-02-14</time>
-</a>
+        
+	<a href="/2016/02/14/nodejs命令行小玩意/" class="article-date">
+		<span class="fa fa-clock-o" aria-hidden="true"></span>
+		<time datetime="Feb 14 2016" itemprop="datePublished">Feb 14 2016</time>
+	</a>
+
     </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      nodejs命令行小玩意
-    </h1>
-  
-
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/prompt/">prompt</a></li></ul>
-	</div>
-
-        
-
-        <div class="clearfix"></div>
-      </div>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="u4E00_u4E2A_u7528nodejs_u5199_u7684_u4E00_u4E2A_u547D_u4EE4_u884C_u7684_u5C0F_u73A9_u610F"><a href="#u4E00_u4E2A_u7528nodejs_u5199_u7684_u4E00_u4E2A_u547D_u4EE4_u884C_u7684_u5C0F_u73A9_u610F" class="headerlink" title="一个用nodejs写的一个命令行的小玩意"></a>一个用nodejs写的一个命令行的小玩意</h2><p>大家新年好，这里给大家拜个晚年啦！（不跑题了</p>
+    <div class="article-inner">
+        <div class="article-entry" itemprop="articleBody">
+                <h2 id="u4E00_u4E2A_u7528nodejs_u5199_u7684_u4E00_u4E2A_u547D_u4EE4_u884C_u7684_u5C0F_u73A9_u610F"><a href="#u4E00_u4E2A_u7528nodejs_u5199_u7684_u4E00_u4E2A_u547D_u4EE4_u884C_u7684_u5C0F_u73A9_u610F" class="headerlink" title="一个用nodejs写的一个命令行的小玩意"></a>一个用nodejs写的一个命令行的小玩意</h2><p>大家新年好，这里给大家拜个晚年啦！（不跑题了</p>
 <a id="more"></a>
 <p>偶然的npm社区看到这个prompt的库，对于node.js的一个美丽的命令行提示符。地址在这里<a href="https://github.com/flatiron/prompt" target="_blank" rel="external">prompt</a>稍微看了下（其实是懒 ，写了个小小的答题的命令行版。 当然了老规矩，登陆功能还是有的，crud不能忘了！</p>
 <p>我简单的说下这个库的使用</p>
@@ -242,88 +83,26 @@ prompt.delimter = &apos;&apos;;
 </code></pre><p>这两句把显示number的时候前面的prompt给去掉了，当然你想换掉的话在空字符串里写就ok。</p>
 <p>代码写的好丑，逻辑也好low。大家看看开心就好，给个<a href="https://github.com/yzzting/nodejs-prompt" target="_blank" rel="external">地址</a>，如果有好想法就帮我pr一下</p>
 <h2 id="u665A_u5B89"><a href="#u665A_u5B89" class="headerlink" title="晚安"></a>晚安</h2>
-      
+        </div>
+            
     </div>
-    
-  </div>
-  
-    
-<nav id="article-nav">
-  
-  
-    <a href="/2015/12/30/杨滋滋2015年度总结/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">杨滋滋2015年度总结</div>
-      <strong class="article-nav-caption">></strong>
-    </a>
-  
-</nav>
-
-  
 </article>
 
-
-
-
-
-
-
-
+    </div>
 </div>
-      <footer id="footer">
-    <div class="outer">
-        <div id="footer-info">
-            <div class="footer-left">
-                &copy; 2016 Yzz
+
+		    <div class="toTop" style="opacity: 1" id="toTop">
+        <div class="arrow"></div>
+        <div class="stick"></div>
+    </div>
+    <footer class="blog-footer">
+        <div class="container">
+            <div id="footer-info" class="inner">
+                &copy; 2016 YzzTing Blog Powered by <a href="#" target="_blank">Yzz</a>
             </div>
         </div>
-</footer>
-    </div>
-    
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+    </footer>
 
+	</body>
 
-<script>
-	var yiliaConfig = {
-		fancybox: true,
-		mathjax: true,
-		animate: true,
-		isHome: false,
-		isPost: true,
-		isArchive: false,
-		isTag: false,
-		isCategory: false,
-		open_in_new: false
-	}
-</script>
-<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
-<script src="/js/main.js" type="text/javascript"></script>
-
-
-
-
-
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    }
-});
-
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';                 
-    }       
-});
-</script>
-
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-
-
-  </div>
-</body>
-</html>
+	</html>

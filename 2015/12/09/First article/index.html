@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>第一篇文章 | YzzTing Blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Yzz写字的地方!
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>YzzTing Blog</title>
+     
+    <!-- 主css -->
+    <link rel="stylesheet" href="/css/main.css">
+    <!-- seo -->
+    <meta name="description" content="Welcome to Yzz写字的地方!
 兜兜转转从wordpress到jekyll再到现在的hexo，能力低下，水平有限。要感谢岳勋老乡 Ahonn 的相助才搭起来这个博客
 Meteor+angularjs 搭建轻论坛系列已经开始动工，敬请期待！">
 <meta property="og:type" content="article">
@@ -16,310 +19,82 @@ Meteor+angularjs 搭建轻论坛系列已经开始动工，敬请期待！">
 <meta property="og:description" content="Welcome to Yzz写字的地方!
 兜兜转转从wordpress到jekyll再到现在的hexo，能力低下，水平有限。要感谢岳勋老乡 Ahonn 的相助才搭起来这个博客
 Meteor+angularjs 搭建轻论坛系列已经开始动工，敬请期待！">
-<meta property="og:updated_time" content="2015-12-10T06:37:39.778Z">
+<meta property="og:updated_time" content="2015-12-09T22:37:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="第一篇文章">
 <meta name="twitter:description" content="Welcome to Yzz写字的地方!
 兜兜转转从wordpress到jekyll再到现在的hexo，能力低下，水平有限。要感谢岳勋老乡 Ahonn 的相助才搭起来这个博客
 Meteor+angularjs 搭建轻论坛系列已经开始动工，敬请期待！">
-  
-  
-    <link rel="icon" href="http://7xp1k3.com1.z0.glb.clouddn.com/octocat-de-los-muertos.jpg">
-  
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <!-- facicon -->
+    
+    <!-- <link rel="stylesheet" href="/css/mian.css" type="text/css"> -->
+    <!-- <script src="js/toTop.js"></script> -->
 </head>
 
-<body>
-  <div id="container">
-    <div class="left-col">
-    <div class="overlay"></div>
-<div class="intrude-less">
-	<header id="header" class="inner">
-		<a href="/" class="profilepic">
-			
-			<img lazy-src="http://7xp1k3.com1.z0.glb.clouddn.com/octocat-de-los-muertos.jpg" class="js-avatar">
-			
-		</a>
 
-		<hgroup>
-		  <h1 class="header-author"><a href="/">Yzz</a></h1>
-		</hgroup>
+	<body>
+		<header>
+    <div class="blog-header">
+        
+                
+        <a href="/" class="navHeader">home</a>
+        
 
-		
-		<p class="header-subtitle">脑子转不过弯的杨滋滋</p>
-		
-
-		
-			<div class="switch-btn">
-				<div class="icon">
-					<div class="icon-ctn">
-						<div class="icon-wrap icon-house" data-idx="0">
-							<div class="birdhouse"></div>
-							<div class="birdhouse_holes"></div>
-						</div>
-						<div class="icon-wrap icon-ribbon hide" data-idx="1">
-							<div class="ribbon"></div>
-						</div>
-						
-						<div class="icon-wrap icon-link hide" data-idx="2">
-							<div class="loopback_l"></div>
-							<div class="loopback_r"></div>
-						</div>
-						
-						
-						<div class="icon-wrap icon-me hide" data-idx="3">
-							<div class="user"></div>
-							<div class="shoulder"></div>
-						</div>
-						
-					</div>
-					
-				</div>
-				<div class="tips-box hide">
-					<div class="tips-arrow"></div>
-					<ul class="tips-inner">
-						<li>菜单</li>
-						<li>标签</li>
-						
-						<li>友情链接</li>
-						
-						
-						<li>关于我</li>
-						
-					</ul>
-				</div>
-			</div>
-		
-
-		<div class="switch-area">
-			<div class="switch-wrap">
-				<section class="switch-part switch-part1">
-					<nav class="header-menu">
-						<ul>
-						
-							<li><a href="/">首页</a></li>
-				        
-							<li><a href="/tags/随笔">随笔</a></li>
-				        
-						</ul>
-					</nav>
-					<nav class="header-nav">
-						<div class="social">
-							
-								<a class="github" target="_blank" href="https://github.com/yzzting" title="github">github</a>
-					        
-								<a class="weibo" target="_blank" href="http://weibo.com/yzzting" title="weibo">weibo</a>
-					        
-								<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/yang-zi-zi-1995" title="zhihu">zhihu</a>
-					        
-						</div>
-					</nav>
-				</section>
-				
-				
-				<section class="switch-part switch-part2">
-					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/AngularJS/" style="font-size: 15px;">AngularJS</a> <a href="/tags/nodejs/" style="font-size: 15px;">nodejs</a> <a href="/tags/prompt/" style="font-size: 10px;">prompt</a> <a href="/tags/ukulele/" style="font-size: 10px;">ukulele</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/年度总结/" style="font-size: 10px;">年度总结</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
-					</div>
-				</section>
-				
-				
-				
-				<section class="switch-part switch-part3">
-					<div id="js-friends">
-					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.ahonn.me">ahonn的博客</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://henbukexue.science">刘帆帆的博客</a>
-			        
-			        </div>
-				</section>
-				
-
-				
-				
-				<section class="switch-part switch-part4">
-				
-					<div id="js-aboutme">我叫杨挺，也可以叫杨滋滋，Yzz。非典型前端路上的码畜</div>
-				</section>
-				
-			</div>
-		</div>
-	</header>				
-</div>
-
+        
+    
+                
+        <a href="/about" class="navHeader">about me</a>
+        
+    
+                
+        <a href="/archives" class="navHeader">archives</a>
+        
+    
     </div>
-    <div class="mid-col">
-      <nav id="mobile-nav">
-  	<div class="overlay">
-  		<div class="slider-trigger"></div>
-  		<h1 class="header-author js-mobile-header hide">Yzz</h1>
-  	</div>
-	<div class="intrude-less">
-		<header id="header" class="inner">
-			<div class="profilepic">
-			
-				<img lazy-src="http://7xp1k3.com1.z0.glb.clouddn.com/octocat-de-los-muertos.jpg" class="js-avatar">
-			
-			</div>
-			<hgroup>
-			  <h1 class="header-author">Yzz</h1>
-			</hgroup>
-			
-			<p class="header-subtitle">脑子转不过弯的杨滋滋</p>
-			
-			<nav class="header-menu">
-				<ul>
-				
-					<li><a href="/">首页</a></li>
-		        
-					<li><a href="/tags/随笔">随笔</a></li>
-		        
-		        <div class="clearfix"></div>
-				</ul>
-			</nav>
-			<nav class="header-nav">
-				<div class="social">
-					
-						<a class="github" target="_blank" href="https://github.com/yzzting" title="github">github</a>
-			        
-						<a class="weibo" target="_blank" href="http://weibo.com/yzzting" title="weibo">weibo</a>
-			        
-						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/yang-zi-zi-1995" title="zhihu">zhihu</a>
-			        
-				</div>
-			</nav>
-		</header>				
-	</div>
-</nav>
+</header>
 
-      <div class="body-wrap"><article id="post-First article" class="article article-type-post" itemscope itemprop="blogPost">
-  
+		<div class="con">
+    <div class="blog-mian">
+        <article class="article-main"  itemscope itemprop="blogPost">
+    <header class="article-header">
+        <h1 itemprop="name">
+            <a href="/2015/12/09/First article/" class="article-title">第一篇文章</a>
+        </h1>
+    </header>
     <div class="article-meta">
-      <a href="/2015/12/09/First article/" class="article-date">
-  	<time datetime="2015-12-09T10:30:00.000Z" itemprop="datePublished">2015-12-09</time>
-</a>
+        
+	<a href="/2015/12/09/First article/" class="article-date">
+		<span class="fa fa-clock-o" aria-hidden="true"></span>
+		<time datetime="Dec 09 2015" itemprop="datePublished">Dec 09 2015</time>
+	</a>
+
     </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      第一篇文章
-    </h1>
-  
-
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
-	</div>
-
-        
-
-        <div class="clearfix"></div>
-      </div>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="http://www.yzz1995.cn">Welcome to Yzz写字的地方!</a></p>
+    <div class="article-inner">
+        <div class="article-entry" itemprop="articleBody">
+                <p><a href="http://www.yzz1995.cn">Welcome to Yzz写字的地方!</a></p>
 <p>兜兜转转从wordpress到jekyll再到现在的hexo，能力低下，水平有限。<br>要感谢岳勋老乡 <a href="http://www.ahonn.me" target="_blank" rel="external">Ahonn</a> 的相助才搭起来这个博客</p>
 <p>Meteor+angularjs 搭建轻论坛系列已经开始动工，敬请期待！</p>
 
-      
+        </div>
+            
     </div>
-    
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2015/12/10/meteor+angularjs-1/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          Meteor+angularjs 实现轻论坛系列一
-        
-      </div>
-    </a>
-  
-  
-</nav>
-
-  
 </article>
 
-
-
-
-
-
-
-
+    </div>
 </div>
-      <footer id="footer">
-    <div class="outer">
-        <div id="footer-info">
-            <div class="footer-left">
-                &copy; 2016 Yzz
+
+		    <div class="toTop" style="opacity: 1" id="toTop">
+        <div class="arrow"></div>
+        <div class="stick"></div>
+    </div>
+    <footer class="blog-footer">
+        <div class="container">
+            <div id="footer-info" class="inner">
+                &copy; 2016 YzzTing Blog Powered by <a href="#" target="_blank">Yzz</a>
             </div>
         </div>
-</footer>
-    </div>
-    
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+    </footer>
 
+	</body>
 
-<script>
-	var yiliaConfig = {
-		fancybox: true,
-		mathjax: true,
-		animate: true,
-		isHome: false,
-		isPost: true,
-		isArchive: false,
-		isTag: false,
-		isCategory: false,
-		open_in_new: false
-	}
-</script>
-<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
-<script src="/js/main.js" type="text/javascript"></script>
-
-
-
-
-
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    }
-});
-
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';                 
-    }       
-});
-</script>
-
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-
-
-  </div>
-</body>
-</html>
+	</html>

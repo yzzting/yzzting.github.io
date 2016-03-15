@@ -1,230 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Angular.js实现即时搜索 | YzzTing Blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Angular.js实现即时搜索现在是2015.12.18凌晨24点31分，突然想起之前做过一个Angular写的即时搜索，就当是一个复习吧，在这篇博文里把实现过程记下来！">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>YzzTing Blog</title>
+     
+    <!-- 主css -->
+    <link rel="stylesheet" href="/css/main.css">
+    <!-- seo -->
+    <meta name="description" content="Angular.js实现即时搜索现在是2015.12.18凌晨24点31分，突然想起之前做过一个Angular写的即时搜索，就当是一个复习吧，在这篇博文里把实现过程记下来！">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Angular.js实现即时搜索">
 <meta property="og:url" content="http://www.yzz1995.cn/2015/12/18/Angular-js实现即时搜索/index.html">
 <meta property="og:site_name" content="YzzTing Blog">
 <meta property="og:description" content="Angular.js实现即时搜索现在是2015.12.18凌晨24点31分，突然想起之前做过一个Angular写的即时搜索，就当是一个复习吧，在这篇博文里把实现过程记下来！">
-<meta property="og:updated_time" content="2016-01-08T04:32:15.382Z">
+<meta property="og:updated_time" content="2016-01-07T20:32:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Angular.js实现即时搜索">
 <meta name="twitter:description" content="Angular.js实现即时搜索现在是2015.12.18凌晨24点31分，突然想起之前做过一个Angular写的即时搜索，就当是一个复习吧，在这篇博文里把实现过程记下来！">
-  
-  
-    <link rel="icon" href="http://7xp1k3.com1.z0.glb.clouddn.com/octocat-de-los-muertos.jpg">
-  
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <!-- facicon -->
+    
+    <!-- <link rel="stylesheet" href="/css/mian.css" type="text/css"> -->
+    <!-- <script src="js/toTop.js"></script> -->
 </head>
 
-<body>
-  <div id="container">
-    <div class="left-col">
-    <div class="overlay"></div>
-<div class="intrude-less">
-	<header id="header" class="inner">
-		<a href="/" class="profilepic">
-			
-			<img lazy-src="http://7xp1k3.com1.z0.glb.clouddn.com/octocat-de-los-muertos.jpg" class="js-avatar">
-			
-		</a>
 
-		<hgroup>
-		  <h1 class="header-author"><a href="/">Yzz</a></h1>
-		</hgroup>
+	<body>
+		<header>
+    <div class="blog-header">
+        
+                
+        <a href="/" class="navHeader">home</a>
+        
 
-		
-		<p class="header-subtitle">脑子转不过弯的杨滋滋</p>
-		
-
-		
-			<div class="switch-btn">
-				<div class="icon">
-					<div class="icon-ctn">
-						<div class="icon-wrap icon-house" data-idx="0">
-							<div class="birdhouse"></div>
-							<div class="birdhouse_holes"></div>
-						</div>
-						<div class="icon-wrap icon-ribbon hide" data-idx="1">
-							<div class="ribbon"></div>
-						</div>
-						
-						<div class="icon-wrap icon-link hide" data-idx="2">
-							<div class="loopback_l"></div>
-							<div class="loopback_r"></div>
-						</div>
-						
-						
-						<div class="icon-wrap icon-me hide" data-idx="3">
-							<div class="user"></div>
-							<div class="shoulder"></div>
-						</div>
-						
-					</div>
-					
-				</div>
-				<div class="tips-box hide">
-					<div class="tips-arrow"></div>
-					<ul class="tips-inner">
-						<li>菜单</li>
-						<li>标签</li>
-						
-						<li>友情链接</li>
-						
-						
-						<li>关于我</li>
-						
-					</ul>
-				</div>
-			</div>
-		
-
-		<div class="switch-area">
-			<div class="switch-wrap">
-				<section class="switch-part switch-part1">
-					<nav class="header-menu">
-						<ul>
-						
-							<li><a href="/">首页</a></li>
-				        
-							<li><a href="/tags/随笔">随笔</a></li>
-				        
-						</ul>
-					</nav>
-					<nav class="header-nav">
-						<div class="social">
-							
-								<a class="github" target="_blank" href="https://github.com/yzzting" title="github">github</a>
-					        
-								<a class="weibo" target="_blank" href="http://weibo.com/yzzting" title="weibo">weibo</a>
-					        
-								<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/yang-zi-zi-1995" title="zhihu">zhihu</a>
-					        
-						</div>
-					</nav>
-				</section>
-				
-				
-				<section class="switch-part switch-part2">
-					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/AngularJS/" style="font-size: 15px;">AngularJS</a> <a href="/tags/nodejs/" style="font-size: 15px;">nodejs</a> <a href="/tags/prompt/" style="font-size: 10px;">prompt</a> <a href="/tags/ukulele/" style="font-size: 10px;">ukulele</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/年度总结/" style="font-size: 10px;">年度总结</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
-					</div>
-				</section>
-				
-				
-				
-				<section class="switch-part switch-part3">
-					<div id="js-friends">
-					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.ahonn.me">ahonn的博客</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://henbukexue.science">刘帆帆的博客</a>
-			        
-			        </div>
-				</section>
-				
-
-				
-				
-				<section class="switch-part switch-part4">
-				
-					<div id="js-aboutme">我叫杨挺，也可以叫杨滋滋，Yzz。非典型前端路上的码畜</div>
-				</section>
-				
-			</div>
-		</div>
-	</header>				
-</div>
-
+        
+    
+                
+        <a href="/about" class="navHeader">about me</a>
+        
+    
+                
+        <a href="/archives" class="navHeader">archives</a>
+        
+    
     </div>
-    <div class="mid-col">
-      <nav id="mobile-nav">
-  	<div class="overlay">
-  		<div class="slider-trigger"></div>
-  		<h1 class="header-author js-mobile-header hide">Yzz</h1>
-  	</div>
-	<div class="intrude-less">
-		<header id="header" class="inner">
-			<div class="profilepic">
-			
-				<img lazy-src="http://7xp1k3.com1.z0.glb.clouddn.com/octocat-de-los-muertos.jpg" class="js-avatar">
-			
-			</div>
-			<hgroup>
-			  <h1 class="header-author">Yzz</h1>
-			</hgroup>
-			
-			<p class="header-subtitle">脑子转不过弯的杨滋滋</p>
-			
-			<nav class="header-menu">
-				<ul>
-				
-					<li><a href="/">首页</a></li>
-		        
-					<li><a href="/tags/随笔">随笔</a></li>
-		        
-		        <div class="clearfix"></div>
-				</ul>
-			</nav>
-			<nav class="header-nav">
-				<div class="social">
-					
-						<a class="github" target="_blank" href="https://github.com/yzzting" title="github">github</a>
-			        
-						<a class="weibo" target="_blank" href="http://weibo.com/yzzting" title="weibo">weibo</a>
-			        
-						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/yang-zi-zi-1995" title="zhihu">zhihu</a>
-			        
-				</div>
-			</nav>
-		</header>				
-	</div>
-</nav>
+</header>
 
-      <div class="body-wrap"><article id="post-Angular-js实现即时搜索" class="article article-type-post" itemscope itemprop="blogPost">
-  
+		<div class="con">
+    <div class="blog-mian">
+        <article class="article-main"  itemscope itemprop="blogPost">
+    <header class="article-header">
+        <h1 itemprop="name">
+            <a href="/2015/12/18/Angular-js实现即时搜索/" class="article-title">Angular.js实现即时搜索</a>
+        </h1>
+    </header>
     <div class="article-meta">
-      <a href="/2015/12/18/Angular-js实现即时搜索/" class="article-date">
-  	<time datetime="2015-12-17T16:27:08.000Z" itemprop="datePublished">2015-12-18</time>
-</a>
+        
+	<a href="/2015/12/18/Angular-js实现即时搜索/" class="article-date">
+		<span class="fa fa-clock-o" aria-hidden="true"></span>
+		<time datetime="Dec 18 2015" itemprop="datePublished">Dec 18 2015</time>
+	</a>
+
     </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Angular.js实现即时搜索
-    </h1>
-  
-
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AngularJS/">AngularJS</a></li></ul>
-	</div>
-
-        
-
-        <div class="clearfix"></div>
-      </div>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Angular-js_u5B9E_u73B0_u5373_u65F6_u641C_u7D22"><a href="#Angular-js_u5B9E_u73B0_u5373_u65F6_u641C_u7D22" class="headerlink" title="Angular.js实现即时搜索"></a>Angular.js实现即时搜索</h1><p>现在是2015.12.18凌晨24点31分，突然想起之前做过一个Angular写的即时搜索，就当是一个复习吧，在这篇博文里把实现过程记下来！<br><a id="more"></a><br>我还在学Angular1.x这个版本中，听说Angular2 beta版已经放出来了！啦啦啦啦啦，不过我对于es6，Typescript，还是傻乎乎的~~~<br><strong>MrSunny</strong>在这篇文章里写到<a href="http://zhuanlan.zhihu.com/FrontendMagazine/20058966" target="_blank" rel="external">Angular2 简介</a></p>
+    <div class="article-inner">
+        <div class="article-entry" itemprop="articleBody">
+                <h1 id="Angular-js_u5B9E_u73B0_u5373_u65F6_u641C_u7D22"><a href="#Angular-js_u5B9E_u73B0_u5373_u65F6_u641C_u7D22" class="headerlink" title="Angular.js实现即时搜索"></a>Angular.js实现即时搜索</h1><p>现在是2015.12.18凌晨24点31分，突然想起之前做过一个Angular写的即时搜索，就当是一个复习吧，在这篇博文里把实现过程记下来！<br><a id="more"></a><br>我还在学Angular1.x这个版本中，听说Angular2 beta版已经放出来了！啦啦啦啦啦，不过我对于es6，Typescript，还是傻乎乎的~~~<br><strong>MrSunny</strong>在这篇文章里写到<a href="http://zhuanlan.zhihu.com/FrontendMagazine/20058966" target="_blank" rel="external">Angular2 简介</a></p>
 <blockquote>
 <p>我希望你学习 Angular 2 能比学图片中的单词还要快 :)</p>
 </blockquote>
@@ -271,97 +112,26 @@
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.container</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">50px</span> <span class="number">0</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">text-align</span>:<span class="value"> center</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="class">.container</span> <span class="tag">input</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">200px</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">border-radius</span>:<span class="value"> <span class="number">5px</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1px</span> solid <span class="hexcolor">#ccc</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">5px</span> <span class="number">10px</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="class">.list</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">220px</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">text-align</span>:<span class="value"> left</span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1px</span> solid <span class="hexcolor">#ccc</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span> auto</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="class">.list</span> <span class="class">.list-item</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">border-bottom</span>:<span class="value"> <span class="number">1px</span> solid <span class="hexcolor">#eee</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">5px</span> <span class="number">10px</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="class">.list</span> <span class="class">.list-item</span><span class="pseudo">:hover</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">background-color</span>:<span class="value"> <span class="hexcolor">#eee</span></span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
 <h2 id="u4E00_u4E2A_u6700_u7B80_u964B_u7684Angular-js_u5373_u65F6_u641C_u7D22_u5C31_u5B8C_u6210_u4E86"><a href="#u4E00_u4E2A_u6700_u7B80_u964B_u7684Angular-js_u5373_u65F6_u641C_u7D22_u5C31_u5B8C_u6210_u4E86" class="headerlink" title="<strong>一个最简陋的Angular.js即时搜索就完成了</strong>"></a><strong>一个最简陋的Angular.js即时搜索就完成了</strong></h2><p>28行代码搞定，也许这就是<strong>angular</strong>的魅力所在吧！</p>
 <h1 id="u665A_u5B89"><a href="#u665A_u5B89" class="headerlink" title="<strong>晚安</strong>"></a><strong>晚安</strong></h1>
-      
+        </div>
+            
     </div>
-    
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2015/12/30/杨滋滋2015年度总结/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          杨滋滋2015年度总结
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2015/12/12/杨滋滋的由来/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">杨滋滋的由来</div>
-      <strong class="article-nav-caption">></strong>
-    </a>
-  
-</nav>
-
-  
 </article>
 
-
-
-
-
-
-
-
+    </div>
 </div>
-      <footer id="footer">
-    <div class="outer">
-        <div id="footer-info">
-            <div class="footer-left">
-                &copy; 2016 Yzz
+
+		    <div class="toTop" style="opacity: 1" id="toTop">
+        <div class="arrow"></div>
+        <div class="stick"></div>
+    </div>
+    <footer class="blog-footer">
+        <div class="container">
+            <div id="footer-info" class="inner">
+                &copy; 2016 YzzTing Blog Powered by <a href="#" target="_blank">Yzz</a>
             </div>
         </div>
-</footer>
-    </div>
-    
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+    </footer>
 
+	</body>
 
-<script>
-	var yiliaConfig = {
-		fancybox: true,
-		mathjax: true,
-		animate: true,
-		isHome: false,
-		isPost: true,
-		isArchive: false,
-		isTag: false,
-		isCategory: false,
-		open_in_new: false
-	}
-</script>
-<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
-<script src="/js/main.js" type="text/javascript"></script>
-
-
-
-
-
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    }
-});
-
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';                 
-    }       
-});
-</script>
-
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-
-
-  </div>
-</body>
-</html>
+	</html>
