@@ -85,6 +85,10 @@ ul {
 .older-posts-link a {
   color: #fff;
 }
+.article-entry figure {
+  text-align: justify;
+  text-justify: distribute;
+}
 .article-entry pre,
 .article-entry .highlight {
   background: #242424;
@@ -291,12 +295,13 @@ pre .css ~ * .id {
   text-align: justify;
   text-justify: distribute;
   display: block;
-  font-family: Merriweather, serif;
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
   word-wrap: break-word;
   line-height: 31.5px;
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 600;
   letter-spacing: 0.12px;
+  color: #5d5d5d;
 }
 .con .article-main .article-inner .article-entry .article-more-link {
   position: absolute;
