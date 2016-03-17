@@ -12,15 +12,28 @@ a {
 ul {
   list-style: none;
 }
-.blog-header {
+body {
+  width: 1160px;
+  margin: 0 auto;
+}
+header {
+  height: 60px;
+}
+header .nav {
   font-family: 'Source Han Sans', 'Microsoft YaHei', Helvetica, Arial, sans-serif;
   font-size: 16px;
-  height: 21px;
   opacity: 0.6;
-  margin: 25px 100px 0;
-  padding: 0 23% 0;
+  text-align: center;
+  left: 80px;
 }
-.blog-header .nav-list-item {
+header .nav .logo-link {
+  color: rgba(246, 74, 182, 0.66);
+  font-size: 67px;
+  font-family: Microsoft YaHei;
+  top: 13px;
+  position: relative;
+}
+header .nav .nav-list-item {
   display: inline-block;
   background-color: rgba(246, 74, 182, 0.66);
   color: #FFF;
@@ -29,23 +42,16 @@ ul {
   text-transform: capitalize;
   padding: 9px 10px;
 }
-.blog-header .nav-list-item a {
+header .nav .nav-list-item a {
   color: #FFF;
 }
-.blog-header .nav-list-item:hover {
+header .nav .nav-list-item:hover {
   text-decoration: underline;
   font-weight: 900;
   background: #fff;
 }
-.blog-header .nav-list-item:hover a {
+header .nav .nav-list-item:hover a {
   color: #000;
-}
-.logo-link {
-  color: rgba(246, 74, 182, 0.66);
-  font-size: 67px;
-  float: right;
-  margin-top: -34px;
-  font-family: Microsoft YaHei;
 }
 .tags-title {
   margin-bottom: 47px;
@@ -264,7 +270,6 @@ pre .css ~ * .id {
 }
 .con {
   text-align: center;
-  width: 1160px;
   margin: 0 auto;
 }
 .con .article-main {
@@ -292,10 +297,6 @@ pre .css ~ * .id {
 }
 .con .article-main .article-inner {
   text-align: center;
-}
-.con .article-main .article-inner .article-entry {
-  display: inline-block;
-  width: 1160px;
 }
 .con .article-main .article-inner .article-entry h1,
 .con .article-main .article-inner .article-entry h2,
@@ -620,6 +621,49 @@ header {
 .container .List a:hover {
   text-decoration: underline;
   font-weight: 800;
+}
+@media (max-width: 1039px) {
+  .con {
+    margin-left: 5%;
+  }
+}
+@media (max-width: 435px) {
+  .con {
+    width: 300px;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  .article-title {
+    font-size: 22px;
+  }
+  .article-dateTime {
+    margin: 18px 0 18px;
+  }
+  .article-header h1 a {
+    font-size: 12px;
+  }
+  .article-entry {
+    width: 300px;
+  }
+  .article-entry p {
+    word-wrap: break-word;
+  }
+  body {
+    width: 100%;
+  }
+  header {
+    padding: 20px 0;
+  }
+  header a.logo-link,
+  header ul.nav.nav-list {
+    float: none;
+    display: block;
+    text-align: center;
+  }
+  #forkongithub,
+  #wrap {
+    display: none;
+  }
 }
 .blog-footer {
   display: block;
