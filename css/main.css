@@ -89,6 +89,20 @@ ul {
   text-align: justify;
   text-justify: distribute;
 }
+.article-entry h1,
+.article-entry h2,
+.article-entry h3,
+.article-entry h4,
+.article-entry h5,
+.article-entry h6 {
+  margin-top: 10px;
+}
+ul li {
+  text-align: left;
+  margin: 8px 0 4px;
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+  list-style: upper-roman;
+}
 .article-entry pre,
 .article-entry .highlight {
   background: #242424;
@@ -108,9 +122,11 @@ ul {
   font-family: Comic Sans MS;
 }
 .article-entry code {
-  background: color-background;
+  background: rgba(246, 74, 182, 0.66);
   padding: 0 0.3em;
-  border: none;
+  color: #fff;
+  font-family: monospace;
+  border: 1px solid rgba(246, 74, 182, 0.66);
 }
 .article-entry pre {
   color: #fff;
@@ -609,5 +625,5 @@ header {
   display: block;
   text-align: center;
   margin: 17% 0 20px;
-  color: #bbc7cc;
+  color: rgba(246, 74, 182, 0.66);
 }

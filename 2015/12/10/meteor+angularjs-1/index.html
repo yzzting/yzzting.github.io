@@ -93,7 +93,7 @@ Meteor is an open-source platform for building top-quality web apps in a fractio
 <meta property="og:image" content="http://7xp1k3.com1.z0.glb.clouddn.com/20151209215348.png">
 <meta property="og:image" content="http://7xp1k3.com1.z0.glb.clouddn.com/20151209221415.png">
 <meta property="og:image" content="http://7xp1k3.com1.z0.glb.clouddn.com/1449322982021.png">
-<meta property="og:updated_time" content="2016-01-07T20:36:24.000Z">
+<meta property="og:updated_time" content="2016-03-17T06:38:55.298Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Meteor+angularjs 实现轻论坛系列一">
 <meta name="twitter:description" content="Meteor的官网( Meteor )这样介绍这个框架：
@@ -104,7 +104,7 @@ Meteor is an open-source platform for building top-quality web apps in a fractio
             <!-- facicon -->
             
                     <!-- <link rel="stylesheet" href="/css/mian.css" type="text/css"> -->
-                    <!-- <script src="js/toTop.js"></script> -->
+                    <script src="/js/toTop.js"></script>
 </head>
 
 
@@ -159,37 +159,27 @@ Meteor is an open-source platform for building top-quality web apps in a fractio
 <a id="more"></a>
 <p>首先讲一下我的开发环境（ubuntu15.10 + sublime text 3）</p>
 <h1 id="u73AF_u5883_u642D_u5EFA"><a href="#u73AF_u5883_u642D_u5EFA" class="headerlink" title="<strong>环境搭建</strong>"></a><strong>环境搭建</strong></h1><p>ubuntu环境下安装meteor特别容易</p>
-<ul>
-<li><p>$ curl <a href="https://install.meteor.com/" target="_blank" rel="external">https://install.meteor.com/</a> | sh</p>
-</li>
-<li><p>$ meteor –version</p>
-</li>
-</ul>
+<p><code>$ curl https://install.meteor.com/ | sh</code></p>
+<p><code>$ meteor --version</code></p>
 <p>敲入上面的命令后，出现版本号说明  安装成功！</p>
-<ul>
-<li>$ meteor create Demo </li>
-</ul>
-<p>这里，我们创建了meteor的一个实例 </p>
-<ul>
-<li><p>$ cd Demo </p>
-</li>
-<li><p>$ meteor </p>
-</li>
-</ul>
-<p>我们通过 $ meteor 在项目的根目录启动这个 Demo 的实例 ，停止这个服务 Ctrl + c</p>
+<pre><code>`$ meteor create Demo`
+</code></pre><p>这里，我们创建了meteor的一个实例</p>
+<pre><code>`$ cd Demo`
+
+`$ meteor`
+</code></pre><p>我们通过 $ meteor 在项目的根目录启动这个 Demo 的实例 ，停止这个服务 Ctrl + c</p>
 <p><img src="http://7xp1k3.com1.z0.glb.clouddn.com/QQ截图20151208212013.png" alt=""></p>
-<p>在这个项目中，meteor默认启动了Mongodb数据库。然后打开 <a href="http://localhost:3000" target="_blank" rel="external">http://localhost:3000</a> </p>
+<p>在这个项目中，meteor默认启动了Mongodb数据库。然后打开 <a href="http://localhost:3000" target="_blank" rel="external">http://localhost:3000</a></p>
 <p><img src="http://7xp1k3.com1.z0.glb.clouddn.com/20151209215348.png" alt=""></p>
 <p>我们可以看到一个Meteor的默认初始页面，可以显示鼠标点击按钮的次数。<br>回到项目目录中，查看Demo文件夹，里面只有三个文件，分别是Demo.html,Demo.css,Demo.js Meteor中的javaScript代码可以在服务端和客户端同时运行！所以只有一个javaScript文件。</p>
 <p><img src="http://7xp1k3.com1.z0.glb.clouddn.com/20151209221415.png" alt=""></p>
 <p>Meteor创建简单的app直接在项目根目录下创建js文件、HTML文件和CSS文件即可。运行项目的时候，所有的CSS文件，都会自动引入到HTML文件，而所有的HTML文件，都会拼成一个HTML文件。下面，我们去掉官方默认的模板，添加<strong>Angular</strong>进来</p>
-<p>#<strong>添加angularjs到Meteor项目中</strong></p>
-<p>首先删掉初始化项目生成的三个文件</p>
+<h1 id="u6DFB_u52A0angularjs_u5230Meteor_u9879_u76EE_u4E2D"><a href="#u6DFB_u52A0angularjs_u5230Meteor_u9879_u76EE_u4E2D" class="headerlink" title="<strong>添加angularjs到Meteor项目中</strong>"></a><strong>添加angularjs到Meteor项目中</strong></h1><p>首先删掉初始化项目生成的三个文件</p>
 <ul>
 <li>$ rm Demo.html Demo.css Demo.js  </li>
 </ul>
 <p>然后我们新建一个 index.html 的文件,并敲入下面的代码，就是下面的代码，其他都不要！</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span> </span><br><span class="line">  <span class="tag">&lt;<span class="title">p</span>&gt;</span>Yzz!!<span class="tag">&lt;/<span class="title">p</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">p</span>&gt;</span>Yzz!!<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>这里，只写了 <code>&lt;body&gt;&lt;/body&gt;</code>这个标签，因为Meteor会扫描所有HTML文件，然后通过一系列的<br>整合，组成一个新的文件，自动补全其他标签</p>
 <p>meteor吧！</p>
 <ul>
@@ -204,18 +194,18 @@ Meteor is an open-source platform for building top-quality web apps in a fractio
 <p>添加完成后，以后run这个项目，前端会自动引用这个Angular，不必我们手动引入</p>
 <p>touch一个新文件</p>
 <ul>
-<li>$touch index.ng.html </li>
+<li>$touch index.ng.html</li>
 </ul>
 <p>这里，我们用了.ng.html 的后缀，为了不让Meteor的默认模板（Blaze）就不会编译到这个文件，Angular就可以使用这个文件了，然后敲入代码</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">p</span>&gt;</span>Yzz Angular!<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>修改 index.html 的代码 </p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">ng-include</span>=<span class="value">"'index.ng.html'"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>修改 index.html 的代码</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">ng-include</span>=<span class="value">"'index.ng.html'"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p> 这里使用了Angular的一个指令，ng-include用于引入外部HTML文件，注意这里的双引号里面还有单引号。然后在创建一个app.js文件，并输入如下代码<br> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (Meteor.isClient) &#123;</span><br><span class="line"><span class="comment">// 创建 Angular module</span></span><br><span class="line"><span class="comment">// 并添加 angular-meteor 包依赖</span></span><br><span class="line">angular.module(<span class="string">'Yzz'</span>, [<span class="string">'angular-meteor'</span>]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>添加ng-app到index.html中<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">body</span> <span class="attribute">ng-app</span>=<span class="value">"Yzz"</span>&gt;</span> </span><br><span class="line">     <span class="tag">&lt;<span class="title">div</span> <span class="attribute">ng-include</span>=<span class="value">"index.ng.html"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>   </span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p><strong>Meteor</strong> </p>
+<p>添加ng-app到index.html中<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">body</span> <span class="attribute">ng-app</span>=<span class="value">"Yzz"</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="title">div</span> <span class="attribute">ng-include</span>=<span class="value">"index.ng.html"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>   </span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>Meteor</strong></p>
 <p><img src="http://7xp1k3.com1.z0.glb.clouddn.com/1449322982021.png" alt=""></p>
 <p>额。。报错了，代码并没写错。。为什么？？<br>   别急。</p>
-<p><strong> Meteor 1.2.1 </strong> 在angular模板这一块更新了二个组件 查看<a href="http://www.angular-meteor.com/tutorials/socially/angular1/bootstrapping" target="_blank" rel="external">官方文档</a> 在add Angular 1 这一块刚好写到 </p>
+<p><strong> Meteor 1.2.1 </strong> 在angular模板这一块更新了二个组件 查看<a href="http://www.angular-meteor.com/tutorials/socially/angular1/bootstrapping" target="_blank" rel="external">官方文档</a> 在add Angular 1 这一块刚好写到</p>
 <blockquote>
 <p>It’s time to add Angular 1 to our stack!</p>
 <p>Because we decided to work with AngularJS in the client side, we need to remove the default UI package of Meteor, called Blaze.</p>
@@ -243,10 +233,10 @@ Meteor is an open-source platform for building top-quality web apps in a fractio
 <p>我们先创建三个文件夹，即client、server和model。client中放只需要客户端运行的代码，server放只需要服务端运行的代码，model放定义数据库collection的代码，客户端和服务端都需要运行</p>
 <p>然后把index.html、index.ng.html和app.js文件移动到client文件夹下面，并修改app.js代码为</p>
 <ul>
-<li>angular.module(‘Yzz’, [‘angular-meteor’]); </li>
+<li>angular.module(‘Yzz’, [‘angular-meteor’]);</li>
 </ul>
 <p>因为app.js 现在在client文件夹下面并在客户端运行，所以我们不用 <strong>Meteor.isClient </strong></p>
-<p>index.html文件中ng-include引入的文件路径必须完整，修改index.html代码如下所示<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">ng-include</span>=<span class="value">"'client/index.ng.html'"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>index.html文件中ng-include引入的文件路径必须完整，修改index.html代码如下所示<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">ng-include</span>=<span class="value">"'client/index.ng.html'"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>ok,运行它 meteor</p>
 <p>嗯，效果一样！，但是项目结构我们清晰了！</p>
 <p>至此，我们成功的搭建了Meteor，并整合了angularjs，下一次将完成论坛用户模块！</p>
