@@ -616,9 +616,6 @@ pre .css ~ * .id {
   right: 18px;
 }
 @media (max-width: 1170px) {
-  .con {
-    margin-left: 5%;
-  }
   body {
     width: auto;
     margin: 0 auto;
@@ -628,8 +625,16 @@ pre .css ~ * .id {
   #wrap {
     display: none;
   }
+  body {
+    width: auto;
+    margin: 3%;
+  }
 }
 @media (max-width: 435px) {
+  body {
+    width: auto;
+    margin: 0 auto;
+  }
   .con {
     width: 300px;
     overflow: hidden;
