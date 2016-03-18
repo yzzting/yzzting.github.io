@@ -16,24 +16,27 @@ body {
   width: 1160px;
   margin: 0 auto;
 }
-header {
-  height: 60px;
+img {
+  width: 1160px;
 }
-header .nav {
+.navHeader {
+  height: 100%;
+}
+.navHeader .nav {
   font-family: 'Source Han Sans', 'Microsoft YaHei', Helvetica, Arial, sans-serif;
   font-size: 16px;
   opacity: 0.6;
   text-align: center;
   left: 80px;
 }
-header .nav .logo-link {
+.navHeader .nav .logo-link {
   color: rgba(246, 74, 182, 0.66);
   font-size: 67px;
   font-family: Microsoft YaHei;
   top: 13px;
   position: relative;
 }
-header .nav .nav-list-item {
+.navHeader .nav .nav-list-item {
   display: inline-block;
   background-color: rgba(246, 74, 182, 0.66);
   color: #FFF;
@@ -42,20 +45,22 @@ header .nav .nav-list-item {
   text-transform: capitalize;
   padding: 9px 10px;
 }
-header .nav .nav-list-item a {
+.navHeader .nav .nav-list-item a {
   color: #FFF;
 }
-header .nav .nav-list-item:hover {
+.navHeader .nav .nav-list-item:hover {
   text-decoration: underline;
   font-weight: 900;
   background: #fff;
 }
-header .nav .nav-list-item:hover a {
+.navHeader .nav .nav-list-item:hover a {
   color: #000;
+}
+.tags-main {
+  margin-top: 3%;
 }
 .tags-title {
   text-align: left;
-  margin-top: 97px;
 }
 .tags-entry ul li {
   margin: 34.1px 0 68.2px 31px;
@@ -293,12 +298,14 @@ pre .css ~ * .id {
   text-align: center;
   margin: 0 auto;
 }
+.con .blog-main {
+  margin-top: 5%;
+}
 .con .article-main {
   margin-bottom: 20px;
 }
 .con .article-main .article-header {
   text-align: left;
-  margin-top: 97px;
 }
 .con .article-main .article-header a {
   color: rgba(246, 74, 182, 0.66);
@@ -347,10 +354,12 @@ pre .css ~ * .id {
   margin-top: 16px;
   display: flex;
   justify-content: center;
-  padding-left: 5px;
   border-radius: 3px solid #f5f8fa;
   width: 90px;
   opacity: 0.8;
+}
+.con .article-main .article-inner .article-entry .article-more-link:hover {
+  background: #fff;
 }
 .con .article-main .article-inner .article-entry .article-more-link a {
   font-size: 15px;
@@ -358,7 +367,6 @@ pre .css ~ * .id {
 }
 .con .article-main .article-inner .article-entry .article-more-link a:hover {
   color: #000;
-  background: #FFF;
   font-weight: 900;
   text-decoration: underline;
 }
@@ -369,6 +377,7 @@ pre .css ~ * .id {
   opacity: 0.2;
   height: 1px;
   top: 59px;
+  margin-bottom: 7%;
 }
 #alien:before,
 .body:before,
@@ -606,9 +615,18 @@ pre .css ~ * .id {
   bottom: 40px;
   right: 18px;
 }
-@media (max-width: 1039px) {
+@media (max-width: 1170px) {
   .con {
     margin-left: 5%;
+  }
+  body {
+    width: auto;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 900px) {
+  #wrap {
+    display: none;
   }
 }
 @media (max-width: 435px) {
@@ -627,7 +645,9 @@ pre .css ~ * .id {
     left: -2%;
   }
   .article-entry {
-    width: 300px;
+    font-size: 12px;
+    display: table-cell;
+    vertical-align: middle;
   }
   .article-entry p {
     word-wrap: break-word;
@@ -642,11 +662,14 @@ pre .css ~ * .id {
   #article-nav-older {
     display: block;
   }
+  .con .lineStyle {
+    margin-bottom: 26%;
+  }
+  .tags-title {
+    margin-top: 0;
+  }
   body {
     width: 100%;
-  }
-  header {
-    padding-buttom: 10px;
   }
   header a.logo-link,
   header ul.nav.nav-list {
@@ -662,6 +685,9 @@ pre .css ~ * .id {
 header {
   color: rgba(246, 74, 182, 0.66);
 }
+.about-main {
+  margin-top: 3%;
+}
 .container {
   font-family: 'Source Han Sans', 'Microsoft YaHei', Helvetica, Arial, sans-serif;
   margin: 0 auto;
@@ -671,9 +697,11 @@ header {
   word-wrap: break-word;
   left: -4.6%;
 }
+.container .aboutHeader {
+  height: auto;
+}
 .container .about-title {
   font-size: 31px;
-  margin: 30px 10px 0 0;
 }
 .container .about-main {
   font-size: 20px;
@@ -682,7 +710,6 @@ header {
   padding-bottom: 20px;
 }
 .container .aboutData {
-  margin-top: 36px;
   padding-bottom: 20px;
 }
 .container .List {
