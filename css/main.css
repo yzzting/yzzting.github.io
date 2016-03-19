@@ -635,8 +635,6 @@ pre .css ~ * .id {
   }
   .con .article-main .article-entry {
     font-size: 12px;
-    display: table-cell;
-    vertical-align: middle;
   }
   .con .article-main .article-entry p {
     word-wrap: break-word;
