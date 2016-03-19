@@ -4,7 +4,6 @@
 }
 a {
   text-decoration: none;
-  font-weight: blod;
   font-family: "Segoe UI Emoji";
   color: #000;
   cursor: auto;
@@ -23,7 +22,7 @@ img {
   height: 100%;
 }
 .navHeader .nav {
-  font-family: 'Source Han Sans', 'Microsoft YaHei', Helvetica, Arial, sans-serif;
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
   font-size: 16px;
   opacity: 0.6;
   text-align: center;
@@ -32,7 +31,7 @@ img {
 .navHeader .nav .logo-link {
   color: rgba(246, 74, 182, 0.66);
   font-size: 67px;
-  font-family: Microsoft YaHei;
+  font-family: 'Microsoft YaHei';
   top: 13px;
   position: relative;
 }
@@ -51,7 +50,7 @@ img {
 .navHeader .nav .nav-list-item:hover {
   text-decoration: underline;
   font-weight: 900;
-  background: #fff;
+  background: #FFF;
 }
 .navHeader .nav .nav-list-item:hover a {
   color: #000;
@@ -89,17 +88,13 @@ img {
 .older-posts-link:hover {
   color: #000;
   opacity: 3;
-  border-color: #fff;
+  border-color: #FFF;
 }
 .older-posts-link .page-number {
   display: none;
 }
 .older-posts-link a {
-  color: #fff;
-}
-.article-entry figure {
-  text-align: justify;
-  text-justify: distribute;
+  color: #FFF;
 }
 .article-entry h1,
 .article-entry h2,
@@ -139,7 +134,7 @@ ul li {
 .article-entry .highlight {
   background: #242424;
   margin: 10px 0;
-  padding: 10px 10px;
+  padding: 10px;
   overflow: auto;
   color: #4c4c4c;
   border-radius: 4px;
@@ -152,13 +147,6 @@ ul li {
 .article-entry pre,
 .article-entry code {
   font-family: Comic Sans MS;
-}
-.article-entry code {
-  background: rgba(246, 74, 182, 0.66);
-  padding: 0 0.3em;
-  color: #fff;
-  font-family: monospace;
-  border: 1px solid rgba(246, 74, 182, 0.66);
 }
 .article-entry pre {
   color: #fff;
@@ -247,12 +235,16 @@ ul li {
 .article-entry .gist .gist-file .gist-meta a:hover {
   text-decoration: underline;
 }
+.article-entry figure {
+  text-align: justify;
+  text-justify: distribute;
+}
 .article-entry blockquote {
   background-color: #f5f8fa;
   padding: 10px 15px;
   word-break: break-word;
   border-left: 5px solid #2f2f2f;
-  margin: 10px 0px 0px;
+  margin: 10px 0 0;
 }
 pre .comment {
   color: #75715e;
@@ -359,7 +351,7 @@ pre .css ~ * .id {
   opacity: 0.8;
 }
 .con .article-main .article-inner .article-entry .article-more-link:hover {
-  background: #fff;
+  background: #FFF;
 }
 .con .article-main .article-inner .article-entry .article-more-link a {
   font-size: 15px;
@@ -615,25 +607,20 @@ pre .css ~ * .id {
   bottom: 40px;
   right: 18px;
 }
-@media (max-width: 1170px) {
-  body {
-    width: auto;
-    margin: 0 auto;
-  }
-}
 @media (max-width: 900px) {
   #wrap {
     display: none;
   }
   body {
     width: auto;
-    margin: 3%;
+    margin: 0 auto;
   }
 }
 @media (max-width: 435px) {
   body {
     width: auto;
     margin: 0 auto;
+    width: 100%;
   }
   .con {
     width: 300px;
@@ -646,16 +633,16 @@ pre .css ~ * .id {
   .con .article-main .article-meta {
     text-align: left;
   }
-  .older-posts-link {
-    left: -2%;
-  }
-  .article-entry {
+  .con .article-main .article-entry {
     font-size: 12px;
     display: table-cell;
     vertical-align: middle;
   }
-  .article-entry p {
+  .con .article-main .article-entry p {
     word-wrap: break-word;
+  }
+  .con .lineStyle {
+    margin-bottom: 26%;
   }
   #article-nav a {
     display: block;
@@ -667,14 +654,15 @@ pre .css ~ * .id {
   #article-nav-older {
     display: block;
   }
-  .con .lineStyle {
-    margin-bottom: 26%;
-  }
   .tags-title {
-    margin-top: 0;
+    font-size: 13px;
   }
-  body {
-    width: 100%;
+  .tags-entry ul li .article-title {
+    margin-top: 0;
+    font-size: 17px;
+  }
+  .tags-entry ul li .article-title h1 {
+    font-size: 25px;
   }
   header a.logo-link,
   header ul.nav.nav-list {
@@ -694,7 +682,7 @@ header {
   margin-top: 3%;
 }
 .container {
-  font-family: 'Source Han Sans', 'Microsoft YaHei', Helvetica, Arial, sans-serif;
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
   margin: 0 auto;
   position: relative;
   width: 80%;
@@ -713,6 +701,10 @@ header {
 }
 .container .about-main > * {
   padding-bottom: 20px;
+}
+.container .aboutInformation a {
+  color: rgba(246, 74, 182, 0.66);
+  font-weight: 900;
 }
 .container .aboutData {
   padding-bottom: 20px;
