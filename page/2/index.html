@@ -9,69 +9,6 @@
     </title>
     
         <!-- 主css -->
-        <style>
-            #forkongithub a {
-                background: rgba(246, 74, 182, 0.66);
-                color: #fff;
-                text-decoration: none;
-                font-family: arial, sans-serif;
-                text-align: center;
-                font-weight: bold;
-                padding: 5px 40px;
-                font-size: 1rem;
-                line-height: 2rem;
-                position: relative;
-                transition: 0.5s;
-            }
-
-            #forkongithub a:hover {
-                background: #FFF;
-                color: #000;
-                text-decoration: underline;
-            }
-
-            #forkongithub a::before,
-            #forkongithub a::after {
-                content: "";
-                width: 100%;
-                display: block;
-                position: absolute;
-                top: 1px;
-                left: 0;
-                height: 1px;
-                background: #fff;
-            }
-
-            #forkongithub a::after {
-                bottom: 1px;
-                top: auto;
-            }
-
-            @media screen and (min-width:1150px) {
-                #forkongithub {
-                    position: absolute;
-                    display: block;
-                    top: 0;
-                    left: 0;
-                    width: 200px;
-                    overflow: hidden;
-                    height: 200px;
-                    z-index: 9999;
-                }
-                #forkongithub a {
-                    width: 200px;
-                    position: absolute;
-                    top: 60px;
-                    left: -60px;
-                    transform: rotate(-45deg);
-                    -webkit-transform: rotate(-45deg);
-                    -ms-transform: rotate(-45deg);
-                    -moz-transform: rotate(-45deg);
-                    -o-transform: rotate(-45deg);
-                    box-shadow: 4px 4px 4px #fff;
-                }
-            }
-        </style>
         <link rel="stylesheet" href="/css/main.css">
         <!-- seo -->
         <meta name="description" content="Yzz写字的地方">
@@ -104,18 +41,16 @@
     
 </head>
 
+
 	<body>
 		<header class="navHeader">
-    <span id="forkongithub"><a href="https://github.com/yzzting/hexo-theme-MyFairLady">Fork me on GitHub</a></span>
-    <div class="blog-header">
-
+    <span class="logo-link"><a href="/" >Yzz</a></span>
         
                 
         <ul class="nav nav-list">
-                <a href="/" class="logo-link">Yzz</a>
+
         <li class="nav-list-item"><a href="/">home</a></li>
         
-
         
     
                 
@@ -127,7 +62,6 @@
         
     
     </ul>
-    </div>
 </header>
 
 		<div class="con">
@@ -152,11 +86,13 @@
                     
                         <div class="article-inner">
                             <div class="article-entry" itemprop="articleBody">
-                                <p>Meteor的官网( Meteor )这样介绍这个框架：</p>
+                                
+                                  <p>Meteor的官网( Meteor )这样介绍这个框架：</p>
 <blockquote>
 <p>Meteor is an open-source platform for building top-quality web apps in a fraction of the time, whether you’re an expert developer or just getting started.</p>
 </blockquote>
 <p>按我自己的理解来说，Meteor是互联网江湖里面的<strong>倚天剑</strong>，<strong>屠龙刀</strong>。不同的是，不是<strong>孤品</strong>，人人可以有，就连我这个js菜鸟的可以比划几下</p>
+                                
                                     <p class="article-more-link">
                                         <a href="/2015/12/10/meteor+angularjs-1/#more">
                                             read more></a>
@@ -186,6 +122,11 @@
                     
                         <div class="article-inner">
                             <div class="article-entry" itemprop="articleBody">
+                                
+                                  <p><a href="http://www.yzz1995.cn">Welcome to Yzz写字的地方!</a></p>
+<p>兜兜转转从wordpress到jekyll再到现在的hexo，能力低下，水平有限。<br>要感谢岳勋老乡 <a href="http://www.ahonn.me" target="_blank" rel="external">Ahonn</a> 的相助才搭起来这个博客</p>
+<p>Meteor+angularjs 搭建轻论坛系列已经开始动工，敬请期待！</p>
+
                                 
                                     <p class="article-more-link">
                                         <a href="/2015/12/09/First article/#more">
@@ -221,4 +162,4 @@
     </footer>
 
 	</body>
-</html>
+	</html>
