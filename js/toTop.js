@@ -1,5 +1,5 @@
 window.onload = function() {
-    var obn = document.getElementById('wrap');
+    var obn = document.getElementById('heart');
     var timer = null;
     var isTop = true;
     window.onscroll = function(){
