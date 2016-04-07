@@ -68,22 +68,23 @@
 
 			<div class="con">
     <div class="blog-mian">
-        <article class="article-main"  itemscope itemprop="blogPost">
-    <header class="article-header">
-        <h1 itemprop="name">
+        <article class="article-main" itemscope itemprop="blogPost">
+    <div class="articleCon">
+        <header class="article-header">
+            <h1 itemprop="name">
             <a href="/2015/12/18/Angular-js实现即时搜索/" class="article-title">Angular.js实现即时搜索</a>
         </h1>
-    </header>
-    <div class="article-meta">
-        <a href="#" class="article-date">
+        </header>
+        <div class="article-meta">
+            <a href="#" class="article-date">
     <time datetime="Dec 18 2015" itemprop="datePublished">
         Dec 18 2015
     </time>
 </a>
 
-    </div>
-    <div class="article-inner">
-        <div class="article-entry" itemprop="articleBody">
+        </div>
+        <div class="article-inner">
+            <div class="article-entry" itemprop="articleBody">
                 <h1 id="Angular-js_u5B9E_u73B0_u5373_u65F6_u641C_u7D22"><a href="#Angular-js_u5B9E_u73B0_u5373_u65F6_u641C_u7D22" class="headerlink" title="Angular.js实现即时搜索"></a>Angular.js实现即时搜索</h1><p>现在是2015.12.18凌晨24点31分，突然想起之前做过一个Angular写的即时搜索，就当是一个复习吧，在这篇博文里把实现过程记下来！<br><a id="more"></a><br>我还在学Angular1.x这个版本中，听说Angular2 beta版已经放出来了！啦啦啦啦啦，不过我对于es6，Typescript，还是傻乎乎的~~~<br><strong>MrSunny</strong>在这篇文章里写到<a href="http://zhuanlan.zhihu.com/FrontendMagazine/20058966" target="_blank" rel="external">Angular2 简介</a></p>
 <blockquote>
 <p>我希望你学习 Angular 2 能比学图片中的单词还要快 :)</p>
@@ -131,7 +132,7 @@
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.container</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">50px</span> <span class="number">0</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">text-align</span>:<span class="value"> center</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="class">.container</span> <span class="tag">input</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">200px</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">border-radius</span>:<span class="value"> <span class="number">5px</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1px</span> solid <span class="hexcolor">#ccc</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">5px</span> <span class="number">10px</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="class">.list</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">220px</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">text-align</span>:<span class="value"> left</span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1px</span> solid <span class="hexcolor">#ccc</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span> auto</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="class">.list</span> <span class="class">.list-item</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">border-bottom</span>:<span class="value"> <span class="number">1px</span> solid <span class="hexcolor">#eee</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">5px</span> <span class="number">10px</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="class">.list</span> <span class="class">.list-item</span><span class="pseudo">:hover</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">background-color</span>:<span class="value"> <span class="hexcolor">#eee</span></span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
 <h2 id="u4E00_u4E2A_u6700_u7B80_u964B_u7684Angular-js_u5373_u65F6_u641C_u7D22_u5C31_u5B8C_u6210_u4E86"><a href="#u4E00_u4E2A_u6700_u7B80_u964B_u7684Angular-js_u5373_u65F6_u641C_u7D22_u5C31_u5B8C_u6210_u4E86" class="headerlink" title="<strong>一个最简陋的Angular.js即时搜索就完成了</strong>"></a><strong>一个最简陋的Angular.js即时搜索就完成了</strong></h2><p>28行代码搞定，也许这就是<strong>angular</strong>的魅力所在吧！</p>
 <h1 id="u665A_u5B89"><a href="#u665A_u5B89" class="headerlink" title="<strong>晚安</strong>"></a><strong>晚安</strong></h1>
-        </div>
+            </div>
             
 <nav id="article-nav">
   
@@ -151,6 +152,7 @@
 </nav>
 
 
+        </div>
     </div>
 </article>
 
