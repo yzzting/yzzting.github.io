@@ -11,16 +11,22 @@
         <!-- 主css -->
         <link rel="stylesheet" href="/css/main.css">
         <!-- seo -->
-        <meta name="description" content="一个用nodejs写的一个命令行的小玩意大家新年好，这里给大家拜个晚年啦！（不跑题了">
+        <meta name="description" content="一个用nodejs写的一个命令行的小玩意大家新年好，这里给大家拜个晚年啦！（不跑题了
+偶然的npm社区看到这个prompt的库，对于node.js的一个美丽的命令行提示符。地址在这里prompt稍微看了下（其实是懒 ，写了个小小的答题的命令行版。 当然了老规矩，登陆功能还是有的，crud不能忘了！
+我简单的说下这个库的使用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="nodejs命令行小玩意">
 <meta property="og:url" content="http://www.yzz1995.cn/2016/02/14/nodejs命令行小玩意/index.html">
 <meta property="og:site_name" content="YzzTing">
-<meta property="og:description" content="一个用nodejs写的一个命令行的小玩意大家新年好，这里给大家拜个晚年啦！（不跑题了">
-<meta property="og:updated_time" content="2016-03-18T06:10:29.630Z">
+<meta property="og:description" content="一个用nodejs写的一个命令行的小玩意大家新年好，这里给大家拜个晚年啦！（不跑题了
+偶然的npm社区看到这个prompt的库，对于node.js的一个美丽的命令行提示符。地址在这里prompt稍微看了下（其实是懒 ，写了个小小的答题的命令行版。 当然了老规矩，登陆功能还是有的，crud不能忘了！
+我简单的说下这个库的使用">
+<meta property="og:updated_time" content="2016-04-12T13:10:22.622Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nodejs命令行小玩意">
-<meta name="twitter:description" content="一个用nodejs写的一个命令行的小玩意大家新年好，这里给大家拜个晚年啦！（不跑题了">
+<meta name="twitter:description" content="一个用nodejs写的一个命令行的小玩意大家新年好，这里给大家拜个晚年啦！（不跑题了
+偶然的npm社区看到这个prompt的库，对于node.js的一个美丽的命令行提示符。地址在这里prompt稍微看了下（其实是懒 ，写了个小小的答题的命令行版。 当然了老规矩，登陆功能还是有的，crud不能忘了！
+我简单的说下这个库的使用">
             <!-- facicon -->
         
         <link rel="icon" href="http://7xp1k3.com1.z0.glb.clouddn.com/octocat-de-los-muertos.jpg">
@@ -89,9 +95,9 @@
         <div class="article-inner">
             <div class="article-entry" itemprop="articleBody">
                 <h2 id="u4E00_u4E2A_u7528nodejs_u5199_u7684_u4E00_u4E2A_u547D_u4EE4_u884C_u7684_u5C0F_u73A9_u610F"><a href="#u4E00_u4E2A_u7528nodejs_u5199_u7684_u4E00_u4E2A_u547D_u4EE4_u884C_u7684_u5C0F_u73A9_u610F" class="headerlink" title="一个用nodejs写的一个命令行的小玩意"></a>一个用nodejs写的一个命令行的小玩意</h2><p>大家新年好，这里给大家拜个晚年啦！（不跑题了</p>
-<a id="more"></a>
 <p>偶然的npm社区看到这个prompt的库，对于node.js的一个美丽的命令行提示符。地址在这里<a href="https://github.com/flatiron/prompt" target="_blank" rel="external">prompt</a>稍微看了下（其实是懒 ，写了个小小的答题的命令行版。 当然了老规矩，登陆功能还是有的，crud不能忘了！</p>
 <p>我简单的说下这个库的使用</p>
+<a id="more"></a>
 <h3 id="u9996_u5148_0x00_2C_u542F_u52A8_u8FD9_u4E2A_u5E93"><a href="#u9996_u5148_0x00_2C_u542F_u52A8_u8FD9_u4E2A_u5E93" class="headerlink" title="首先 0x00,启动这个库"></a>首先 0x00,启动这个库</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> prompt = <span class="built_in">require</span>(<span class="string">'prompt'</span>);</span><br><span class="line">prompt.start();</span><br></pre></td></tr></table></figure>
 <h3 id="0x01_2C_u7A0B_u5E8F_u7684_u4E3B_u5165_u53E3"><a href="#0x01_2C_u7A0B_u5E8F_u7684_u4E3B_u5165_u53E3" class="headerlink" title="0x01,程序的主入口"></a>0x01,程序的主入口</h3><p>用主入口函数来做栗子</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">main</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"输入你的想要的模式:1.答题模式 2.编辑模式"</span>);</span><br><span class="line">    prompt.get([<span class="string">'number'</span>], <span class="function"><span class="keyword">function</span>(<span class="params">err, value</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> num = value.number;</span><br><span class="line">        <span class="keyword">if</span> (num === <span class="string">'1'</span>) &#123;</span><br><span class="line">            data.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item, index</span>) </span>&#123;</span><br><span class="line">                <span class="built_in">console</span>.log(index + <span class="number">1</span>, item[<span class="number">0</span>]);</span><br><span class="line">            &#125;);</span><br><span class="line">            aw();</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (num === <span class="string">'2'</span>) &#123;</span><br><span class="line">            aks();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>

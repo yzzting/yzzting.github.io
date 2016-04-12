@@ -11,16 +11,22 @@
         <!-- 主css -->
         <link rel="stylesheet" href="/css/main.css">
         <!-- seo -->
-        <meta name="description" content="Angular.js实现即时搜索现在是2015.12.18凌晨24点31分，突然想起之前做过一个Angular写的即时搜索，就当是一个复习吧，在这篇博文里把实现过程记下来！">
+        <meta name="description" content="Angular.js实现即时搜索现在是2015.12.18凌晨24点31分，突然想起之前做过一个Angular写的即时搜索，就当是一个复习吧，在这篇博文里把实现过程记下来！我还在学Angular1.x这个版本中，听说Angular2 beta版已经放出来了！啦啦啦啦啦，不过我对于es6，Typescript，还是傻乎乎的~~~MrSunny在这篇文章里写到Angular2 简介
+
+我希望你学习 A">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Angular.js实现即时搜索">
 <meta property="og:url" content="http://www.yzz1995.cn/2015/12/18/Angular-js实现即时搜索/index.html">
 <meta property="og:site_name" content="YzzTing">
-<meta property="og:description" content="Angular.js实现即时搜索现在是2015.12.18凌晨24点31分，突然想起之前做过一个Angular写的即时搜索，就当是一个复习吧，在这篇博文里把实现过程记下来！">
-<meta property="og:updated_time" content="2016-04-12T09:19:21.968Z">
+<meta property="og:description" content="Angular.js实现即时搜索现在是2015.12.18凌晨24点31分，突然想起之前做过一个Angular写的即时搜索，就当是一个复习吧，在这篇博文里把实现过程记下来！我还在学Angular1.x这个版本中，听说Angular2 beta版已经放出来了！啦啦啦啦啦，不过我对于es6，Typescript，还是傻乎乎的~~~MrSunny在这篇文章里写到Angular2 简介
+
+我希望你学习 A">
+<meta property="og:updated_time" content="2016-04-12T13:15:42.227Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Angular.js实现即时搜索">
-<meta name="twitter:description" content="Angular.js实现即时搜索现在是2015.12.18凌晨24点31分，突然想起之前做过一个Angular写的即时搜索，就当是一个复习吧，在这篇博文里把实现过程记下来！">
+<meta name="twitter:description" content="Angular.js实现即时搜索现在是2015.12.18凌晨24点31分，突然想起之前做过一个Angular写的即时搜索，就当是一个复习吧，在这篇博文里把实现过程记下来！我还在学Angular1.x这个版本中，听说Angular2 beta版已经放出来了！啦啦啦啦啦，不过我对于es6，Typescript，还是傻乎乎的~~~MrSunny在这篇文章里写到Angular2 简介
+
+我希望你学习 A">
             <!-- facicon -->
         
         <link rel="icon" href="http://7xp1k3.com1.z0.glb.clouddn.com/octocat-de-los-muertos.jpg">
@@ -88,10 +94,11 @@
         </div>
         <div class="article-inner">
             <div class="article-entry" itemprop="articleBody">
-                <h1 id="Angular-js_u5B9E_u73B0_u5373_u65F6_u641C_u7D22"><a href="#Angular-js_u5B9E_u73B0_u5373_u65F6_u641C_u7D22" class="headerlink" title="Angular.js实现即时搜索"></a>Angular.js实现即时搜索</h1><p>现在是2015.12.18凌晨24点31分，突然想起之前做过一个Angular写的即时搜索，就当是一个复习吧，在这篇博文里把实现过程记下来！<br><a id="more"></a><br>我还在学Angular1.x这个版本中，听说Angular2 beta版已经放出来了！啦啦啦啦啦，不过我对于es6，Typescript，还是傻乎乎的~~~<br><strong>MrSunny</strong>在这篇文章里写到<a href="http://zhuanlan.zhihu.com/FrontendMagazine/20058966" target="_blank" rel="external">Angular2 简介</a></p>
+                <h1 id="Angular-js_u5B9E_u73B0_u5373_u65F6_u641C_u7D22"><a href="#Angular-js_u5B9E_u73B0_u5373_u65F6_u641C_u7D22" class="headerlink" title="Angular.js实现即时搜索"></a>Angular.js实现即时搜索</h1><p>现在是2015.12.18凌晨24点31分，突然想起之前做过一个Angular写的即时搜索，就当是一个复习吧，在这篇博文里把实现过程记下来！<br>我还在学Angular1.x这个版本中，听说Angular2 beta版已经放出来了！啦啦啦啦啦，不过我对于es6，Typescript，还是傻乎乎的~~~<br><strong>MrSunny</strong>在这篇文章里写到<a href="http://zhuanlan.zhihu.com/FrontendMagazine/20058966" target="_blank" rel="external">Angular2 简介</a></p>
 <blockquote>
 <p>我希望你学习 Angular 2 能比学图片中的单词还要快 :)</p>
 </blockquote>
+<a id="more"></a>
 <p>希望真的如此吧！:)</p>
 <p>好了，进入干货！</p>
 <h1 id="u670D_u52A1_u6846_u67B6"><a href="#u670D_u52A1_u6846_u67B6" class="headerlink" title="服务框架"></a>服务框架</h1><p>为了让项目可以跟后台通信，这里我们采用Nodejs的Express框架来搭建。<br>老规矩</p>
