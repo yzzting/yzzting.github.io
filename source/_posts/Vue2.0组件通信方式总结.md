@@ -5,7 +5,6 @@ tags:
     - Vue.js
     - javascript
     - summary
-
 ---
 
 ## Vue 2.0 组件通信方式总结
