@@ -76,3 +76,5 @@ node_sass:
 deploy:
   type: git
   repo: git@github.com:yzzting/yzzting.github.io.git
+  type: git
+  repo: git@git.coding.net:yzzting/blog.git
