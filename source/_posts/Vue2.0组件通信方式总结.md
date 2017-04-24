@@ -4,7 +4,8 @@ date: 2017-04-23 00:41:00
 tags:
     - Vue.js
     - javascript
-    - summer
+    - summary
+
 ---
 
 ## Vue 2.0 组件通信方式总结
