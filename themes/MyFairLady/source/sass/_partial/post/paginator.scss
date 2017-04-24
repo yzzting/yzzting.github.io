@@ -1,0 +1,28 @@
+//Article olderposts link
+$article-olderposts-margin: 2em 1% 1%;
+$article-olderposts-fontSize: 1.44em;
+$article-olderposts-fontWeight: 800;
+$article-olderposts-color: rgb(93, 93, 93);
+@mixin paginator {
+    .older-posts-link {
+        margin: $article-olderposts-margin;
+        .page-number {
+            display: none;
+        }
+        .prev {
+            float: left;
+        }
+        .next {
+            float: right;
+        }
+        a {
+            color: $blog-main-color;
+            font-family: cathsgbr;
+            font-size: $article-olderposts-fontSize;
+            font-weight: $article-olderposts-fontWeight;
+            &:hover {
+                color: $article-olderposts-color;
+            }
+        }
+    }
+}

@@ -1,0 +1,130 @@
+//Media setting
+$media-paddimg: 2em 1.4em 0;
+$media-maxWidth: 768px;
+
+$media-blog-width: 95%;
+$media-blog-padding: 0;
+
+$media-article-fontSize: 14px;
+$media-article-lineHeight: 23.5px;
+$media-olderlink-fontSize: 18px;
+
+$media-title-margin: 10%;
+
+$media-about-width: 100%;
+$media-about-margin: 4%;
+$media-about-size: 30px;
+
+$media-archives-padding: 0 2%;
+$media-archives-width: 95%;
+$media-archives-margin: 0 auto;
+$media-archivesPhoto-width: 98%;
+$media-archives-fontSize: 14px;
+
+
+@mixin media {
+     @media screen and (max-width:$media-maxWidth){
+        .main {
+            padding: $media-paddimg;
+            .blog-main {
+                width: $media-blog-width;
+                padding: $media-blog-padding;
+                .older-posts-link {
+                    a {
+                        font-size: $media-olderlink-fontSize;
+                    }
+                }
+            }
+            .article-main {
+                .bookmark {
+                        display: none;
+                    }
+                .article-entry {
+                    p {
+                        font-size: $media-article-fontSize;
+                        line-height: $media-article-lineHeight;
+                    }
+                    @for $i from 1 through 6 {
+                        h#{$i} {
+                            font-size: $media-article-fontSize;
+                        }
+                    }
+
+                    
+                }
+                .article-nav-title{
+                  font-size: $media-article-fontSize;
+                }
+            }
+            .title {
+              margin-top: $media-title-margin;
+            }
+            .nav-header {
+                display: none;
+            }
+            #mobile-bar {
+                display: block;
+            }
+            .about-main {
+                display: block;
+                .about-body{
+                  .about-header {
+                    p {
+                      line-height: $media-about-size;
+                    }
+                  }
+                }
+                .about-photo {
+                  margin-bottom: $media-about-margin;
+                    img {
+                        width: $media-about-width;
+                    }
+                }
+            }
+            .archives-main {
+                padding: $media-archives-padding;
+                display: block;
+                .archives-photo {
+                    img {
+                        width: $media-archivesPhoto-width;
+                        margin: $media-archives-margin;
+                    }
+                }
+                .archives-entry {
+                    a {
+                        font-size: $media-article-fontSize;
+                    }
+                }
+            }
+            .sidebar {
+              z-index: 100;
+              position: fixed;
+              background-color: #fff;
+              width: 100%;
+              height: 132px;
+              top: 40px;
+              left: 0;
+              box-shadow: 0 0 10px rgba(0,0,0,0.2);
+              box-sizing: border-box;
+              transition: all 0.4s cubic-bezier(0.4, 0, 0, 1);
+              -webkit-transform: translate(0, -200px);
+              transform: translate(0, -200px);
+              .main-menu {
+                display: block;
+              }
+            }
+            .open {
+              -webkit-transform: translate(0, 0);
+              transform: translate(0, 0);
+            }
+            .tags-photo {
+              img {
+                width: $media-blog-width;
+              }
+            }
+        }
+        #heart {
+          display: none;
+        }
+    }
+}

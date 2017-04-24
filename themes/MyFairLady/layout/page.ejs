@@ -1,0 +1,38 @@
+<div class="about-main">
+    <div class="about-photo">
+        <img src="<%=theme.aboutPhoto%>" alt="photo">
+    </div>
+    <div class="about-body">
+        <div class="about-chat">
+          <h3 class="about-title"><%- theme.header.aboutHeader %></h3>
+          <p><%- theme.chat%></p>
+        </div>
+        <div class="about-show">
+          <div class="about-social">
+            <h3 class="about-title"><%- theme.header.aboutInformation%></h3>
+            <ul class="about-list">
+              <% for (var i in theme.subnav){ %>
+                <li>
+                  <%=i %>:
+                  <a href="<%=theme.subnav[i] %>">
+                    @<%=config.title %>
+                  </a>
+                </li>
+                <% } %>
+              </ul>
+          </div>
+          <div class="about-talent">
+           <h3 class="about-title"><%- theme.header.aboutFriendlink %></h3>
+           <ul class="about-list">
+            <% for (var i in theme.friendlink){ %>
+                <li>
+                    <a href="<%=theme.friendlink[i] %>">
+                        <%=i %>
+                    </a>
+                </li>
+            <% } %>
+            </ul>
+          </div>
+        </div>
+    </div>
+</div>

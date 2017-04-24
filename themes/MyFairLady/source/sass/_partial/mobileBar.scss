@@ -1,0 +1,56 @@
+//Mobile-bar setting
+$mobile-top: 0;
+$mobile-left: 0;
+$mobile-width: 100%;
+$mobile-height: 2.5em;
+$mobile-zIndex: 9;
+$mobile-color: #fff;
+$mobile-boxShadow-color: rgba(0,0,0,0.25);
+//Mobile button setting
+$mobile-button-width: 1.5em;
+$mobile-button-height: 1.5em;
+$mobile-button-top: 8px;
+$mobile-button-left: 12px;
+$mobile-button-backgroundSize: 1.5em;
+//Mobile logo setting
+$mobile-logo-width: 30px;
+$mobile-logo-height: 30px;
+$mobile-logo-lineHeight: 30px;
+$mobile-logo-top: 5px;
+$mobile-logo-left: 50%;
+$mobile-logo-marginLeft: -15px;
+$mobile-logo-backgroundSize: 30px;
+@mixin mobile-bar {
+  #mobile-bar{
+      display: none;
+      position: fixed;
+      top: $mobile-top;
+      left: $mobile-left;
+      width: $mobile-width;
+      height: $mobile-height;
+      background-color: $mobile-color;
+      z-index: $mobile-zIndex;
+      box-shadow: 0 0 4px $mobile-boxShadow-color;
+      .menu-button {
+          position: absolute;
+          width: $mobile-button-width;
+          height: $mobile-button-height;
+          top: $mobile-button-top;
+          left: $mobile-button-left;
+          background: url("../images/menu.png") center center no-repeat;
+          background-size: $mobile-button-backgroundSize;
+      }
+      .logo {
+          position: absolute;
+          width: $mobile-logo-width;
+          height: $mobile-logo-height;
+          line-height: $mobile-logo-lineHeight;
+          top: $mobile-logo-top;
+          left: $mobile-logo-left;
+          margin-left: $mobile-logo-marginLeft;
+          background-size: $mobile-logo-backgroundSize;
+          font-family: cathsgbr;
+          color:$blog-main-color;
+      }
+  }
+}

@@ -1,0 +1,34 @@
+//Tags setting
+$tagsMargin: 0 1%;
+$tagsPadding: 2.5%;
+$tagsSzie: 112.5%;
+$tagsColor: rgb(93, 93, 93);
+$tagsZindex: 99;
+@mixin tags {
+    position: relative;
+    z-index: $tagsZindex;
+    padding: $tagsPadding;
+    overflow: hidden;
+    text-align: center;
+    a {
+        margin: $tagsMargin;
+        font-size: $tagsSzie;
+        font-family: $blog-main-font;
+        color: $tagsColor;
+        &:hover {
+            color: $blog-main-color;
+        }
+    }
+    sup {
+        display: none;
+    }
+    .tags-photo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.tags-main {
+    @include tags;
+}

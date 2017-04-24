@@ -1,0 +1,73 @@
+//About style
+$aboutPadding: 3.5em;
+$aboutTitleSize: 1.75em;
+$aboutLineHeight: 1;
+$aboutTitleColor: rgb(93, 93, 93);
+$aboutChatHeight:5em;
+$aboutChatLineHeight: 2em;
+$aboutListPadding: 3% 0;
+$aboutShowMargin: 15%;
+$aboutImgWidth: 90%;
+@mixin aboutTitle {
+    color: $blog-main-color;
+    font-family: cathsgbr;
+    font-size: $aboutTitleSize;
+    line-height: $aboutLineHeight;
+    &:hover {
+        color: $aboutTitleColor;
+    }
+}
+
+@mixin aboutChat {
+    p {
+        height: $aboutChatHeight;
+        line-height: $aboutChatLineHeight;
+    }
+}
+
+@mixin aboutList {
+    li {
+        color: $blog-main-color;
+        padding: $aboutListPadding;
+        a {
+            &:hover {
+                color: $blog-main-color;
+            }
+        }
+    }
+}
+
+@mixin about {
+    padding: $aboutPadding;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $articleFont;
+    .about-photo {
+        img {
+            width: $aboutImgWidth;
+        }
+    }
+    .about-body {
+        .about-chat {
+            @include aboutChat;
+        }
+        .about-show {
+            .about-list {
+                @include aboutList;
+            }
+        }
+        .about-talent {
+            margin-top: $aboutShowMargin;
+        }
+        .about-title {
+            @include aboutTitle;
+        }
+    }
+}
+
+.about-main {
+    @include about;
+}
+
+

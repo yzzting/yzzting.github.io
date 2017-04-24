@@ -1,0 +1,103 @@
+//Article setting
+$article-padding: 1em 0 2em;
+$article-borderBottom: 1px;
+$article-borderBottomColor: #ddd;
+$article-maxWidth: 666px;
+$article-margin: 0 auto; //Article header setting
+$article-header-margin: 0.8em 0;
+$article-header-color: rgb(93, 93, 93); //Article title setting
+$article-title-footSize: 20px; //Article entry setting
+$article-entry-marigin: 10px 0;
+$article-entry-color: #969b9f;
+$article-entry-fontSize: 100%;
+$article-entry-font: "Lucida Grande", Lucida Sans Unicode, Hiragino Sans GB, WenQuanYi Micro Hei, Verdana, Aril, sans-serif; //Article p setting
+$article-p-fontSize: 95%;
+$article-p-fontFamily: Monda, "PingFang SC", "Microsoft YaHei", sans-serif;
+$article-p-lineHeight: 1.8;
+$article-p-letterSpacing: 0.12px;
+$article-p-color: #364F6B;
+$article-p-margin: 2% 0;
+$article-p-img: 100%;
+@mixin article {
+    .article-main {
+        overflow: hidden;
+        padding: $article-padding;
+        border-bottom: $article-borderBottom solid $article-borderBottomColor;
+        max-width: $article-maxWidth;
+        margin: $article-margin;
+
+        .article-header {
+            text-align: left;
+            margin: $article-header-margin;
+
+            a {
+                color: $article-p-color;
+            }
+        }
+
+        .article-title {
+            font-size: $article-title-footSize;
+            @extend %underline-from-center;
+        }
+
+        .article-date {
+            @import 'post/date';
+            @include article-date;
+        }
+
+        .article-inner {
+            @import 'post/morelink';
+            @include morelink;
+        }
+
+        .article-entry {
+            %article-p {
+                text-align: left;
+                margin: $article-entry-marigin;
+                color: $article-entry-color;
+                font-size: $article-entry-fontSize;
+                font-family: $article-entry-font;
+
+                &:before {
+                    content: '#';
+                    color: $blog-main-color;
+                }
+            }
+            @for $i from 1 through 6 {
+                h#{$i} {
+                    @extend %article-p;
+                }
+            }
+
+            p {
+                margin: $article-p-margin;
+
+                img {
+                    max-width: 100%;
+                }
+            }
+
+            p,
+            ul {
+                text-align: justify;
+                text-justify: distribute;
+                display: block;
+                word-wrap: break-word;
+                font-family: $article-p-fontFamily;
+                font-size: $article-p-fontSize;
+                color: $article-p-color;
+                line-height: $article-p-lineHeight;
+                letter-spacing: $article-p-letterSpacing;
+
+                a {
+                    color: $blog-main-color;
+                }
+            }
+        }
+
+        .older-posts-link {
+            @import 'post/paginator';
+            @include paginator;
+        }
+    }
+}

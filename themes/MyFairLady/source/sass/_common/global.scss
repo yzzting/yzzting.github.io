@@ -1,0 +1,82 @@
+@import './color';
+$browser-default-font-size: 16px!default;
+* {
+    margin: 0;
+    padding: 0;
+    transition-duration: 0.5s;
+}
+
+html {
+    font-size: $browser-default-font-size;
+}
+
+a {
+    cursor: auto;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.82);
+}
+
+li,
+ol,
+ul {
+    list-style-type: none;
+}
+
+body {
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+}
+
+del {
+    color: $blog-main-color;
+}
+
+.main {
+    flex: 1;
+}
+
+::selection {
+    background: $blog-main-color;
+    color: #fff;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $blog-main-color;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -o-border-radius: 0;
+    -ms-border-radius: 0;
+    border-radius: 0;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(211, 211, 211, 0.18);
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -o-border-radius: 0;
+    -ms-border-radius: 0;
+    border-radius: 0;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    -o-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    -ms-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+%clearfix {
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}

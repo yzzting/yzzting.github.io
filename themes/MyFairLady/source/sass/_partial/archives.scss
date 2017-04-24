@@ -1,0 +1,49 @@
+//Archives setting
+$archivs-margin: 0 auto;
+$archivs-padding: 3.5%;
+$archivs-lineHeight: 35px;
+
+$archives-photo-width: 90%;
+
+$archives-title-color: rgb(93,93,93);
+$archives-title-margin: 1% 0;
+
+$archives-entry-margin: 4% 0;
+$archives-entry-fontSize: 18px;
+$archives-entry-color: rgb(93,93,93);
+
+@mixin archivs {
+    .archives-main {
+        padding: $archivs-padding;
+        display: flex;
+        font-family: $blog-main-font;
+        margin: $archivs-margin;
+        .archives-photo {
+          img {
+            width: $archives-photo-width;
+            margin: $archivs-margin;
+          }
+        }
+        .archives-body {
+            ul {
+                line-height: $archivs-lineHeight;
+            }
+        }
+        .archives-title {
+            text-align: left;
+            color: $archives-title-color;
+            margin: $archives-title-margin;
+        }
+        .archives-entry {
+            margin: $archives-entry-margin;
+            color: $blog-main-color;
+            a {
+                font-size: $archives-entry-fontSize;
+                font-family:$articleFont;
+                &:hover {
+                    color: $blog-main-color;
+                }
+            }
+        }
+    }
+}

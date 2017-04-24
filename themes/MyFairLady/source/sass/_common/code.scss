@@ -1,0 +1,177 @@
+@import './highlight';
+$highlight-current-line: #efefef;
+$highlight-selection: #d6d6d6;
+$highlight-foreground: #4d4d4c;
+$highlight-comment: #8e908c;
+$highlight-red: #c82829;
+$highlight-orange: #f5871f;
+$highlight-yellow: #eab700;
+$highlight-green: #718c00;
+$highlight-aqua: #3e999f;
+$highlight-blue: #4271ae;
+$highlight-purple: #8959a8;
+$highlight-gutter-bg-color:#eff2f3;
+$highlight-gutter-color:#869194;
+$highlight-deletion: #fdd;
+$highlight-addition: #dfd;
+$code-margin: 10px 0;
+$code-padding: 15px;
+$code-fontSize: 14px;
+$code-lineHeight: 1.6;
+$code-fontFamily: "SFMono-Regular",
+Consolas,
+"Liberation Mono",
+Menlo,
+Courier,
+monospace;
+$code-pre-padding: 0;
+$code-highlight-padding: 1px;
+$code-highlight-margin: 0;
+$code-highlight-fontSize: 0.85em;
+$code-highlight-lineHeight: 1em;
+$code-highlight-marginBottom: 1em;
+$code-border: 5px;
+$code-blockquote-background: rgba(182, 173, 173, 0.14);
+$code-blockquote-margin: 2% 0;
+$code-blockquote-padding: 1%;
+$code-blockquote-fontSize: 100%;
+$code-gutter-right: 5px;
+$code-line-height: 20px;
+$code-class: #4f397c;
+$code-attribute: #a2852f;
+$coed-line: #436b24;
+$code-foreground:#555;
+$code-background:#eee;
+$code-border-radius:3;
+%code-block {
+    overflow: auto;
+    margin: 10px 0;
+    padding: 0;
+    font-size: $code-fontSize;
+    color: $highlight-foreground;
+    background: #f7f7f7;
+    line-height: $code-lineHeight;
+}
+
+pre,
+code {
+    font-family: $code-fontFamily;
+}
+
+code {
+    padding: 2px 4px;
+    word-wrap: break-word;
+    color: $code-foreground;
+    background: $code-background;
+    border-radius: $code-border-radius;
+    font-size: $code-fontSize;
+}
+
+pre {
+    @extend %code-block;
+    code {
+        padding: 0;
+        color: $highlight-foreground;
+        background: none;
+        text-shadow: none;
+    }
+}
+
+.highlight {
+    @extend %code-block;
+    border-radius: 1px pre {
+        border: none;
+        margin: 0;
+        padding: 10px 0;
+    }
+    table {
+        margin: 0;
+        width: auto;
+        border: none;
+    }
+    td {
+        border: none;
+        padding: 0;
+    }
+    figcaption {
+        @extend %clearfix;
+        font-size: 1em;
+        color: $highlight-foreground;
+        line-height: 1em;
+        margin-bottom: 1em;
+        a {
+            float: right;
+            color: $highlight-foreground;
+            &:hover {
+                border-bottom-color: $highlight-foreground;
+            }
+        }
+    }
+    .gutter pre {
+        padding-left: 10px;
+        padding-right: 10px;
+        text-align: right;
+        background-color: #eff2f3;
+    }
+    .code pre {
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+        background-color: #f7f7f7;
+    }
+    .line {
+        height: 20px;
+    }
+}
+
+.gutter {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #eff2f3;
+}
+
+.gist table {
+    width: auto;
+    td {
+        border: none;
+    }
+}
+
+// For diff highlight
+pre .deletion {
+    background: $highlight-deletion;
+}
+
+pre .addition {
+    background: $highlight-addition;
+}
+
+pre .meta {
+    color: $highlight-purple;
+}
+
+pre {
+    .comment {
+        color: $highlight-comment;
+    }
+    .variable .attribute .tag .regexp .ruby .constant .xml .tag .title .xml .pi .xml .doctype .html .doctype .css .id .css .class .css .pseudo {
+        color: $highlight-red;
+    }
+    .number .preprocessor .built_in .literal .params .constant .command {
+        color: $highlight-orange;
+    }
+    .ruby .class .title .css .rules .attribute .string .value .inheritance .header .ruby .symbol .xml .cdata .special .number .formula {
+        color: $highlight-green;
+    }
+    .title .css .hexcolor {
+        color: $highlight-aqua;
+    }
+    .function .python .decorator .python .title .ruby .function .title .ruby .title .keyword .perl .sub .javascript .title .coffeescript .title {
+        color: $highlight-blue;
+    }
+    .keyword .javascript .function {
+        color: $highlight-purple;
+    }
+}

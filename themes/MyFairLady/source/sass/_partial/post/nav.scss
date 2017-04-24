@@ -1,0 +1,28 @@
+//Nav setting
+$nav-margin: 80px 0 30px 0;
+$nav-padding: 10px;
+$nav-color: rgb(93,93,93);
+$nav-height: 29px;
+$nav-title-padding: 5px;
+@mixin nav {
+    #article-nav {
+        margin: $nav-margin;
+        padding: $nav-padding;
+        &:hover {
+            color: $nav-color;
+        }
+        #article-nav-newer {
+            float: right;
+        }
+        #article-nav-older {
+            float: left;
+        }
+        .article-nav-title {
+            color: $blog-main-color;
+            height: $nav-height;
+            padding: $nav-title-padding;
+            font-family: $blog-main-font;
+            font-weight: bold;
+        }
+    }
+}

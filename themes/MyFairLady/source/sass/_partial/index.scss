@@ -1,0 +1,8 @@
+$blog-main-maxWidth: 600px;
+
+@mixin index {
+  .blog-main {
+    margin: 0 auto;
+    max-width: $blog-main-maxWidth;
+  }
+}

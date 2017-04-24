@@ -1,0 +1,7 @@
+<div class="article-dateTime">
+    <a href="<%- url_for(post.path) %>" class="article-date">
+        <time datetime="<%= date(post.date, 'MMM Do YYYY') %>" itemprop="datePublished">
+            <%- date(post.date, 'MMM Do YYYY') %>
+        </time>
+    </a>
+</div>

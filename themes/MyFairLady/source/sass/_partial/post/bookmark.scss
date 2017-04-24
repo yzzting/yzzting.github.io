@@ -1,0 +1,38 @@
+$bookmarkRight: 8%;
+$bookmarkTop: 21%;
+$bookmarkWidth: 200px;
+@mixin bookmark {
+    position: fixed;
+    right: $bookmarkRight;
+    top: $bookmarkTop;
+    max-width: $bookmarkWidth;
+    .toc-text {
+        color: $blog-article-color;
+    }
+}
+
+@mixin bookmark-tocChild {
+    $i: 1;
+    @while $i <=6 {
+        .toc-level-#{$i} {
+            $fontSize: (22 - $i * 1.8) + px;
+            font-size: $fontSize;
+            @if $i>=4 {
+                padding-left: 15px;
+            }
+        }
+        $i: $i+1;
+    }
+}
+
+.bookmark {
+    .active {
+        .toc-text {
+            color: $blog-main-color;
+        }
+    }
+    @include bookmark;
+    .toc-child {
+        @include bookmark-tocChild;
+    }
+}

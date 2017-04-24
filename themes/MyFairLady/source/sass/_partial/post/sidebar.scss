@@ -1,0 +1,31 @@
+//Sidebar setting
+$sidebar-zIndex: 10;
+$sidebar-width: 250px;
+$sidebar-padding: 0 2.5em;
+$sidebar-position: 0;
+$sidebar-margin: 6px 0 4px;
+@mixin sidebar {
+    .sidebar {
+        position: absolute;
+        overflow-x: hidden;
+        overflow-y: auto;
+        z-index: $sidebar-zIndex;
+        width: $sidebar-width;
+        top: $sidebar-position;
+        left: $sidebar-position;
+        bottom: $sidebar-position;
+        padding:$sidebar-padding;
+        .main-menu {
+            display: none;
+            font-family: $articleFont;
+            .main-menu-item {
+              text-align: left;
+              margin: $sidebar-margin;
+                a {
+                    color: $blog-main-color;
+                    font-family: cathsgbr;
+                }
+            }
+        }
+    }
+}

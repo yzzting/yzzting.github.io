@@ -1,0 +1,60 @@
+//Header style
+$headerZindex: 12;
+$headerPadding: 1.56em 3.75em;
+$logoSize: 3em;
+
+$navTop: 1.75em;
+$navRight: 1.25em;
+$navLineHeight:3;
+
+$navMargin:0 .6em;
+$navSize: 1.125em;
+
+@mixin logoStyle {
+    cursor: pointer;
+    font-size: $logoSize;
+    font-family: cathsgbr;
+    color: $blog-main-color;
+}
+
+@mixin navItemStyle {
+    float: left;
+    margin: $navMargin;
+    a {
+        font-family: $logoFont;
+        cursor: pointer;
+        color: $blog-main-color;
+        font-size: $navSize;
+
+        &::hover {
+            text-shadow: 0 0 0.1em $blog-main-color;
+        }
+    }
+}
+
+@mixin navStyle {
+    position: absolute;
+    right: $navRight;
+    top: $navTop;
+    line-height: $navLineHeight;
+    .nav-list-item {
+        @include navItemStyle;
+    }
+}
+
+@mixin header {
+    position: relative;
+    z-index: $headerZindex;
+    padding: $headerPadding;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+    .logo-link {
+        @include logoStyle;
+    }
+    .nav {
+        @include navStyle;
+    }
+}
+
+.nav-header {
+    @include header;
+}

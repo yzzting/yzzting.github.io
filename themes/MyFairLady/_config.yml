@@ -1,0 +1,46 @@
+#title
+title: Yzz
+# Header
+menu:
+    Home : /
+    About : /about
+    Tags : /tags
+    Archives : /archives
+# title
+header:
+    aboutHeader: Chat
+    aboutInformation: Social
+    aboutFriendlink: Talent
+
+# author chat
+chat: 杨滋滋的生活得有代码音乐，还有远方的人
+
+# SubNav
+subnav:
+  gitHub: "https://github.com/yzzting"
+  zhiHu: "https://www.zhihu.com/people/yang-zi-zi-1995"
+
+# friendlink
+friendlink:
+    ahonn的博客: http://www.ahonn.me
+    刘帆帆的博客: http://henbukexue.science
+# read more
+excerpt_link: ...continue reading
+
+# favicon
+favicon: http://7xp1k3.com1.z0.glb.clouddn.com/octocat-de-los-muertos.jpg
+
+# Baidu Analytics
+baidu_analytics: c21994907883f37ffd80e13627dd4faa
+
+# Google Analytics
+# google_analytics: UA-75314797-1
+
+# comments
+disqus: yzzting
+# duoshuo: yzzting
+
+# photo link
+aboutPhoto: http://7xp1k3.com1.z0.glb.clouddn.com/156_1.jpg
+tagPhoto: http://7xp1k3.com1.z0.glb.clouddn.com/83_1.jpg
+archivePhoto: http://7xp1k3.com1.z0.glb.clouddn.com/208_1.jpg

@@ -1,0 +1,21 @@
+//Article morelink setting
+$article-morelink-margin: 2% 0;
+$article-morelink-fontSize: 100%;
+$article-morelink-fontWeight: 800;
+$article-morelink-color: rgb(93, 93, 93);
+@mixin morelink {
+    .article-more-link {
+        margin: $article-morelink-margin;
+        float: left;
+
+        a {
+            font-size: $article-morelink-fontSize;
+            color: #3FC1C9;
+            font-weight: $article-morelink-fontWeight;
+
+            &:hover {
+                color: $article-morelink-color;
+            }
+        }
+    }
+}

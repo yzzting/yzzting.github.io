@@ -1,0 +1,12 @@
+//Blog main setting
+$blog-title-margin: 2%;
+$blog-title-fontWeight: 500;
+@mixin title {
+  .title {
+    text-align: center;
+    margin-top: $blog-title-margin;
+    font-weight: $blog-title-fontWeight;
+    font-family: cathsgbr;
+    color: $blog-main-color;
+  }
+}

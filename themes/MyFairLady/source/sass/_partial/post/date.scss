@@ -1,0 +1,12 @@
+//Article date setting
+$article-date-color: rgba(0,0,0,0.5);
+$article-date-font: Helvetica Neue,Helvetica,Arial,PingFang SC,Hiragino Sans GB,WenQuanYi Micro Hei,Microsoft Yahei,sans-serif;
+@mixin article-date {
+    .article-meta {
+        text-align: left;
+        a {
+            color: $article-date-color;
+            font-family: $article-date-font;
+        }
+    }
+}

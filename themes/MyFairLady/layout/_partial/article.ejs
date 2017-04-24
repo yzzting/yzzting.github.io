@@ -1,0 +1,27 @@
+<% if(is_post()) { %>
+<article class="article-main" itemscope itemprop="blogPost">
+        <div class="articleCon">
+            <header class="article-header">
+                <h1 itemprop="name">
+                    <a href="<%- url_for(post.path) %>" class="article-title"><%- post.title %></a>
+                </h1>
+            </header>
+            <%- partial('_partial/post/bookmark') %>            
+            <div class="article-meta">
+                <%- partial('post/date') %>
+            </div>
+            <div class="article-inner">
+                <div class="article-entry" itemprop="articleBody">
+                    <%- post.content %>
+                </div>
+                <%- partial('_partial/post/nav') %>
+            </div>
+        </div>
+        <% if(theme.disqus){ %>
+            <%- partial('_partial/comments/disqus.ejs') %>
+        <% } %>
+        <% if (theme.duoshuo){%>
+            <%- partial('_partial/comments/duoshuo.ejs') %>
+        <% } %>
+</article>
+<% } %>
