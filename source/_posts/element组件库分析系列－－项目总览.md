@@ -54,7 +54,7 @@ tags:
 
 ```
 
-### mixins
+### Mixins
 
 ```bash
 
@@ -119,7 +119,7 @@ broadcast函数接收3个参数,componentName组件名,eventName事件名,数据
 
 同样的dispatch接收3个参数,componentName组件名,eventName事件名,数据源.通过遍历寻找父级,派发事件
 
-### utils
+### Utils
 
 占坑,会新开一篇文章单独讲
 
@@ -148,7 +148,7 @@ ex:
 
 我自己的理解,这样将CSS单独作为一个包发布,引入整个包也可以包含全部的样式,单独安装某个组件也可以通过安装主题包引入样式.
 
-### end
+### End
 
 下一次分析utils里一些常见的工具类,看看elme的是如何实现
 
