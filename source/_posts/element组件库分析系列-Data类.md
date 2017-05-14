@@ -19,6 +19,8 @@ tags:
 ```js
 //这里忽略了开源信息
 
+// 总体用了常见的立即执行函数 IFFE()
+
 /*eslint-disable*/
 // 把 YYYY-MM-DD 改成了 yyyy-MM-dd
 (function (main) {
@@ -152,35 +154,37 @@ tags:
       return dateObj.getMinutes(); // 分钟
     },
     mm: function(dateObj) {
-      return pad(dateObj.getMinutes());
+      return pad(dateObj.getMinutes()); //加0前缀分钟
     },
     s: function(dateObj) {
-      return dateObj.getSeconds();
+      return dateObj.getSeconds(); //秒
     },
     ss: function(dateObj) {
-      return pad(dateObj.getSeconds());
+      return pad(dateObj.getSeconds()); //加0前缀秒
     },
     S: function(dateObj) {
-      return Math.round(dateObj.getMilliseconds() / 100);
+      return Math.round(dateObj.getMilliseconds() / 100); // 一位毫秒数
     },
     SS: function(dateObj) {
-      return pad(Math.round(dateObj.getMilliseconds() / 10), 2);
+      return pad(Math.round(dateObj.getMilliseconds() / 10), 2); //两位毫秒数
     },
     SSS: function(dateObj) {
-      return pad(dateObj.getMilliseconds(), 3);
+      return pad(dateObj.getMilliseconds(), 3); // 三位毫秒数
     },
     a: function(dateObj, i18n) {
-      return dateObj.getHours() < 12 ? i18n.amPm[0] : i18n.amPm[1];
+      return dateObj.getHours() < 12 ? i18n.amPm[0] : i18n.amPm[1]; // 返回上下午
     },
     A: function(dateObj, i18n) {
-      return dateObj.getHours() < 12 ? i18n.amPm[0].toUpperCase() : i18n.amPm[1].toUpperCase();
+      return dateObj.getHours() < 12 ? i18n.amPm[0].toUpperCase() : i18n.amPm[1].toUpperCase(); // 返回上下午 大小写
     },
     ZZ: function(dateObj) {
       var o = dateObj.getTimezoneOffset();
-      return (o > 0 ? '-' : '+') + pad(Math.floor(Math.abs(o) / 60) * 100 + Math.abs(o) % 60, 4);
+      return (o > 0 ? '-' : '+') + pad(Math.floor(Math.abs(o) / 60) * 100 + Math.abs(o) % 60, 4); //时区偏移
     }
   };
 
+
+  //匹配不同的解析
   var parseFlags = {
     d: [twoDigits, function (d, v) {
       d.day = v;
@@ -245,6 +249,7 @@ tags:
 
 
   // Some common format strings
+  // 通用的格式
   fecha.masks = {
     'default': 'ddd MMM dd yyyy HH:mm:ss',
     shortDate: 'M/D/yy',
@@ -263,18 +268,22 @@ tags:
    * @param {string} mask Format of the date, i.e. 'mm-dd-yy' or 'shortDate'
    */
   fecha.format = function (dateObj, mask, i18nSettings) {
+    // 设置数据格式
     var i18n = i18nSettings || fecha.i18n;
 
+    // 实例化Date类
     if (typeof dateObj === 'number') {
       dateObj = new Date(dateObj);
     }
-
+    // 检测类型 Object.prototype.toString.call() 这个检测类型的方法很好用
     if (Object.prototype.toString.call(dateObj) !== '[object Date]' || isNaN(dateObj.getTime())) {
       throw new Error('Invalid Date in fecha.format');
     }
 
+    // 设置通用格式???
     mask = fecha.masks[mask] || mask || fecha.masks['default'];
 
+    // 使用对应的格式化方法???
     return mask.replace(token, function ($0) {
       return $0 in formatFlags ? formatFlags[$0](dateObj, i18n) : $0.slice(1, $0.length - 1);
     });
@@ -306,14 +315,14 @@ tags:
     var dateInfo = {};
     format.replace(token, function ($0) {
       if (parseFlags[$0]) {
-        var info = parseFlags[$0];
-        var index = dateStr.search(info[0]);
+        var info = parseFlags[$0]; //对应解析方法
+        var index = dateStr.search(info[0]); //查找对应匹配
         if (!~index) {
           isValid = false;
         } else {
           dateStr.replace(info[0], function (result) {
-            info[1](dateInfo, result, i18n);
-            dateStr = dateStr.substr(index + result.length);
+            info[1](dateInfo, result, i18n); //对应函数处理
+            dateStr = dateStr.substr(index + result.length); //截取长度
             return result;
           });
         }
@@ -326,6 +335,7 @@ tags:
       return false;
     }
 
+    //处理12小时制
     var today = new Date();
     if (dateInfo.isPm === true && dateInfo.hour != null && +dateInfo.hour !== 12) {
       dateInfo.hour = +dateInfo.hour + 12;
@@ -333,6 +343,7 @@ tags:
       dateInfo.hour = 0;
     }
 
+    //时区偏移
     var date;
     if (dateInfo.timezoneOffset != null) {
       dateInfo.minute = +(dateInfo.minute || 0) - +dateInfo.timezoneOffset;
@@ -358,3 +369,8 @@ tags:
 })(this);
 
 ```
+
+## End
+
+下次尝试分析第一个组件Alert
+
