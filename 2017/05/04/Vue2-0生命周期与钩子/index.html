@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>
+      
+        Vue 2.0生命周期与钩子 |
+          
+            YzzTing
+    </title>
+    <!-- 主css -->
+    <link rel="stylesheet" href="/sass/main.css">
+      <!-- seo -->
+      <meta name="description" content="Vue 2.0生命周期与钩子Vue是通过一个构造函数Vue创建一个Vue的根实例启动,每个实例都包含了业务的处理逻辑(methods),数据模型(data)等等.每个实例也包括了完整的生命周期,从创建模版,初始化数据,编译模板,挂载dom,渲染,更新,销毁一系列过程,从创建到销毁的过程">
+<meta name="keywords" content="javascript,summary,Vue.js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue 2.0生命周期与钩子">
+<meta property="og:url" content="http://www.yzz1995.cn/2017/05/04/Vue2-0生命周期与钩子/index.html">
+<meta property="og:site_name" content="YzzTing">
+<meta property="og:description" content="Vue 2.0生命周期与钩子Vue是通过一个构造函数Vue创建一个Vue的根实例启动,每个实例都包含了业务的处理逻辑(methods),数据模型(data)等等.每个实例也包括了完整的生命周期,从创建模版,初始化数据,编译模板,挂载dom,渲染,更新,销毁一系列过程,从创建到销毁的过程">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:image" content="https://cn.vuejs.org/images/lifecycle.png">
+<meta property="og:image" content="http://7xp1k3.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20170505110037.png">
+<meta property="og:image" content="http://7xp1k3.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20170505110838.png">
+<meta property="og:image" content="http://7xp1k3.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20170505121703.png">
+<meta property="og:image" content="http://7xp1k3.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20170505113119.png">
+<meta property="og:image" content="http://7xp1k3.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20170505115152.png">
+<meta property="og:image" content="http://7xp1k3.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20170505115516.png">
+<meta property="og:image" content="http://7xp1k3.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20170505120425.png">
+<meta property="og:image" content="http://7xp1k3.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20170505121028.png">
+<meta property="og:updated_time" content="2017-08-22T07:02:58.145Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vue 2.0生命周期与钩子">
+<meta name="twitter:description" content="Vue 2.0生命周期与钩子Vue是通过一个构造函数Vue创建一个Vue的根实例启动,每个实例都包含了业务的处理逻辑(methods),数据模型(data)等等.每个实例也包括了完整的生命周期,从创建模版,初始化数据,编译模板,挂载dom,渲染,更新,销毁一系列过程,从创建到销毁的过程">
+<meta name="twitter:image" content="https://cn.vuejs.org/images/lifecycle.png">
+        <!-- facicon -->
+        
+          <link rel="icon" href="http://7xp1k3.com1.z0.glb.clouddn.com/octocat-de-los-muertos.jpg">
+          
+            <!-- 统计 -->
+            
+              <script>
+                var _hmt = _hmt || [];
+                (function () {
+                  var hm = document.createElement("script");
+                  hm.src = "//hm.baidu.com/hm.js?c21994907883f37ffd80e13627dd4faa";
+                  var s = document.getElementsByTagName("script")[0];
+                  s.parentNode.insertBefore(hm, s);
+                })();
+              </script>
+              
+                
+                    <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+</head>
+	<body>
+		<div class="main">
+			<div id="mobile-bar">
+    <a class="menu-button"></a>
+    <a class="logo" href="/">
+        Yzz
+    </a>
+</div>
+<header class="nav-header">
+    <a href="/" class="logo-link">
+        Yzz
+    </a>
+    
+        
+            <ul class="nav nav-list">
+                <li class="nav-list-item">
+                    <a href="/">
+                        Home
+                    </a>
+                </li>
+                
+                    
+                            
+        
+                        <li class="nav-list-item">
+                            <a href="/about">
+                                About
+                            </a>
+                        </li>
+                        
+                            
+        
+                        <li class="nav-list-item">
+                            <a href="/tags">
+                                Tags
+                            </a>
+                        </li>
+                        
+                            
+        
+                        <li class="nav-list-item">
+                            <a href="/archives">
+                                Archives
+                            </a>
+                        </li>
+                        
+                            
+            </ul>
+</header>
+<div class="sidebar">
+    
+            
+    <ul class="main-menu">
+        <li class="main-menu-item"><a href="/">Home</a></li>
+        
+            
+        
+            
+        <li class="main-menu-item"><a href="/about">About</a></li>
+            
+        
+            
+        <li class="main-menu-item"><a href="/tags">Tags</a></li>
+            
+        
+            
+        <li class="main-menu-item"><a href="/archives">Archives</a></li>
+            
+        
+    </ul>
+</div>
+
+    <h1 class="blog-title">The
+        Yzz Blog</h1>
+			
+<article class="article-main" itemscope itemprop="blogPost">
+        <div class="articleCon">
+            <header class="article-header">
+                <h1 itemprop="name">
+                    <a href="/2017/05/04/Vue2-0生命周期与钩子/" class="article-title">Vue 2.0生命周期与钩子</a>
+                </h1>
+            </header>
+            <div class="article-meta">
+                <div class="article-dateTime">
+    <a href="/2017/05/04/Vue2-0生命周期与钩子/" class="article-date">
+        <time datetime="5月 4日 2017" itemprop="datePublished">
+            5月 4日 2017
+        </time>
+    </a>
+</div>
+
+            </div>
+            <div class="article-inner">
+                <div class="article-entry" itemprop="articleBody">
+                    <h2 id="Vue-2-0生命周期与钩子"><a href="#Vue-2-0生命周期与钩子" class="headerlink" title="Vue 2.0生命周期与钩子"></a>Vue 2.0生命周期与钩子</h2><p>Vue是通过一个构造函数Vue创建一个Vue的根实例启动,每个实例都包含了业务的处理逻辑(methods),数据模型(data)等等.每个实例也包括了完整的生命周期,从创建模版,初始化数据,编译模板,挂载dom,渲染,更新,销毁一系列过程,从创建到销毁的过程</p>
+<a id="more"></a>
+<p><img src="https://cn.vuejs.org/images/lifecycle.png" alt=""></p>
+<h3 id="beforeCreate"><a href="#beforeCreate" class="headerlink" title="beforeCreate"></a>beforeCreate</h3><p>整个流程的最前端,这个时候data,el,methods还没有开始初始化,可以在这里加loading事件</p>
+<p>ex:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"show"</span>&gt;</span></div><div class="line">    &#123;&#123;msg&#125;&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">    <span class="keyword">var</span> vue = <span class="keyword">new</span> Vue(&#123;</span></div><div class="line"><span class="javascript">        el:<span class="string">'#show'</span>,</span></div><div class="line"><span class="undefined">        data:&#123;</span></div><div class="line"><span class="javascript">            msg:<span class="string">'yzzting'</span></span></div><div class="line"><span class="undefined">        &#125;,</span></div><div class="line"><span class="undefined">        beforeCreate()&#123;</span></div><div class="line"><span class="javascript">            <span class="built_in">console</span>.log(<span class="string">'beforeCreate'</span>)</span></div><div class="line"><span class="javascript">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.data)</span></div><div class="line"><span class="javascript">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.$el)</span></div><div class="line"><span class="undefined">        &#125;</span></div><div class="line"><span class="undefined">    &#125;)</span></div><div class="line"><span class="undefined"></span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><img src="http://7xp1k3.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20170505110037.png" alt=""></p>
+<h3 id="create"><a href="#create" class="headerlink" title="create"></a>create</h3><p>这个时候初始化了data和methods,但是并没有在DOM上挂载,$el还未挂载,这里结束loading事件或者是在这里调用ajax</p>
+<p>ex:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"show"</span> <span class="attr">ref</span>=<span class="string">"show"</span>&gt;</span></div><div class="line">    &#123;&#123;msg&#125;&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">    <span class="keyword">var</span> vue = <span class="keyword">new</span> Vue(&#123;</span></div><div class="line"><span class="javascript">        el: <span class="string">'#show'</span>,</span></div><div class="line"><span class="undefined">        data: &#123;</span></div><div class="line"><span class="javascript">            msg: <span class="string">'yzzting'</span></span></div><div class="line"><span class="undefined">        &#125;,</span></div><div class="line"><span class="undefined">        created() &#123;</span></div><div class="line"><span class="javascript">            <span class="built_in">console</span>.log(<span class="string">'created'</span>)</span></div><div class="line"><span class="javascript">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.msg)</span></div><div class="line"><span class="javascript">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.$el)</span></div><div class="line"><span class="javascript">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.$refs.show)</span></div><div class="line"><span class="undefined">        &#125;</span></div><div class="line"><span class="undefined">    &#125;)</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><img src="http://7xp1k3.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20170505110838.png" alt=""></p>
+<h3 id="beforeMount"><a href="#beforeMount" class="headerlink" title="beforeMount"></a>beforeMount</h3><p>完成了el初始化</p>
+<p>ex:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"show"</span> <span class="attr">ref</span>=<span class="string">"show"</span>&gt;</span></div><div class="line">    &#123;&#123;msg&#125;&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">    <span class="keyword">var</span> vue = <span class="keyword">new</span> Vue(&#123;</span></div><div class="line"><span class="javascript">        el: <span class="string">'#show'</span>,</span></div><div class="line"><span class="undefined">        data: &#123;</span></div><div class="line"><span class="javascript">            msg: <span class="string">'yzzting'</span></span></div><div class="line"><span class="undefined">        &#125;,</span></div><div class="line"><span class="undefined">        beforeMount() &#123;</span></div><div class="line"><span class="javascript">            <span class="built_in">console</span>.log(<span class="string">'beforeMount'</span>)</span></div><div class="line"><span class="javascript">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.msg)</span></div><div class="line"><span class="javascript">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.$el)</span></div><div class="line"><span class="javascript">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.$refs.show)</span></div><div class="line"><span class="undefined">        &#125;</span></div><div class="line"><span class="undefined">    &#125;)</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><img src="http://7xp1k3.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20170505121703.png" alt=""></p>
+<p>这里可以看到msg值还没有被渲染到dom中,但vue挂载的根节点已经生成,下一步$mount函数都是基于这个阶段生成的根节点.这就是Virtual DOM ???</p>
+<h3 id="mounted"><a href="#mounted" class="headerlink" title="mounted"></a>mounted</h3><p>完成所有挂载,refs组件属性方法的渲染也完成,到这个步骤Vue实例的创建全部完成,在这个过程之前$el的值是虚拟的节点</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"show"</span> <span class="attr">ref</span>=<span class="string">"show"</span>&gt;</span></div><div class="line">    &#123;&#123;msg&#125;&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">    <span class="keyword">var</span> vue = <span class="keyword">new</span> Vue(&#123;</span></div><div class="line"><span class="javascript">        el: <span class="string">'#show'</span>,</span></div><div class="line"><span class="undefined">        data: &#123;</span></div><div class="line"><span class="javascript">            msg: <span class="string">'yzzting'</span></span></div><div class="line"><span class="undefined">        &#125;,</span></div><div class="line"><span class="undefined">        mounted() &#123;</span></div><div class="line"><span class="javascript">            <span class="built_in">console</span>.log(<span class="string">'mounted'</span>)</span></div><div class="line"><span class="javascript">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.msg)</span></div><div class="line"><span class="javascript">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.$el)</span></div><div class="line"><span class="javascript">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.$refs.show)</span></div><div class="line"><span class="undefined">        &#125;</span></div><div class="line"><span class="undefined">    &#125;)</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><img src="http://7xp1k3.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20170505113119.png" alt=""></p>
+<h3 id="beforeUpdate"><a href="#beforeUpdate" class="headerlink" title="beforeUpdate"></a>beforeUpdate</h3><p>在页面初始渲染视图之后，一旦监测到data发生变化，在变化的数据重新渲染视图之前会触发beforeUpdate钩子函数，这也是重新渲染之前最后修改数据的机会</p>
+<p>ex:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"show"</span> <span class="attr">ref</span>=<span class="string">"show"</span>&gt;</span></div><div class="line">    &#123;&#123;msg&#125;&#125;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"updateMsg"</span>&gt;</span>BeforeUpdate<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">    <span class="keyword">var</span> vue = <span class="keyword">new</span> Vue(&#123;</span></div><div class="line"><span class="javascript">        el: <span class="string">'#show'</span>,</span></div><div class="line"><span class="undefined">        data: &#123;</span></div><div class="line"><span class="javascript">            msg: <span class="string">'yzzting'</span></span></div><div class="line"><span class="undefined">        &#125;,</span></div><div class="line"><span class="undefined">        methods: &#123;</span></div><div class="line"><span class="undefined">            updateMsg() &#123;</span></div><div class="line"><span class="javascript">                <span class="keyword">this</span>.msg = <span class="string">'updateYzzting'</span></span></div><div class="line"><span class="undefined">            &#125;</span></div><div class="line"><span class="undefined">        &#125;,</span></div><div class="line"><span class="undefined">        beforeUpdate() &#123;</span></div><div class="line"><span class="javascript">            <span class="built_in">console</span>.log(<span class="string">'beforeUpdate'</span>)</span></div><div class="line"><span class="javascript">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.msg)</span></div><div class="line"><span class="javascript">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.$el)</span></div><div class="line"><span class="javascript">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.$refs.show.innerHTML)</span></div><div class="line"><span class="undefined">        &#125;</span></div><div class="line"><span class="undefined">    &#125;)</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><img src="http://7xp1k3.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20170505115152.png" alt=""></p>
+<h3 id="update"><a href="#update" class="headerlink" title="update"></a>update</h3><p>在data发生变化渲染更新视图之后触发</p>
+<p>ex:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"show"</span> <span class="attr">ref</span>=<span class="string">"show"</span>&gt;</span></div><div class="line">    &#123;&#123;msg&#125;&#125;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"updateMsg"</span>&gt;</span>BeforeUpdate<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">    <span class="keyword">var</span> vue = <span class="keyword">new</span> Vue(&#123;</span></div><div class="line"><span class="javascript">        el: <span class="string">'#show'</span>,</span></div><div class="line"><span class="undefined">        data: &#123;</span></div><div class="line"><span class="javascript">            msg: <span class="string">'yzzting'</span></span></div><div class="line"><span class="undefined">        &#125;,</span></div><div class="line"><span class="undefined">        methods: &#123;</span></div><div class="line"><span class="undefined">            updateMsg() &#123;</span></div><div class="line"><span class="javascript">                <span class="keyword">this</span>.msg = <span class="string">'updateYzzting'</span></span></div><div class="line"><span class="undefined">            &#125;</span></div><div class="line"><span class="undefined">        &#125;,</span></div><div class="line"><span class="undefined">        updated() &#123;</span></div><div class="line"><span class="javascript">            <span class="built_in">console</span>.log(<span class="string">'Update'</span>)</span></div><div class="line"><span class="javascript">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.msg)</span></div><div class="line"><span class="javascript">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.$el)</span></div><div class="line"><span class="javascript">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.$refs.show.innerHTML)</span></div><div class="line"><span class="undefined">        &#125;</span></div><div class="line"><span class="undefined">    &#125;)</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><img src="http://7xp1k3.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20170505115516.png" alt=""></p>
+<h3 id="beforeDestroy"><a href="#beforeDestroy" class="headerlink" title="beforeDestroy"></a>beforeDestroy</h3><p>清除vue实例与DOM的关联,调用destroy方法可以销毁当前组件.在销毁前,会触发beforeDestroy钩子函数</p>
+<p>ex:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"show"</span> <span class="attr">ref</span>=<span class="string">"show"</span>&gt;</span></div><div class="line">    &#123;&#123;msg&#125;&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">    <span class="keyword">var</span> vue = <span class="keyword">new</span> Vue(&#123;</span></div><div class="line"><span class="javascript">        el: <span class="string">'#show'</span>,</span></div><div class="line"><span class="undefined">        data: &#123;</span></div><div class="line"><span class="javascript">            msg: <span class="string">'yzzting'</span></span></div><div class="line"><span class="undefined">        &#125;,</span></div><div class="line"><span class="undefined">        beforeDestroy() &#123;</span></div><div class="line"><span class="javascript">            <span class="built_in">console</span>.log(<span class="string">'beforeDestroy'</span>)</span></div><div class="line"><span class="javascript">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.msg)</span></div><div class="line"><span class="javascript">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.$el)</span></div><div class="line"><span class="undefined">        &#125;</span></div><div class="line"><span class="undefined">    &#125;)</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><img src="http://7xp1k3.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20170505120425.png" alt=""></p>
+<p>在这一步实例还是可以调用的</p>
+<h3 id="destroyed"><a href="#destroyed" class="headerlink" title="destroyed"></a>destroyed</h3><p>Vue实例销毁后调用.调用后,Vue实例指示的所有东西都会解绑定,所有的事件监听器会被移除,所有的子实例也会被销毁.</p>
+<p>ex:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"show"</span> <span class="attr">ref</span>=<span class="string">"show"</span>&gt;</span></div><div class="line">    &#123;&#123;msg&#125;&#125;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"updateMsg"</span>&gt;</span>BeforeUpdate<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">    <span class="keyword">var</span> vue = <span class="keyword">new</span> Vue(&#123;</span></div><div class="line"><span class="javascript">        el: <span class="string">'#show'</span>,</span></div><div class="line"><span class="undefined">        data: &#123;</span></div><div class="line"><span class="javascript">            msg: <span class="string">'yzzting'</span></span></div><div class="line"><span class="undefined">        &#125;,</span></div><div class="line"><span class="undefined">        methods: &#123;</span></div><div class="line"><span class="undefined">            updateMsg() &#123;</span></div><div class="line"><span class="javascript">                <span class="keyword">this</span>.msg = <span class="string">'updateYzzting'</span></span></div><div class="line"><span class="undefined">            &#125;</span></div><div class="line"><span class="undefined">        &#125;,</span></div><div class="line"><span class="undefined">        destroyed() &#123;</span></div><div class="line"><span class="javascript">            <span class="built_in">console</span>.log(<span class="string">'Destroyed'</span>)</span></div><div class="line"><span class="javascript">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.msg)</span></div><div class="line"><span class="javascript">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.$el)</span></div><div class="line"><span class="undefined">        &#125;</span></div><div class="line"><span class="undefined">    &#125;)</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>此时销毁实例后,再次调用updateMsg方法,无法在更新数据</p>
+<p><img src="http://7xp1k3.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20170505121028.png" alt=""></p>
+
+                </div>
+                
+<nav id="article-nav">
+  
+    <a href="/2017/05/12/element组件库分析系列－－项目总览/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title">
+        
+          element组件库分析系列--项目总览 >
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/04/23/Vue2.0组件通信方式总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"> < Vue2.0组件通信方式总结</div>
+    </a>
+  
+</nav>
+
+
+            </div>
+        </div>
+        
+            <div id="disqus_thread"></div>
+<script>
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document,
+            s = d.createElement('script');
+
+        s.src = '//yzzting.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script id="dsq-count-scr" src="//yzzting.disqus.com/count.js" async></script>
+
+        
+        
+</article>
+
+
+
+		</div>
+		<div id="heart"></div>
+
+    <footer class="blog-footer" id="blog-footer">
+        <div id="footer-info" class="inner">
+            Made with ♥ by <a href="https://github.com/yzzting/hexo-theme-MyFairLady" target="_blank">MyFairLady</a>
+        </div>
+    </footer>
+    <script src="/js/sidebar.js"></script>
+    <script src="/js/toTop.js"></script>
+    <script src="/js/bookmark.js"></script>
+	</body>
+	</html>

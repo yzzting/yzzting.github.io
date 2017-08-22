@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>
+      
+        《css揭秘》读书笔记系列-根据兄弟元素数量设置样式 |
+          
+            YzzTing
+    </title>
+    <!-- 主css -->
+    <link rel="stylesheet" href="/sass/main.css">
+      <!-- seo -->
+      <meta name="description" content="《css揭秘》读书笔记系列-根据兄弟元素数量设置样式这次主要讲CSS3的伪类选择器 老规矩,基本HTML结构123&amp;lt;ul&amp;gt;  &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt;&amp;lt;!--li数量不定--&amp;gt;&amp;lt;/ul&amp;gt;">
+<meta name="keywords" content="summary,css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《css揭秘》读书笔记系列-根据兄弟元素数量设置样式">
+<meta property="og:url" content="http://www.yzz1995.cn/2016/10/23/《css揭秘》读书笔记系列-根据兄弟元素数量设置样式/index.html">
+<meta property="og:site_name" content="YzzTing">
+<meta property="og:description" content="《css揭秘》读书笔记系列-根据兄弟元素数量设置样式这次主要讲CSS3的伪类选择器 老规矩,基本HTML结构123&amp;lt;ul&amp;gt;  &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt;&amp;lt;!--li数量不定--&amp;gt;&amp;lt;/ul&amp;gt;">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2017-08-22T07:02:58.150Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《css揭秘》读书笔记系列-根据兄弟元素数量设置样式">
+<meta name="twitter:description" content="《css揭秘》读书笔记系列-根据兄弟元素数量设置样式这次主要讲CSS3的伪类选择器 老规矩,基本HTML结构123&amp;lt;ul&amp;gt;  &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt;&amp;lt;!--li数量不定--&amp;gt;&amp;lt;/ul&amp;gt;">
+        <!-- facicon -->
+        
+          <link rel="icon" href="http://7xp1k3.com1.z0.glb.clouddn.com/octocat-de-los-muertos.jpg">
+          
+            <!-- 统计 -->
+            
+              <script>
+                var _hmt = _hmt || [];
+                (function () {
+                  var hm = document.createElement("script");
+                  hm.src = "//hm.baidu.com/hm.js?c21994907883f37ffd80e13627dd4faa";
+                  var s = document.getElementsByTagName("script")[0];
+                  s.parentNode.insertBefore(hm, s);
+                })();
+              </script>
+              
+                
+                    <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+</head>
+	<body>
+		<div class="main">
+			<div id="mobile-bar">
+    <a class="menu-button"></a>
+    <a class="logo" href="/">
+        Yzz
+    </a>
+</div>
+<header class="nav-header">
+    <a href="/" class="logo-link">
+        Yzz
+    </a>
+    
+        
+            <ul class="nav nav-list">
+                <li class="nav-list-item">
+                    <a href="/">
+                        Home
+                    </a>
+                </li>
+                
+                    
+                            
+        
+                        <li class="nav-list-item">
+                            <a href="/about">
+                                About
+                            </a>
+                        </li>
+                        
+                            
+        
+                        <li class="nav-list-item">
+                            <a href="/tags">
+                                Tags
+                            </a>
+                        </li>
+                        
+                            
+        
+                        <li class="nav-list-item">
+                            <a href="/archives">
+                                Archives
+                            </a>
+                        </li>
+                        
+                            
+            </ul>
+</header>
+<div class="sidebar">
+    
+            
+    <ul class="main-menu">
+        <li class="main-menu-item"><a href="/">Home</a></li>
+        
+            
+        
+            
+        <li class="main-menu-item"><a href="/about">About</a></li>
+            
+        
+            
+        <li class="main-menu-item"><a href="/tags">Tags</a></li>
+            
+        
+            
+        <li class="main-menu-item"><a href="/archives">Archives</a></li>
+            
+        
+    </ul>
+</div>
+
+    <h1 class="blog-title">The
+        Yzz Blog</h1>
+			
+<article class="article-main" itemscope itemprop="blogPost">
+        <div class="articleCon">
+            <header class="article-header">
+                <h1 itemprop="name">
+                    <a href="/2016/10/23/《css揭秘》读书笔记系列-根据兄弟元素数量设置样式/" class="article-title">《css揭秘》读书笔记系列-根据兄弟元素数量设置样式</a>
+                </h1>
+            </header>
+            <div class="article-meta">
+                <div class="article-dateTime">
+    <a href="/2016/10/23/《css揭秘》读书笔记系列-根据兄弟元素数量设置样式/" class="article-date">
+        <time datetime="10月 23日 2016" itemprop="datePublished">
+            10月 23日 2016
+        </time>
+    </a>
+</div>
+
+            </div>
+            <div class="article-inner">
+                <div class="article-entry" itemprop="articleBody">
+                    <h2 id="《css揭秘》读书笔记系列-根据兄弟元素数量设置样式"><a href="#《css揭秘》读书笔记系列-根据兄弟元素数量设置样式" class="headerlink" title="《css揭秘》读书笔记系列-根据兄弟元素数量设置样式"></a>《css揭秘》读书笔记系列-根据兄弟元素数量设置样式</h2><p>这次主要讲CSS3的伪类选择器</p>
+<h3 id="老规矩-基本HTML结构"><a href="#老规矩-基本HTML结构" class="headerlink" title="老规矩,基本HTML结构"></a>老规矩,基本HTML结构</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span><span class="comment">&lt;!--li数量不定--&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>ex:当只有一个列表项的时候,解决方案就是:only-child.这个伪类选择符就是为这样的情况设计的</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">li</span><span class="selector-pseudo">:only-child</span> &#123;</div><div class="line">  <span class="comment">/* 只有一个列表项的样式*/</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<iframe class="" id="" data-url="http://jsbin.com/jezeyozude/edit?html,css,outputt" src="http://jsbin.com/jezeyozude/edit?html,css,output" style="border: 1px solid rgb(170, 170, 170); width: 100%; min-height: 300px; height: 30px;"></iframe>
+
+<p>当然 :only-child === :first-child:last-child,道理很简单如果第一项等于最后一项,那从某种意义上来讲他就是唯一的一项.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">li</span><span class="selector-pseudo">:first-child</span><span class="selector-pseudo">:nth-last-child(1)</span> &#123;</div><div class="line">  <span class="comment">/*相当于li:only-child*/</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<iframe class="" id="" data-url="http://jsbin.com/coreba/edit?html,css,output" src="http://jsbin.com/coreba/edit?html,css,output" style="border: 1px solid rgb(170, 170, 170); width: 100%; min-height: 300px; height: 30px;"></iframe>
+
+<p>跟着这个思路,如果把:nth-last-child(1)中的这个1换成4会是什么样?在一个有4个列表项的列表中<strong>li:first-child:nth-last-child(4)</strong> 刚好可以命中这个列表的第一个列表项,那么我们再结合兄弟选择符来命中他之后的所有兄弟元素,从而命中所以列表项</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">li</span><span class="selector-pseudo">:first-child</span><span class="selector-pseudo">:nth-last-child(4)</span>,</div><div class="line"><span class="selector-tag">li</span><span class="selector-pseudo">:first-child</span><span class="selector-pseudo">:nth-last-child(4)</span> ~ <span class="selector-tag">li</span> &#123;</div><div class="line">  <span class="comment">/*当列表正好包含这4个项时,命中所有列表项*/</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<iframe class="" id="" data-url="http://jsbin.com/coreba/7/edit?html,css,output" src="http://jsbin.com/coreba/7/edit?html,css,output" style="border: 1px solid rgb(170, 170, 170); width: 100%; min-height: 300px; height: 30px;"></iframe>
+
+<p>当然我们可以用SCSS这样的预选择器来处理</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">mixin</span> n-items($n) &#123;</div><div class="line">  &amp;:first-child:nth-last-child(#&#123;$n),</div><div class="line">  &amp;:first-child:nth-last-child(#&#123;$n) ~ &amp; &#123;</div><div class="line">    @<span class="keyword">content</span></div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">li &#123;</div><div class="line">  @<span class="keyword">include</span> n-items(<span class="number">4</span>) &#123;</div><div class="line">    <span class="comment">/*属性什么的写这里*/</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>(不知道为什么不高亮了….</p>
+<h3 id="根据兄弟元素的数量范围来匹配元素"><a href="#根据兄弟元素的数量范围来匹配元素" class="headerlink" title="根据兄弟元素的数量范围来匹配元素"></a>根据兄弟元素的数量范围来匹配元素</h3><p>在实际场景中,我们匹配元素的条件往往不是列表项的具体数量,而是一个数量范围.:nth-child() 选择符在这方面非常好用,我们完全可以用它来命中一个范围,ex:”选中第4项之后的内容”.而他的参数还可以是表达式an+b ex:(:nth-child(2n+1)).如果是用n+b这种形式的无论n取什么值这个表达式都无法产生一个小于b的值(好像是废话。。。。)所以这种形式可以命中从第b个开始的所有子元素.ex: :nth-child(n+4) 会选择除了第一,二,三个子元素之外的所有子元素</p>
+<iframe class="" id="" data-url="http://jsbin.com/coreba/13/edit?html,css,output" src="http://jsbin.com/coreba/13/edit?html,css,output" style="border: 1px solid rgb(170, 170, 170); width: 100%; min-height: 300px; height: 30px;"></iframe>
+
+<p>因此,利用这技巧,我们可以在列表的总数是4或者更多的时候命中所有列表项</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">li</span><span class="selector-pseudo">:first-child</span><span class="selector-pseudo">:nth-last-child(n+4)</span>,</div><div class="line"><span class="selector-tag">li</span><span class="selector-pseudo">:first-child</span><span class="selector-pseudo">:nth-last-child(n+4)</span> ~ <span class="selector-tag">li</span> &#123;</div><div class="line">  <span class="comment">/*当列表正好至少包含4个项,命中所有列表项*/</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<iframe class="" id="" data-url="http://jsbin.com/coreba/9/edit?html,css,output" src="http://jsbin.com/coreba/9/edit?html,css,output" style="border: 1px solid rgb(170, 170, 170); width: 100%; min-height: 300px; height: 30px;"></iframe>
+
+<p>同理,-n+b这种形式可以命中开头的b个元素.因此当列表项有4个或者小于4时,要选中所有列表项可以这么写</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">li</span><span class="selector-pseudo">:first-child</span><span class="selector-pseudo">:nth-last-child(-n+4)</span>,</div><div class="line"><span class="selector-tag">li</span><span class="selector-pseudo">:first-child</span><span class="selector-pseudo">:nth-last-child(-n+4)</span> ~ <span class="selector-tag">li</span> &#123;</div><div class="line">  <span class="comment">/*当列表正好最多包含4个项,命中所有列表项*/</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<iframe class="" id="" data-url="http://jsbin.com/coreba/10/edit?html,css,output" src="http://jsbin.com/coreba/10/edit?html,css,output" style="border: 1px solid rgb(170, 170, 170); width: 100%; min-height: 300px; height: 30px;"></iframe>
+
+<p>当然,我们想要命中2-6个列表项时呢?</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">li</span><span class="selector-pseudo">:first-child</span><span class="selector-pseudo">:nth-last-child(n+2)</span><span class="selector-pseudo">:nth-last-child(-n+6)</span>,</div><div class="line"><span class="selector-tag">li</span><span class="selector-pseudo">:first-child</span><span class="selector-pseudo">:nth-last-child(n+2)</span><span class="selector-pseudo">:nth-last-child(-n+6)</span> ~ <span class="selector-tag">li</span> &#123;</div><div class="line">  <span class="comment">/*当列表正好包含2-6个项,命中所有列表项*/</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<iframe class="" id="" data-url="http://jsbin.com/coreba/12/edit?html,css,output" src="http://jsbin.com/coreba/12/edit?html,css,output" style="border: 1px solid rgb(170, 170, 170); width: 100%; min-height: 300px; height: 30px;"></iframe>
+
+<h3 id="在线实验"><a href="#在线实验" class="headerlink" title="在线实验"></a>在线实验</h3><p><a href="http://lea.verou.me/demos/nth.html" target="_blank" rel="external">CSS3 structural pseudo-class selector tester</a></p>
+
+                </div>
+                
+<nav id="article-nav">
+  
+    <a href="/2016/11/25/译《DEPENDENCY INJECTION IN ANGULAR 2》/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title">
+        
+          译[dependency injection in angular2] >
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/09/25/《css揭秘》读书笔记系列-投影详解/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"> < 《css揭秘》读书笔记系列---投影详解</div>
+    </a>
+  
+</nav>
+
+
+            </div>
+        </div>
+        
+            <div id="disqus_thread"></div>
+<script>
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document,
+            s = d.createElement('script');
+
+        s.src = '//yzzting.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script id="dsq-count-scr" src="//yzzting.disqus.com/count.js" async></script>
+
+        
+        
+</article>
+
+
+
+		</div>
+		<div id="heart"></div>
+
+    <footer class="blog-footer" id="blog-footer">
+        <div id="footer-info" class="inner">
+            Made with ♥ by <a href="https://github.com/yzzting/hexo-theme-MyFairLady" target="_blank">MyFairLady</a>
+        </div>
+    </footer>
+    <script src="/js/sidebar.js"></script>
+    <script src="/js/toTop.js"></script>
+    <script src="/js/bookmark.js"></script>
+	</body>
+	</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>
+      
+        《css揭秘》读书笔记系列---实现条纹背景 |
+          
+            YzzTing
+    </title>
+    <!-- 主css -->
+    <link rel="stylesheet" href="/sass/main.css">
+      <!-- seo -->
+      <meta name="description" content="《css揭秘》读书笔记系列—-实现条纹背景最近在拜读《css揭秘》这本书，为了加深理解，我会写下一系列的读书笔记 直接进入正题先说一个属性，linear-gradient——线性渐变。通过这个属性，我们可以设置两个颜色值，让背景从颜色a过渡到颜色b，再设置起始位置，最后通过background–size来调整大小，就可以达到我们想要的效果">
+<meta name="keywords" content="summary,css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《css揭秘》读书笔记系列---实现条纹背景">
+<meta property="og:url" content="http://www.yzz1995.cn/2016/07/02/《css揭秘》读书笔记系列-实现条纹背景/index.html">
+<meta property="og:site_name" content="YzzTing">
+<meta property="og:description" content="《css揭秘》读书笔记系列—-实现条纹背景最近在拜读《css揭秘》这本书，为了加深理解，我会写下一系列的读书笔记 直接进入正题先说一个属性，linear-gradient——线性渐变。通过这个属性，我们可以设置两个颜色值，让背景从颜色a过渡到颜色b，再设置起始位置，最后通过background–size来调整大小，就可以达到我们想要的效果">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2017-08-22T07:02:58.149Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《css揭秘》读书笔记系列---实现条纹背景">
+<meta name="twitter:description" content="《css揭秘》读书笔记系列—-实现条纹背景最近在拜读《css揭秘》这本书，为了加深理解，我会写下一系列的读书笔记 直接进入正题先说一个属性，linear-gradient——线性渐变。通过这个属性，我们可以设置两个颜色值，让背景从颜色a过渡到颜色b，再设置起始位置，最后通过background–size来调整大小，就可以达到我们想要的效果">
+        <!-- facicon -->
+        
+          <link rel="icon" href="http://7xp1k3.com1.z0.glb.clouddn.com/octocat-de-los-muertos.jpg">
+          
+            <!-- 统计 -->
+            
+              <script>
+                var _hmt = _hmt || [];
+                (function () {
+                  var hm = document.createElement("script");
+                  hm.src = "//hm.baidu.com/hm.js?c21994907883f37ffd80e13627dd4faa";
+                  var s = document.getElementsByTagName("script")[0];
+                  s.parentNode.insertBefore(hm, s);
+                })();
+              </script>
+              
+                
+                    <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+</head>
+	<body>
+		<div class="main">
+			<div id="mobile-bar">
+    <a class="menu-button"></a>
+    <a class="logo" href="/">
+        Yzz
+    </a>
+</div>
+<header class="nav-header">
+    <a href="/" class="logo-link">
+        Yzz
+    </a>
+    
+        
+            <ul class="nav nav-list">
+                <li class="nav-list-item">
+                    <a href="/">
+                        Home
+                    </a>
+                </li>
+                
+                    
+                            
+        
+                        <li class="nav-list-item">
+                            <a href="/about">
+                                About
+                            </a>
+                        </li>
+                        
+                            
+        
+                        <li class="nav-list-item">
+                            <a href="/tags">
+                                Tags
+                            </a>
+                        </li>
+                        
+                            
+        
+                        <li class="nav-list-item">
+                            <a href="/archives">
+                                Archives
+                            </a>
+                        </li>
+                        
+                            
+            </ul>
+</header>
+<div class="sidebar">
+    
+            
+    <ul class="main-menu">
+        <li class="main-menu-item"><a href="/">Home</a></li>
+        
+            
+        
+            
+        <li class="main-menu-item"><a href="/about">About</a></li>
+            
+        
+            
+        <li class="main-menu-item"><a href="/tags">Tags</a></li>
+            
+        
+            
+        <li class="main-menu-item"><a href="/archives">Archives</a></li>
+            
+        
+    </ul>
+</div>
+
+    <h1 class="blog-title">The
+        Yzz Blog</h1>
+			
+<article class="article-main" itemscope itemprop="blogPost">
+        <div class="articleCon">
+            <header class="article-header">
+                <h1 itemprop="name">
+                    <a href="/2016/07/02/《css揭秘》读书笔记系列-实现条纹背景/" class="article-title">《css揭秘》读书笔记系列---实现条纹背景</a>
+                </h1>
+            </header>
+            <div class="article-meta">
+                <div class="article-dateTime">
+    <a href="/2016/07/02/《css揭秘》读书笔记系列-实现条纹背景/" class="article-date">
+        <time datetime="7月 2日 2016" itemprop="datePublished">
+            7月 2日 2016
+        </time>
+    </a>
+</div>
+
+            </div>
+            <div class="article-inner">
+                <div class="article-entry" itemprop="articleBody">
+                    <h2 id="《css揭秘》读书笔记系列—-实现条纹背景"><a href="#《css揭秘》读书笔记系列—-实现条纹背景" class="headerlink" title="《css揭秘》读书笔记系列—-实现条纹背景"></a>《css揭秘》读书笔记系列—-实现条纹背景</h2><p>最近在拜读《css揭秘》这本书，为了加深理解，我会写下一系列的读书笔记</p>
+<h3 id="直接进入正题"><a href="#直接进入正题" class="headerlink" title="直接进入正题"></a>直接进入正题</h3><p>先说一个属性，<strong>linear-gradient</strong>——线性渐<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/linear-gradient" target="_blank" rel="external">变</a>。通过这个属性，我们可以设置两个颜色值，让背景从颜色a过渡到颜色b，再设置起始位置，最后通过background–size来调整大小，就可以达到我们想要的效果</p>
+<a id="more"></a>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><iframe class="" id="" data-url="http://jsbin.com/rezolux/2/edit?html,css,output" src="http://jsbin.com/rezolux/2/edit?html,css,output" style="border: 1px solid rgb(170, 170, 170); width: 100%; min-height: 300px; height: 30px;"></iframe>
+
+<p>通过上面的例子我们可以看到，设置linear-gradient便可以达到渐变，但是我们最终要的并不是这样。so，我们可以调整两个颜色渐变的位置看看效果。</p>
+<iframe class="" id="" data-url="http://jsbin.com/rezolux/4/edit?html,css,output" src="http://jsbin.com/rezolux/4/edit?html,css,output" style="border: 1px solid rgb(170, 170, 170); width: 100%; min-height: 300px; height: 30px;"></iframe>
+
+<p>我们可以看到红色在容器高度40%以上的地方是纯色的，黄色在容器高度60%以下是纯色的。那么中间渐变的区域就讲道理的表小了。如果这个值是50%呢？</p>
+<iframe class="" id="" data-url="http://jsbin.com/rezolux/6/edit?html,css,output" src="http://jsbin.com/rezolux/6/edit?html,css,output" style="border: 1px solid rgb(170, 170, 170); width: 100%; min-height: 300px; height: 30px;"></iframe>
+
+<p>oh，正如你所见，事实上这个body的背景已经没有任何的渐变效果了。是两条巨大的条纹。既然是背景，当然还可以通过调整background-size来控制大小</p>
+<iframe class="" id="" data-url="http://jsbin.com/rezolux/7/edit?html,css,output" src="http://jsbin.com/rezolux/7/edit?html,css,output" style="border: 1px solid rgb(170, 170, 170); width: 100%; min-height: 300px; height: 30px;"></iframe>
+
+<p>在上面的例子中，我们将2条条纹都设置成了15px，再者背景在默认的情况下是重复平铺的。最终实现了我们想要的效果。</p>
+<p>书里还说了一种三色条纹背景。</p>
+<iframe class="" id="" data-url="http://jsbin.com/rezolux/8/edit?html,css,output" src="http://jsbin.com/rezolux/8/edit?html,css,output" style="border: 1px solid rgb(170, 170, 170); width: 100%; min-height: 300px; height: 30px;"></iframe>
+
+<p>道理就是通过调整不同颜色之前的渐变区域，将这个区域最小化，就可以达到效果</p>
+<h3 id="垂直条纹"><a href="#垂直条纹" class="headerlink" title="垂直条纹"></a>垂直条纹</h3><p>既然，横的可以来，那么竖的条纹可以不可以实现呢？</p>
+<p>事实上，linear-gradient这个属性，有一个默认的参数<angle> ，用角度值指定渐变的方向（或角度）。在横纹中，默认的角度是to bottom，也就是0°。所以他就是横的。综上，只要我们在横纹中，加上一定的角(90°，或者 to right ，就是竖纹啦。</angle></p>
+<iframe class="" id="" data-url="http://jsbin.com/rezolux/9/edit?html,css,output" src="http://jsbin.com/rezolux/9/edit?html,css,output" style="border: 1px solid rgb(170, 170, 170); width: 100%; min-height: 300px; height: 30px;"></iframe>
+
+<p>当然你可以background-size的两个属性倒一下位置，就是重复平铺整个背景</p>
+<h3 id="题外话"><a href="#题外话" class="headerlink" title="题外话"></a>题外话</h3><p>这次用了jsbin作为文章的展示，不过jsbin并没有提供iframe的格式，我偷偷地把jsbin提供的src连接跳入iframe中，就可以用了。ex:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">class</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">data-url</span>=<span class="string">"http://jsbin.com/rezolux/9/edit?html,css,output"</span> <span class="attr">src</span>=<span class="string">"http://jsbin.com/rezolux/9/edit?html,css,output"</span> <span class="attr">style</span>=<span class="string">"border: 1px solid rgb(170, 170, 170); width: 100%; min-height: 300px; height: 30px;"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></div></pre></td></tr></table></figure>
+
+                </div>
+                
+<nav id="article-nav">
+  
+    <a href="/2016/07/04/《css揭秘》读书笔记系列-实现垂直居中/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title">
+        
+          《css揭秘》读书笔记系列---实现垂直居中 >
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/06/08/总结Hover-css/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"> < 总结Hover-css</div>
+    </a>
+  
+</nav>
+
+
+            </div>
+        </div>
+        
+            <div id="disqus_thread"></div>
+<script>
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document,
+            s = d.createElement('script');
+
+        s.src = '//yzzting.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script id="dsq-count-scr" src="//yzzting.disqus.com/count.js" async></script>
+
+        
+        
+</article>
+
+
+
+		</div>
+		<div id="heart"></div>
+
+    <footer class="blog-footer" id="blog-footer">
+        <div id="footer-info" class="inner">
+            Made with ♥ by <a href="https://github.com/yzzting/hexo-theme-MyFairLady" target="_blank">MyFairLady</a>
+        </div>
+    </footer>
+    <script src="/js/sidebar.js"></script>
+    <script src="/js/toTop.js"></script>
+    <script src="/js/bookmark.js"></script>
+	</body>
+	</html>

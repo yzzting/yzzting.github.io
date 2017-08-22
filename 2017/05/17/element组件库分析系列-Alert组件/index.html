@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>
+      
+        element组件库分析系列--Alert组件 |
+          
+            YzzTing
+    </title>
+    <!-- 主css -->
+    <link rel="stylesheet" href="/sass/main.css">
+      <!-- seo -->
+      <meta name="description" content="element组件库分析系列–Alert组件开始分析第一个组件–Alert组件">
+<meta name="keywords" content="javascript,Vue.js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="element组件库分析系列--Alert组件">
+<meta property="og:url" content="http://www.yzz1995.cn/2017/05/17/element组件库分析系列-Alert组件/index.html">
+<meta property="og:site_name" content="YzzTing">
+<meta property="og:description" content="element组件库分析系列–Alert组件开始分析第一个组件–Alert组件">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2017-08-22T07:02:58.146Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="element组件库分析系列--Alert组件">
+<meta name="twitter:description" content="element组件库分析系列–Alert组件开始分析第一个组件–Alert组件">
+        <!-- facicon -->
+        
+          <link rel="icon" href="http://7xp1k3.com1.z0.glb.clouddn.com/octocat-de-los-muertos.jpg">
+          
+            <!-- 统计 -->
+            
+              <script>
+                var _hmt = _hmt || [];
+                (function () {
+                  var hm = document.createElement("script");
+                  hm.src = "//hm.baidu.com/hm.js?c21994907883f37ffd80e13627dd4faa";
+                  var s = document.getElementsByTagName("script")[0];
+                  s.parentNode.insertBefore(hm, s);
+                })();
+              </script>
+              
+                
+                    <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+</head>
+	<body>
+		<div class="main">
+			<div id="mobile-bar">
+    <a class="menu-button"></a>
+    <a class="logo" href="/">
+        Yzz
+    </a>
+</div>
+<header class="nav-header">
+    <a href="/" class="logo-link">
+        Yzz
+    </a>
+    
+        
+            <ul class="nav nav-list">
+                <li class="nav-list-item">
+                    <a href="/">
+                        Home
+                    </a>
+                </li>
+                
+                    
+                            
+        
+                        <li class="nav-list-item">
+                            <a href="/about">
+                                About
+                            </a>
+                        </li>
+                        
+                            
+        
+                        <li class="nav-list-item">
+                            <a href="/tags">
+                                Tags
+                            </a>
+                        </li>
+                        
+                            
+        
+                        <li class="nav-list-item">
+                            <a href="/archives">
+                                Archives
+                            </a>
+                        </li>
+                        
+                            
+            </ul>
+</header>
+<div class="sidebar">
+    
+            
+    <ul class="main-menu">
+        <li class="main-menu-item"><a href="/">Home</a></li>
+        
+            
+        
+            
+        <li class="main-menu-item"><a href="/about">About</a></li>
+            
+        
+            
+        <li class="main-menu-item"><a href="/tags">Tags</a></li>
+            
+        
+            
+        <li class="main-menu-item"><a href="/archives">Archives</a></li>
+            
+        
+    </ul>
+</div>
+
+    <h1 class="blog-title">The
+        Yzz Blog</h1>
+			
+<article class="article-main" itemscope itemprop="blogPost">
+        <div class="articleCon">
+            <header class="article-header">
+                <h1 itemprop="name">
+                    <a href="/2017/05/17/element组件库分析系列-Alert组件/" class="article-title">element组件库分析系列--Alert组件</a>
+                </h1>
+            </header>
+            <div class="article-meta">
+                <div class="article-dateTime">
+    <a href="/2017/05/17/element组件库分析系列-Alert组件/" class="article-date">
+        <time datetime="5月 17日 2017" itemprop="datePublished">
+            5月 17日 2017
+        </time>
+    </a>
+</div>
+
+            </div>
+            <div class="article-inner">
+                <div class="article-entry" itemprop="articleBody">
+                    <h2 id="element组件库分析系列–Alert组件"><a href="#element组件库分析系列–Alert组件" class="headerlink" title="element组件库分析系列–Alert组件"></a>element组件库分析系列–Alert组件</h2><p>开始分析第一个组件–Alert组件</p>
+<a id="more"></a>
+<h2 id="Template"><a href="#Template" class="headerlink" title="Template"></a>Template</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">transition</span> <span class="attr">name</span>=<span class="string">"el-alert-fade"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"el-alert"</span> <span class="attr">:class</span>=<span class="string">"[ typeClass ]"</span> <span class="attr">v-show</span>=<span class="string">"visible"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"el-alert__icon"</span> <span class="attr">:class</span>=<span class="string">"[ iconClass, isBigIcon ]"</span> <span class="attr">v-if</span>=<span class="string">"showIcon"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"el-alert__content"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"el-alert__title"</span> <span class="attr">:class</span>=<span class="string">"[ isBoldTitle ]"</span> <span class="attr">v-if</span>=<span class="string">"title"</span>&gt;</span>&#123;&#123; title &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">slot</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"el-alert__description"</span> <span class="attr">v-if</span>=<span class="string">"description"</span>&gt;</span>&#123;&#123; description &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">slot</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"el-alert__closebtn"</span> <span class="attr">:class</span>=<span class="string">"&#123; 'is-customed': closeText !== '', 'el-icon-close': closeText === '' &#125;"</span> <span class="attr">v-show</span>=<span class="string">"closable"</span> @<span class="attr">click</span>=<span class="string">"close()"</span>&gt;</span>&#123;&#123;closeText&#125;&#125;<span class="tag">&lt;/<span class="name">i</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">transition</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>从结构上看最外层用了Vue的<a href="https://cn.vuejs.org/v2/guide/transitions.html" target="_blank" rel="external">transition</a>组件,通过name给予entering/leaving状态.实现CSS动画的平滑过渡.里层结构通过属性列表和事件列表分析更容易理解</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:right">说明</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">可选值</th>
+<th style="text-align:center">默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">title</td>
+<td style="text-align:right">标题，必选参数</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">—</td>
+<td style="text-align:center">—</td>
+</tr>
+<tr>
+<td style="text-align:left">type</td>
+<td style="text-align:right">主题</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">success/warning/info/error</td>
+<td style="text-align:center">info</td>
+</tr>
+<tr>
+<td style="text-align:left">description</td>
+<td style="text-align:right">辅助性文字也可通过默认 slot 传入</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">—</td>
+<td style="text-align:center">—</td>
+</tr>
+<tr>
+<td style="text-align:left">closable</td>
+<td style="text-align:right">是否可关闭</td>
+<td style="text-align:center">boolean</td>
+<td style="text-align:center">—</td>
+<td style="text-align:center">true</td>
+</tr>
+<tr>
+<td style="text-align:left">close-text</td>
+<td style="text-align:right">关闭按钮自定义文本</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">—</td>
+<td style="text-align:center">—</td>
+</tr>
+<tr>
+<td style="text-align:left">show-icon</td>
+<td style="text-align:right">是否显示图标</td>
+<td style="text-align:center">boolean</td>
+<td style="text-align:center">—</td>
+<td style="text-align:center">false</td>
+</tr>
+</tbody>
+</table>
+<p>首先最外层 <code>&lt;div class=&quot;el-alert&quot; :class=&quot;[ typeClass ]&quot; v-show=&quot;visible&quot;&gt;</code> typeClass对应了type属性,element定义了4种不同的alert主题,visible控制alert组件的显示与隐藏</p>
+<p>对应的close方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">data() &#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">    visible: <span class="literal">true</span></div><div class="line">    &#125;;</div><div class="line">&#125;,</div><div class="line"></div><div class="line">methods: &#123;</div><div class="line">    <span class="comment">// 组件调用时,可传入一个回调函数</span></div><div class="line">    close() &#123;</div><div class="line">    <span class="keyword">this</span>.visible = <span class="literal">false</span>;</div><div class="line">    <span class="keyword">this</span>.$emit(<span class="string">'close'</span>); <span class="comment">//监听事件</span></div><div class="line">    &#125;</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"el-alert__icon"</span> <span class="attr">:class</span>=<span class="string">"[ iconClass, isBigIcon ]"</span> <span class="attr">v-if</span>=<span class="string">"showIcon"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>icon样式,iconClass控制icon图标样式,isBigIcon让图标更大. v-if=”showIcon” 对应属性 show-icon ,这个属性并不是close button 而是文案前面的icon图标 默认隐藏</p>
+<p>iconClass和isBigIcon分别通过计算属性得到</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">iconClass() &#123;</div><div class="line">  <span class="keyword">return</span> TYPE_CLASSES_MAP[<span class="keyword">this</span>.type] || <span class="string">'el-icon-information'</span>;</div><div class="line">&#125;,</div><div class="line"></div><div class="line">isBigIcon() &#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.description ? <span class="string">'is-big'</span> : <span class="string">''</span>;</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
+<p>这里的TYPE_CLASS_MAP是alert类型的数组,通过type属性,选择对应的Css类名</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> TYPE_CLASSES_MAP = &#123;</div><div class="line">  <span class="string">'success'</span>: <span class="string">'el-icon-circle-check'</span>,</div><div class="line">  <span class="string">'warning'</span>: <span class="string">'el-icon-warning'</span>,</div><div class="line">  <span class="string">'error'</span>: <span class="string">'el-icon-circle-cross'</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"el-alert__title"</span> <span class="attr">:class</span>=<span class="string">"[ isBoldTitle ]"</span> <span class="attr">v-if</span>=<span class="string">"title"</span>&gt;</span>&#123;&#123; title &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>对应title参数,alert标题,必选项,默认值为true</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">slot</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"el-alert__description"</span> <span class="attr">v-if</span>=<span class="string">"description"</span>&gt;</span>&#123;&#123; description &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>辅助性的描述文字,更好的描述alert组件.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"el-alert__closebtn"</span> <span class="attr">:class</span>=<span class="string">"&#123; 'is-customed': closeText !== '', 'el-icon-close': closeText === '' &#125;"</span> <span class="attr">v-show</span>=<span class="string">"closable"</span> @<span class="attr">click</span>=<span class="string">"close()"</span>&gt;</span>&#123;&#123;closeText&#125;&#125;<span class="tag">&lt;/<span class="name">i</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>close button标签,如果定义了closeText则close icon会显示为自定义的closeText. closable控制按钮的显隐.绑定单击事件,触发close()</p>
+<h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2>
+                </div>
+                
+<nav id="article-nav">
+  
+  
+    <a href="/2017/05/14/element组件库分析系列-Data类/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"> < element组件库分析系列--Data类</div>
+    </a>
+  
+</nav>
+
+
+            </div>
+        </div>
+        
+            <div id="disqus_thread"></div>
+<script>
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document,
+            s = d.createElement('script');
+
+        s.src = '//yzzting.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script id="dsq-count-scr" src="//yzzting.disqus.com/count.js" async></script>
+
+        
+        
+</article>
+
+
+
+		</div>
+		<div id="heart"></div>
+
+    <footer class="blog-footer" id="blog-footer">
+        <div id="footer-info" class="inner">
+            Made with ♥ by <a href="https://github.com/yzzting/hexo-theme-MyFairLady" target="_blank">MyFairLady</a>
+        </div>
+    </footer>
+    <script src="/js/sidebar.js"></script>
+    <script src="/js/toTop.js"></script>
+    <script src="/js/bookmark.js"></script>
+	</body>
+	</html>

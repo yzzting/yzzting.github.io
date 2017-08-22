@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>
+      
+        javascript闭包理解 |
+          
+            YzzTing
+    </title>
+    <!-- 主css -->
+    <link rel="stylesheet" href="/sass/main.css">
+      <!-- seo -->
+      <meta name="description" content="今天我们聊一下闭包这个概念首先，为什么会有闭包这个概念的呢？ 在大多数的编程语言中，都会存在着一种垃圾回收机制。每当一个函数被执行后，通常都会期待函数的整个内部作用域都被销毁。因为引擎有垃圾回收器用来释放不再使用的内存空间，因为看上去这个函数的内容不会在被使用，所以很自然的会考虑对其进行回收">
+<meta name="keywords" content="javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript闭包理解">
+<meta property="og:url" content="http://www.yzz1995.cn/2016/04/20/javascript闭包理解/index.html">
+<meta property="og:site_name" content="YzzTing">
+<meta property="og:description" content="今天我们聊一下闭包这个概念首先，为什么会有闭包这个概念的呢？ 在大多数的编程语言中，都会存在着一种垃圾回收机制。每当一个函数被执行后，通常都会期待函数的整个内部作用域都被销毁。因为引擎有垃圾回收器用来释放不再使用的内存空间，因为看上去这个函数的内容不会在被使用，所以很自然的会考虑对其进行回收">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2017-08-22T07:02:58.147Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="javascript闭包理解">
+<meta name="twitter:description" content="今天我们聊一下闭包这个概念首先，为什么会有闭包这个概念的呢？ 在大多数的编程语言中，都会存在着一种垃圾回收机制。每当一个函数被执行后，通常都会期待函数的整个内部作用域都被销毁。因为引擎有垃圾回收器用来释放不再使用的内存空间，因为看上去这个函数的内容不会在被使用，所以很自然的会考虑对其进行回收">
+        <!-- facicon -->
+        
+          <link rel="icon" href="http://7xp1k3.com1.z0.glb.clouddn.com/octocat-de-los-muertos.jpg">
+          
+            <!-- 统计 -->
+            
+              <script>
+                var _hmt = _hmt || [];
+                (function () {
+                  var hm = document.createElement("script");
+                  hm.src = "//hm.baidu.com/hm.js?c21994907883f37ffd80e13627dd4faa";
+                  var s = document.getElementsByTagName("script")[0];
+                  s.parentNode.insertBefore(hm, s);
+                })();
+              </script>
+              
+                
+                    <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+</head>
+	<body>
+		<div class="main">
+			<div id="mobile-bar">
+    <a class="menu-button"></a>
+    <a class="logo" href="/">
+        Yzz
+    </a>
+</div>
+<header class="nav-header">
+    <a href="/" class="logo-link">
+        Yzz
+    </a>
+    
+        
+            <ul class="nav nav-list">
+                <li class="nav-list-item">
+                    <a href="/">
+                        Home
+                    </a>
+                </li>
+                
+                    
+                            
+        
+                        <li class="nav-list-item">
+                            <a href="/about">
+                                About
+                            </a>
+                        </li>
+                        
+                            
+        
+                        <li class="nav-list-item">
+                            <a href="/tags">
+                                Tags
+                            </a>
+                        </li>
+                        
+                            
+        
+                        <li class="nav-list-item">
+                            <a href="/archives">
+                                Archives
+                            </a>
+                        </li>
+                        
+                            
+            </ul>
+</header>
+<div class="sidebar">
+    
+            
+    <ul class="main-menu">
+        <li class="main-menu-item"><a href="/">Home</a></li>
+        
+            
+        
+            
+        <li class="main-menu-item"><a href="/about">About</a></li>
+            
+        
+            
+        <li class="main-menu-item"><a href="/tags">Tags</a></li>
+            
+        
+            
+        <li class="main-menu-item"><a href="/archives">Archives</a></li>
+            
+        
+    </ul>
+</div>
+
+    <h1 class="blog-title">The
+        Yzz Blog</h1>
+			
+<article class="article-main" itemscope itemprop="blogPost">
+        <div class="articleCon">
+            <header class="article-header">
+                <h1 itemprop="name">
+                    <a href="/2016/04/20/javascript闭包理解/" class="article-title">javascript闭包理解</a>
+                </h1>
+            </header>
+            <div class="article-meta">
+                <div class="article-dateTime">
+    <a href="/2016/04/20/javascript闭包理解/" class="article-date">
+        <time datetime="4月 20日 2016" itemprop="datePublished">
+            4月 20日 2016
+        </time>
+    </a>
+</div>
+
+            </div>
+            <div class="article-inner">
+                <div class="article-entry" itemprop="articleBody">
+                    <h2 id="今天我们聊一下闭包这个概念"><a href="#今天我们聊一下闭包这个概念" class="headerlink" title="今天我们聊一下闭包这个概念"></a>今天我们聊一下闭包这个概念</h2><p>首先，为什么会有闭包这个概念的呢？</p>
+<p>在大多数的编程语言中，都会存在着一种垃圾回收机制。每当一个函数被执行后，通常都会期待函数的整个内部作用域都被销毁。因为引擎有垃圾回收器用来释放不再使用的内存空间，因为看上去这个函数的内容不会在被使用，所以很自然的会考虑对其进行回收</p>
+<a id="more"></a>
+<h2 id="举个例子来看看"><a href="#举个例子来看看" class="headerlink" title="举个例子来看看"></a>举个例子来看看</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">yzz</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> a = <span class="number">2</span>;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">yzzting</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log( a );</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> yzzting();</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> ting = yzz();</div><div class="line"></div><div class="line">ting(); <span class="comment">// 2</span></div></pre></td></tr></table></figure>
+<p>函数yzzting()可以访问到yzz()的内部作用域，然后将yzzting()函数本身当作是一个值类型进行传递。在上面的例子中，我们将yzzting()所引用的函数对象本身当作是返回值。在yzz()执行后，其返回值(也就是yzzting()函数)赋值给变量ting并调用ting()，也就是说通过不同的标识符引用调用了内部的函数yzzting()。文章开头提到垃圾回收机制，而闭包的神奇之处就在这里，正是闭包阻止了回收。事实上内部的作用域依然是存在的，因此并没有被回收，那么是谁在使用这个作用域呢？</p>
+<p>是yzzting()本身</p>
+<p>拜yzzting()函数声明的位置所赐，它一出生就拥有了涵盖yzz()内部作用域的闭包，使用该作用域可以一直存活，以便在yzz()之后的任何时间进行引用</p>
+<p>yzzting()函数依然拥有对该作用域的引用，而这个引用就是闭包</p>
+<p>因此，在几微秒之后变量ting被实际调用(也就是调用内部函数yzzting()),所以他可以访问到定义时的词法作用域，所以可以访问到变量a</p>
+<blockquote>
+<p>简单的说，词法作用域就是定义在词法阶段的作用域。换句话说，词法作用域是由你在写代码时将变量和块作用域写在哪里决定的</p>
+</blockquote>
+<p>我们打个比喻，你买了一罐可口可乐，喝完了它，这个时候瓶子里是空的，你当然想扔了它。但是，你女朋友(其实是你的左右手)，往里面填入了一些土壤，还有几颗神奇的种子。不久后种子生根发芽，你可以拿着它做装饰。这个时候瓶子就一直存在了，并可以任你使用!</p>
+<h2 id="再来看个例子"><a href="#再来看个例子" class="headerlink" title="再来看个例子"></a>再来看个例子</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">2</span>;</div><div class="line">(<span class="function"><span class="keyword">function</span> <span class="title">yzzting</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(a);</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+<p>这个例子讲真不能算是闭包，因为yzzting()并不是在它本身的词法作用域外执行的。它是在本身的定义时所在的作用域中执行的(而外部作用域，全局作用域也同时持有a)。这个a是通过普通的词法作用域查找，并不是闭包发现的。</p>
+<p>最后总结一句</p>
+<blockquote>
+<p>只要是使用了回调函数，就是使用了闭包</p>
+</blockquote>
+<h2 id="End…"><a href="#End…" class="headerlink" title="End…"></a>End…</h2>
+                </div>
+                
+<nav id="article-nav">
+  
+    <a href="/2016/05/13/面试总结/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title">
+        
+          面试总结 >
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/04/14/译[$watch How the $apply Runs a $digest]/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"> < 译[$watch How the $apply Runs a $digest]</div>
+    </a>
+  
+</nav>
+
+
+            </div>
+        </div>
+        
+            <div id="disqus_thread"></div>
+<script>
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document,
+            s = d.createElement('script');
+
+        s.src = '//yzzting.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script id="dsq-count-scr" src="//yzzting.disqus.com/count.js" async></script>
+
+        
+        
+</article>
+
+
+
+		</div>
+		<div id="heart"></div>
+
+    <footer class="blog-footer" id="blog-footer">
+        <div id="footer-info" class="inner">
+            Made with ♥ by <a href="https://github.com/yzzting/hexo-theme-MyFairLady" target="_blank">MyFairLady</a>
+        </div>
+    </footer>
+    <script src="/js/sidebar.js"></script>
+    <script src="/js/toTop.js"></script>
+    <script src="/js/bookmark.js"></script>
+	</body>
+	</html>

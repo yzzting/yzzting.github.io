@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>
+      
+        《css揭秘》读书笔记系列---实现垂直居中 |
+          
+            YzzTing
+    </title>
+    <!-- 主css -->
+    <link rel="stylesheet" href="/sass/main.css">
+      <!-- seo -->
+      <meta name="description" content="《css揭秘》读书笔记系列—实现垂直居中这次的主题是实现用css实现垂直居中的几种方法 这篇文章不出意外的话，都是用的以下的html结构12345&amp;lt;div class=&quot;parent&quot;&amp;gt;    &amp;lt;div class=&quot;children&quot;&amp;gt;        some....    &amp;lt;/div&amp;gt;        &amp;lt;/div&amp;gt;">
+<meta name="keywords" content="summary,css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《css揭秘》读书笔记系列---实现垂直居中">
+<meta property="og:url" content="http://www.yzz1995.cn/2016/07/04/《css揭秘》读书笔记系列-实现垂直居中/index.html">
+<meta property="og:site_name" content="YzzTing">
+<meta property="og:description" content="《css揭秘》读书笔记系列—实现垂直居中这次的主题是实现用css实现垂直居中的几种方法 这篇文章不出意外的话，都是用的以下的html结构12345&amp;lt;div class=&quot;parent&quot;&amp;gt;    &amp;lt;div class=&quot;children&quot;&amp;gt;        some....    &amp;lt;/div&amp;gt;        &amp;lt;/div&amp;gt;">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2017-08-22T07:02:58.149Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《css揭秘》读书笔记系列---实现垂直居中">
+<meta name="twitter:description" content="《css揭秘》读书笔记系列—实现垂直居中这次的主题是实现用css实现垂直居中的几种方法 这篇文章不出意外的话，都是用的以下的html结构12345&amp;lt;div class=&quot;parent&quot;&amp;gt;    &amp;lt;div class=&quot;children&quot;&amp;gt;        some....    &amp;lt;/div&amp;gt;        &amp;lt;/div&amp;gt;">
+        <!-- facicon -->
+        
+          <link rel="icon" href="http://7xp1k3.com1.z0.glb.clouddn.com/octocat-de-los-muertos.jpg">
+          
+            <!-- 统计 -->
+            
+              <script>
+                var _hmt = _hmt || [];
+                (function () {
+                  var hm = document.createElement("script");
+                  hm.src = "//hm.baidu.com/hm.js?c21994907883f37ffd80e13627dd4faa";
+                  var s = document.getElementsByTagName("script")[0];
+                  s.parentNode.insertBefore(hm, s);
+                })();
+              </script>
+              
+                
+                    <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+</head>
+	<body>
+		<div class="main">
+			<div id="mobile-bar">
+    <a class="menu-button"></a>
+    <a class="logo" href="/">
+        Yzz
+    </a>
+</div>
+<header class="nav-header">
+    <a href="/" class="logo-link">
+        Yzz
+    </a>
+    
+        
+            <ul class="nav nav-list">
+                <li class="nav-list-item">
+                    <a href="/">
+                        Home
+                    </a>
+                </li>
+                
+                    
+                            
+        
+                        <li class="nav-list-item">
+                            <a href="/about">
+                                About
+                            </a>
+                        </li>
+                        
+                            
+        
+                        <li class="nav-list-item">
+                            <a href="/tags">
+                                Tags
+                            </a>
+                        </li>
+                        
+                            
+        
+                        <li class="nav-list-item">
+                            <a href="/archives">
+                                Archives
+                            </a>
+                        </li>
+                        
+                            
+            </ul>
+</header>
+<div class="sidebar">
+    
+            
+    <ul class="main-menu">
+        <li class="main-menu-item"><a href="/">Home</a></li>
+        
+            
+        
+            
+        <li class="main-menu-item"><a href="/about">About</a></li>
+            
+        
+            
+        <li class="main-menu-item"><a href="/tags">Tags</a></li>
+            
+        
+            
+        <li class="main-menu-item"><a href="/archives">Archives</a></li>
+            
+        
+    </ul>
+</div>
+
+    <h1 class="blog-title">The
+        Yzz Blog</h1>
+			
+<article class="article-main" itemscope itemprop="blogPost">
+        <div class="articleCon">
+            <header class="article-header">
+                <h1 itemprop="name">
+                    <a href="/2016/07/04/《css揭秘》读书笔记系列-实现垂直居中/" class="article-title">《css揭秘》读书笔记系列---实现垂直居中</a>
+                </h1>
+            </header>
+            <div class="article-meta">
+                <div class="article-dateTime">
+    <a href="/2016/07/04/《css揭秘》读书笔记系列-实现垂直居中/" class="article-date">
+        <time datetime="7月 4日 2016" itemprop="datePublished">
+            7月 4日 2016
+        </time>
+    </a>
+</div>
+
+            </div>
+            <div class="article-inner">
+                <div class="article-entry" itemprop="articleBody">
+                    <h2 id="《css揭秘》读书笔记系列—实现垂直居中"><a href="#《css揭秘》读书笔记系列—实现垂直居中" class="headerlink" title="《css揭秘》读书笔记系列—实现垂直居中"></a>《css揭秘》读书笔记系列—实现垂直居中</h2><p>这次的主题是实现用css实现垂直居中的几种方法</p>
+<h3 id="这篇文章不出意外的话，都是用的以下的html结构"><a href="#这篇文章不出意外的话，都是用的以下的html结构" class="headerlink" title="这篇文章不出意外的话，都是用的以下的html结构"></a>这篇文章不出意外的话，都是用的以下的html结构</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"parent"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"children"</span>&gt;</span></div><div class="line">        some....</div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span>        </div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="传统方法"><a href="#传统方法" class="headerlink" title="传统方法"></a>传统方法</h3><p>事实上，如果我们的元素、具有固定的宽度，高度。有一个相对比较麻烦的方法实现垂直居中</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.parent</span>&#123;</div><div class="line">    <span class="attribute">position</span>:absolute;</div><div class="line">    <span class="attribute">top</span>:<span class="number">50%</span>;</div><div class="line">    <span class="attribute">left</span>:<span class="number">50%</span>;</div><div class="line">    <span class="attribute">width</span>:<span class="number">20em</span>;</div><div class="line">    <span class="attribute">height</span>:<span class="number">6em</span>;</div><div class="line">    <span class="attribute">margin-top</span>:-<span class="number">3em</span>;</div><div class="line">    <span class="attribute">margin-left</span>:-<span class="number">10em</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在这段代码中，将父元素进行绝对定位。相对于视口左上角的那种，(因为在这里并没有跟顶级的元素有positioned定位，所以这个父元素相对于body定位。然后在利用负外边距，向左向上移动距离是自身宽高的一半，让这父子俩位于视口的中心。</p>
+<p>当然我们可以利用calc()函数，减少代码行数</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.parent</span>&#123;</div><div class="line">    <span class="attribute">position</span>:absolute;</div><div class="line">    <span class="attribute">top</span>:<span class="built_in">calc</span>(50%-3em);</div><div class="line">    <span class="attribute">left</span>:<span class="built_in">calc</span>(50%-10em);</div><div class="line">    <span class="attribute">width</span>:<span class="number">20em</span>;</div><div class="line">    <span class="attribute">height</span>:<span class="number">6em</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>当然如果你使用scss这类的预处理器的时候还可以写一个mixin ex:</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">mixin</span> center(<span class="variable">$w</span>,<span class="variable">$h</span>)&#123;</div><div class="line">    <span class="attribute">position</span>:absolute;</div><div class="line">    <span class="attribute">width</span>:<span class="variable">$w</span>;</div><div class="line">    <span class="attribute">height</span>:<span class="variable">$h</span>;</div><div class="line">    <span class="attribute">top</span>:calc(<span class="number">50%</span>-(#&#123;<span class="variable">$h</span>&#125;/<span class="number">2</span>));</div><div class="line">    <span class="attribute">left</span>:calc(<span class="number">50%</span>-(#&#123;<span class="variable">$w</span>&#125;/<span class="number">2</span>));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>可是这种方法之所以说是传统，就是因为他必须有规定的宽度，高度。我们在实际开发中不可能每次都写死了宽度高度。元素的尺寸往往是有内容决定的，在css中并没有某一个属性已元素自身的宽高为解析标准。</p>
+<p>也许我们可以用translate()变形函数使用百分比来实现垂直居中。ex:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.parent</span>&#123;</div><div class="line">    <span class="attribute">position</span>:absolute;</div><div class="line">    <span class="attribute">top</span>:<span class="number">50%</span>;</div><div class="line">    <span class="attribute">left</span>:<span class="number">50%</span>;</div><div class="line">    <span class="attribute">transform</span>:<span class="built_in">translate</span>(-50%,-50%);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>不过这个方法也有些缺点,作者这样说到:</p>
+<blockquote>
+<p>有时候并不能使用绝对布局，他对于整个布局的影响太过强烈<br>  如果需要垂直的元素，高度超过视口的高度，那么他的顶部会被视口裁剪掉。</p>
+</blockquote>
+<p>给个链接，看一<a href="http://dabblet.com/gist/cd12fac0e18bb27fb62d" target="_blank" rel="external">下</a>  </p>
+<p>如果我们不使用定位，通常都会这样写</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.parent</span>&#123;</div><div class="line">    <span class="attribute">width</span>:<span class="number">20em</span>;</div><div class="line">    <span class="attribute">margin</span>:<span class="number">50%</span> auto <span class="number">0</span>;</div><div class="line">    <span class="attribute">transform</span>:<span class="built_in">translateY</span>(-50%);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>好像没什么问题，不过你看下这个jsbin的演示，你就知道。</p>
+<iframe class="" id="" data-url="http://jsbin.com/zuzive/1/edit?html,css,output" src="http://jsbin.com/zuzive/1/edit?html,css,output" style="border: 1px solid rgb(170, 170, 170); width: 100%; min-height: 300px; height: 30px;"></iframe>
+
+<p>红红的框偏得很离谱，原因就是margin的百分比值是根据父元素的宽度为解析基准的。没有错，所有的margin-* 都是如此</p>
+<p>不过没有关系，我们只要将百分比换成一个新的单位，视口相关的长度单位vh</p>
+<p>1vh表示视口宽度的1%</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.parent</span>&#123;</div><div class="line">    <span class="attribute">width</span>:<span class="number">20em</span>;</div><div class="line">    <span class="attribute">margin</span>:<span class="number">50vh</span> auto <span class="number">0</span>;</div><div class="line">    <span class="attribute">transform</span>:<span class="built_in">translateY</span>(-50%);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在看看效果</p>
+<iframe class="" id="" data-url="http://jsbin.com/zuzive/3/edit?html,css,output" src="http://jsbin.com/zuzive/3/edit?html,css,output" style="border: 1px solid rgb(170, 170, 170); width: 100%; min-height: 300px; height: 30px;"></iframe>
+
+<p>显而易见，对比一下位置就知道了</p>
+<h2 id="利用flexbox实现垂直居中"><a href="#利用flexbox实现垂直居中" class="headerlink" title="利用flexbox实现垂直居中"></a>利用flexbox实现垂直居中</h2><p>当然这是最好的方法了，简单又快捷。</p>
+<p>给我们需要垂直居中的父元素，这里是body元素加上display:flex,再给元素自身加上margin:auto就可以啦</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span>&#123;</div><div class="line">    <span class="attribute">display</span>:flex;</div><div class="line">    <span class="attribute">min-height</span>: <span class="number">100vh</span>;</div><div class="line">    <span class="attribute">margin</span>:<span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.parent</span>&#123;</div><div class="line">    <span class="attribute">margin</span>:auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这样写不仅仅是垂直居中，水平方向上也居中了。</p>
+<p>当然也可以</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.parent</span>&#123;</div><div class="line">    <span class="attribute">disply</span>:flex;</div><div class="line">    <span class="attribute">align-items</span>: center;</div><div class="line">    <span class="attribute">justify-content</span>: center;</div><div class="line">    <span class="attribute">width</span>:<span class="number">20em</span>;</div><div class="line">    <span class="attribute">height</span>:<span class="number">6em</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>实现内部文本居中</p>
+<p>我专门去查了浏览器对于flexbox布局的支持程度。<a href="http://caniuse.com/#feat=flexbox" target="_blank" rel="external">戳</a> 已经相当完善了</p>
+<h3 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h3><p>说下水平居中</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.parent</span>&#123;</div><div class="line">    <span class="attribute">text-align</span>: center;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.children</span>&#123;</div><div class="line">    <span class="attribute">display</span>: inline-block;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这样写简单，兼容性也非常好</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.child</span>&#123;</div><div class="line">    <span class="attribute">display</span>:table;</div><div class="line">    <span class="attribute">margin</span>: <span class="number">0</span> auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>设置特别简单，只需对子元素进行设置.</p>
+
+                </div>
+                
+<nav id="article-nav">
+  
+    <a href="/2016/08/01/用clip-path画图形/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title">
+        
+          用clip-path画图形 >
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/07/02/《css揭秘》读书笔记系列-实现条纹背景/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"> < 《css揭秘》读书笔记系列---实现条纹背景</div>
+    </a>
+  
+</nav>
+
+
+            </div>
+        </div>
+        
+            <div id="disqus_thread"></div>
+<script>
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document,
+            s = d.createElement('script');
+
+        s.src = '//yzzting.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script id="dsq-count-scr" src="//yzzting.disqus.com/count.js" async></script>
+
+        
+        
+</article>
+
+
+
+		</div>
+		<div id="heart"></div>
+
+    <footer class="blog-footer" id="blog-footer">
+        <div id="footer-info" class="inner">
+            Made with ♥ by <a href="https://github.com/yzzting/hexo-theme-MyFairLady" target="_blank">MyFairLady</a>
+        </div>
+    </footer>
+    <script src="/js/sidebar.js"></script>
+    <script src="/js/toTop.js"></script>
+    <script src="/js/bookmark.js"></script>
+	</body>
+	</html>

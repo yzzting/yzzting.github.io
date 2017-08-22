@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>
+      
+        用clip-path画图形 |
+          
+            YzzTing
+    </title>
+    <!-- 主css -->
+    <link rel="stylesheet" href="/sass/main.css">
+      <!-- seo -->
+      <meta name="description" content="用clip-path画图形css发展到现在,在图形绘制这块几乎是无所不能。但是一些稍微复杂的图形，都是利用border和多个HTML元素来构建，导致其可扩展性不高。所幸，css3还有clip-path这个属性，这个属性刚看有点陌生，毕竟是存在与SVG里头的。利用遮罩的方法，连接座标绘制遮罩区域，就可以做出许多不同的形状，让底色或底图显现，随着浏览器对于CSS3的支援度大幅提升，自然而然的就可以用它">
+<meta name="keywords" content="css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用clip-path画图形">
+<meta property="og:url" content="http://www.yzz1995.cn/2016/08/01/用clip-path画图形/index.html">
+<meta property="og:site_name" content="YzzTing">
+<meta property="og:description" content="用clip-path画图形css发展到现在,在图形绘制这块几乎是无所不能。但是一些稍微复杂的图形，都是利用border和多个HTML元素来构建，导致其可扩展性不高。所幸，css3还有clip-path这个属性，这个属性刚看有点陌生，毕竟是存在与SVG里头的。利用遮罩的方法，连接座标绘制遮罩区域，就可以做出许多不同的形状，让底色或底图显现，随着浏览器对于CSS3的支援度大幅提升，自然而然的就可以用它">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:image" content="http://7xp1k3.com1.z0.glb.clouddn.com/20150330_1_04.png">
+<meta property="og:image" content="http://7xp1k3.com1.z0.glb.clouddn.com/20150330_1_05.png">
+<meta property="og:image" content="http://7xp1k3.com1.z0.glb.clouddn.com/20150330_1_08.png">
+<meta property="og:image" content="http://7xp1k3.com1.z0.glb.clouddn.com/20150330_1_09.png">
+<meta property="og:updated_time" content="2017-08-22T07:02:58.152Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="用clip-path画图形">
+<meta name="twitter:description" content="用clip-path画图形css发展到现在,在图形绘制这块几乎是无所不能。但是一些稍微复杂的图形，都是利用border和多个HTML元素来构建，导致其可扩展性不高。所幸，css3还有clip-path这个属性，这个属性刚看有点陌生，毕竟是存在与SVG里头的。利用遮罩的方法，连接座标绘制遮罩区域，就可以做出许多不同的形状，让底色或底图显现，随着浏览器对于CSS3的支援度大幅提升，自然而然的就可以用它">
+<meta name="twitter:image" content="http://7xp1k3.com1.z0.glb.clouddn.com/20150330_1_04.png">
+        <!-- facicon -->
+        
+          <link rel="icon" href="http://7xp1k3.com1.z0.glb.clouddn.com/octocat-de-los-muertos.jpg">
+          
+            <!-- 统计 -->
+            
+              <script>
+                var _hmt = _hmt || [];
+                (function () {
+                  var hm = document.createElement("script");
+                  hm.src = "//hm.baidu.com/hm.js?c21994907883f37ffd80e13627dd4faa";
+                  var s = document.getElementsByTagName("script")[0];
+                  s.parentNode.insertBefore(hm, s);
+                })();
+              </script>
+              
+                
+                    <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+</head>
+	<body>
+		<div class="main">
+			<div id="mobile-bar">
+    <a class="menu-button"></a>
+    <a class="logo" href="/">
+        Yzz
+    </a>
+</div>
+<header class="nav-header">
+    <a href="/" class="logo-link">
+        Yzz
+    </a>
+    
+        
+            <ul class="nav nav-list">
+                <li class="nav-list-item">
+                    <a href="/">
+                        Home
+                    </a>
+                </li>
+                
+                    
+                            
+        
+                        <li class="nav-list-item">
+                            <a href="/about">
+                                About
+                            </a>
+                        </li>
+                        
+                            
+        
+                        <li class="nav-list-item">
+                            <a href="/tags">
+                                Tags
+                            </a>
+                        </li>
+                        
+                            
+        
+                        <li class="nav-list-item">
+                            <a href="/archives">
+                                Archives
+                            </a>
+                        </li>
+                        
+                            
+            </ul>
+</header>
+<div class="sidebar">
+    
+            
+    <ul class="main-menu">
+        <li class="main-menu-item"><a href="/">Home</a></li>
+        
+            
+        
+            
+        <li class="main-menu-item"><a href="/about">About</a></li>
+            
+        
+            
+        <li class="main-menu-item"><a href="/tags">Tags</a></li>
+            
+        
+            
+        <li class="main-menu-item"><a href="/archives">Archives</a></li>
+            
+        
+    </ul>
+</div>
+
+    <h1 class="blog-title">The
+        Yzz Blog</h1>
+			
+<article class="article-main" itemscope itemprop="blogPost">
+        <div class="articleCon">
+            <header class="article-header">
+                <h1 itemprop="name">
+                    <a href="/2016/08/01/用clip-path画图形/" class="article-title">用clip-path画图形</a>
+                </h1>
+            </header>
+            <div class="article-meta">
+                <div class="article-dateTime">
+    <a href="/2016/08/01/用clip-path画图形/" class="article-date">
+        <time datetime="8月 1日 2016" itemprop="datePublished">
+            8月 1日 2016
+        </time>
+    </a>
+</div>
+
+            </div>
+            <div class="article-inner">
+                <div class="article-entry" itemprop="articleBody">
+                    <h2 id="用clip-path画图形"><a href="#用clip-path画图形" class="headerlink" title="用clip-path画图形"></a>用clip-path画图形</h2><p>css发展到现在,在图形绘制这块几乎是无所不能。但是一些稍微复杂的图形，都是利用border和多个HTML元素来构建，导致其可扩展性不高。所幸，css3还有clip-path这个属性，这个属性刚看有点陌生，毕竟是存在与SV<a href="http://www.oxxostudio.tw/articles/201406/svg-09-clipping-masking.html" target="_blank" rel="external">G</a>里头的<br>。利用遮罩的方法，连接座标绘制遮罩区域，就可以做出许多不同的形状，让底色或底图显现，随着浏览器对于CSS3的支援度大幅提升，自然而然的就可以用它来做些与众不同的变化。</p>
+<a id="more"></a>
+<h2 id="clip-path原理"><a href="#clip-path原理" class="headerlink" title="clip-path原理"></a>clip-path原理</h2><p>首先，在chrome版本 51.0.2704.84 (64-bit) 上 clip-path属性仍然要加-webkit-的前缀。使用前需考虑兼容<a href="http://caniuse.com/#search=clip-path" target="_blank" rel="external">性</a>.</p>
+<p>还有要注意的是</p>
+<blockquote>
+<p>使用clip-path 要从同一个方向绘制，如果顺时针绘制就一律顺时针，逆时针就一律逆时针，因为polygon 是一个连续的线段，若线段彼此有交集，面积区域就会有相减的状况发生( 当然如果这是你要的效果就无妨了)。如果绘制时采用「比例」的方式绘制，长宽就必须要先行设定，不然有可能绘制出来的长宽和我们想像的就会有落差，使用「像素」绘制就没有这种问题。</p>
+</blockquote>
+<p>说了这么多，放几个图形讲一下</p>
+<h3 id="圆形"><a href="#圆形" class="headerlink" title="圆形"></a>圆形</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.circle</span> &#123;</div><div class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</div><div class="line">  <span class="attribute">background</span>: <span class="number">#ee6e73</span>;</div><div class="line">  <span class="attribute">-webkit-clip-path</span>: <span class="built_in">circle</span>(50% at 50% 50%);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://7xp1k3.com1.z0.glb.clouddn.com/20150330_1_04.png" alt=""></p>
+<p>-webkit-clip-path: circle(50% at 50% 50%); 第一个50%是半径，后面两个50%是圆心的位置，看图就明白了</p>
+<h3 id="椭圆"><a href="#椭圆" class="headerlink" title="椭圆"></a>椭圆</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.oval</span> &#123;</div><div class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</div><div class="line">  <span class="attribute">background</span>: <span class="number">#ee6e73</span>;</div><div class="line">  <span class="attribute">-webkit-clip-path</span>: <span class="built_in">ellipse</span>(25% 40% at 50% 50%);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://7xp1k3.com1.z0.glb.clouddn.com/20150330_1_05.png" alt=""></p>
+<p>-webkit-clip-path: ellipse(25% 40% at 50% 50%); 和圆形类似，25%,40%分别表示短径和长径长，后面两个50%是圆心的位置</p>
+<h3 id="正方形"><a href="#正方形" class="headerlink" title="正方形"></a>正方形</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.square</span> &#123;</div><div class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</div><div class="line">  <span class="attribute">background</span>: <span class="number">#ee6e73</span>;</div><div class="line">  <span class="attribute">-webkit-clip-path</span>: <span class="built_in">polygon</span>(0% 0%, 0 100%, 100% 100%, 100% 0%);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://7xp1k3.com1.z0.glb.clouddn.com/20150330_1_08.png" alt=""></p>
+<h3 id="五边形"><a href="#五边形" class="headerlink" title="五边形"></a>五边形</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.pentagon</span> &#123;</div><div class="line">  <span class="attribute">width</span>:<span class="number">162px</span>;</div><div class="line">  <span class="attribute">height</span>:<span class="number">154px</span>;</div><div class="line">  <span class="attribute">background</span>:<span class="number">#ee6e73</span>;</div><div class="line">  <span class="attribute">-webkit-clip-path</span>:<span class="built_in">polygon</span>(0% 38.31%, 50% 0%,100% 38.31%,80.86% 100%,19.14% 100%);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://7xp1k3.com1.z0.glb.clouddn.com/20150330_1_09.png" alt=""></p>
+<p>五边形得稍微计算一下 59/(59+95)=38.31%，31/(81*2)=19.14%</p>
+<p>其他图形也是同样的思路，先选择一个坐标原点(0,0) 然后根据图形的长宽去计算每一个点的位置，就像小学生做数学题那样。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>从上面的实例来看，利用clip-path来绘制图形非常的快捷，定义长宽，颜色，计算每个点的对应位置，就可以了。除了一些浏览器哩哩抠抠的兼容性问题之外，还是不错的</p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="http://species-in-pieces.com/" target="_blank" rel="external">In Pieces - 30 Endangered Species, 30 Pieces.</a><br><a href="http://zt.yzz1995.cn/" target="_blank" rel="external">Graphic</a></p>
+
+                </div>
+                
+<nav id="article-nav">
+  
+    <a href="/2016/09/25/《css揭秘》读书笔记系列-投影详解/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title">
+        
+          《css揭秘》读书笔记系列---投影详解 >
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/07/04/《css揭秘》读书笔记系列-实现垂直居中/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"> < 《css揭秘》读书笔记系列---实现垂直居中</div>
+    </a>
+  
+</nav>
+
+
+            </div>
+        </div>
+        
+            <div id="disqus_thread"></div>
+<script>
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document,
+            s = d.createElement('script');
+
+        s.src = '//yzzting.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script id="dsq-count-scr" src="//yzzting.disqus.com/count.js" async></script>
+
+        
+        
+</article>
+
+
+
+		</div>
+		<div id="heart"></div>
+
+    <footer class="blog-footer" id="blog-footer">
+        <div id="footer-info" class="inner">
+            Made with ♥ by <a href="https://github.com/yzzting/hexo-theme-MyFairLady" target="_blank">MyFairLady</a>
+        </div>
+    </footer>
+    <script src="/js/sidebar.js"></script>
+    <script src="/js/toTop.js"></script>
+    <script src="/js/bookmark.js"></script>
+	</body>
+	</html>

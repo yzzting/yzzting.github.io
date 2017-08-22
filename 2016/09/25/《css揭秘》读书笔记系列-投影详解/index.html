@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>
+      
+        《css揭秘》读书笔记系列---投影详解 |
+          
+            YzzTing
+    </title>
+    <!-- 主css -->
+    <link rel="stylesheet" href="/sass/main.css">
+      <!-- seo -->
+      <meta name="description" content="《css揭秘》读书笔记系列—投影详解好久没更,这次聊聊box-shadow这个属性 单侧投影先了解下CSS3的box-shadow属性,比较常用的方法是指定三个长度和一个颜色值 ex:123.demo &amp;#123;  box-shadow: 2px 3px 4px rgba(0,0,0,0.15)&amp;#125;">
+<meta name="keywords" content="summary,css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《css揭秘》读书笔记系列---投影详解">
+<meta property="og:url" content="http://www.yzz1995.cn/2016/09/25/《css揭秘》读书笔记系列-投影详解/index.html">
+<meta property="og:site_name" content="YzzTing">
+<meta property="og:description" content="《css揭秘》读书笔记系列—投影详解好久没更,这次聊聊box-shadow这个属性 单侧投影先了解下CSS3的box-shadow属性,比较常用的方法是指定三个长度和一个颜色值 ex:123.demo &amp;#123;  box-shadow: 2px 3px 4px rgba(0,0,0,0.15)&amp;#125;">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2017-08-22T07:02:58.150Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《css揭秘》读书笔记系列---投影详解">
+<meta name="twitter:description" content="《css揭秘》读书笔记系列—投影详解好久没更,这次聊聊box-shadow这个属性 单侧投影先了解下CSS3的box-shadow属性,比较常用的方法是指定三个长度和一个颜色值 ex:123.demo &amp;#123;  box-shadow: 2px 3px 4px rgba(0,0,0,0.15)&amp;#125;">
+        <!-- facicon -->
+        
+          <link rel="icon" href="http://7xp1k3.com1.z0.glb.clouddn.com/octocat-de-los-muertos.jpg">
+          
+            <!-- 统计 -->
+            
+              <script>
+                var _hmt = _hmt || [];
+                (function () {
+                  var hm = document.createElement("script");
+                  hm.src = "//hm.baidu.com/hm.js?c21994907883f37ffd80e13627dd4faa";
+                  var s = document.getElementsByTagName("script")[0];
+                  s.parentNode.insertBefore(hm, s);
+                })();
+              </script>
+              
+                
+                    <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+</head>
+	<body>
+		<div class="main">
+			<div id="mobile-bar">
+    <a class="menu-button"></a>
+    <a class="logo" href="/">
+        Yzz
+    </a>
+</div>
+<header class="nav-header">
+    <a href="/" class="logo-link">
+        Yzz
+    </a>
+    
+        
+            <ul class="nav nav-list">
+                <li class="nav-list-item">
+                    <a href="/">
+                        Home
+                    </a>
+                </li>
+                
+                    
+                            
+        
+                        <li class="nav-list-item">
+                            <a href="/about">
+                                About
+                            </a>
+                        </li>
+                        
+                            
+        
+                        <li class="nav-list-item">
+                            <a href="/tags">
+                                Tags
+                            </a>
+                        </li>
+                        
+                            
+        
+                        <li class="nav-list-item">
+                            <a href="/archives">
+                                Archives
+                            </a>
+                        </li>
+                        
+                            
+            </ul>
+</header>
+<div class="sidebar">
+    
+            
+    <ul class="main-menu">
+        <li class="main-menu-item"><a href="/">Home</a></li>
+        
+            
+        
+            
+        <li class="main-menu-item"><a href="/about">About</a></li>
+            
+        
+            
+        <li class="main-menu-item"><a href="/tags">Tags</a></li>
+            
+        
+            
+        <li class="main-menu-item"><a href="/archives">Archives</a></li>
+            
+        
+    </ul>
+</div>
+
+    <h1 class="blog-title">The
+        Yzz Blog</h1>
+			
+<article class="article-main" itemscope itemprop="blogPost">
+        <div class="articleCon">
+            <header class="article-header">
+                <h1 itemprop="name">
+                    <a href="/2016/09/25/《css揭秘》读书笔记系列-投影详解/" class="article-title">《css揭秘》读书笔记系列---投影详解</a>
+                </h1>
+            </header>
+            <div class="article-meta">
+                <div class="article-dateTime">
+    <a href="/2016/09/25/《css揭秘》读书笔记系列-投影详解/" class="article-date">
+        <time datetime="9月 25日 2016" itemprop="datePublished">
+            9月 25日 2016
+        </time>
+    </a>
+</div>
+
+            </div>
+            <div class="article-inner">
+                <div class="article-entry" itemprop="articleBody">
+                    <h2 id="《css揭秘》读书笔记系列—投影详解"><a href="#《css揭秘》读书笔记系列—投影详解" class="headerlink" title="《css揭秘》读书笔记系列—投影详解"></a>《css揭秘》读书笔记系列—投影详解</h2><p>好久没更,这次聊聊box-shadow这个属性</p>
+<h2 id="单侧投影"><a href="#单侧投影" class="headerlink" title="单侧投影"></a>单侧投影</h2><p>先了解下CSS3的box-shadow属性,比较常用的方法是指定三个长度和一个颜色值</p>
+<p>ex:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.demo</span> &#123;</div><div class="line">  <span class="attribute">box-shadow</span>: <span class="number">2px</span> <span class="number">3px</span> <span class="number">4px</span> <span class="built_in">rgba</span>(0,0,0,0.15)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>效果如下:</p>
+<iframe style="width: 100%; height: 150px" src="http://sandbox.runjs.cn/show/hc6xh9di" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<h4 id="box-shadow绘制原理"><a href="#box-shadow绘制原理" class="headerlink" title="box-shadow绘制原理"></a>box-shadow绘制原理</h4><p>我用CSS实现了书里以图形化的方式讲解投影是如何绘制 ex:</p>
+<iframe style="width: 100%; height: 150px" src="http://sandbox.runjs.cn/show/l26lckcl" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<p>1): 第一步绘制一个和该元素相同尺寸位置，颜色为#000的矩形<br>2): 将它向右向下偏移10px<br>3): 使用<a href="https://zh.wikipedia.org/wiki/%E9%AB%98%E6%96%AF%E6%A8%A1%E7%B3%8A" target="_blank" rel="external">高斯模糊算法</a>或是类似的算法(我不会这个..)将它进行4px的模糊处理。<br>4): 最后,将模糊后的矩形和原始元素交集的地方切掉,剩下偏移的部分。</p>
+<p>使用4px的模糊半径意味着投影的尺寸会比元素本身的尺寸大差不多8px(左右和上下),因此投影的最外圈会从元素的四周向外显露出来，我们通过偏移量的控制投影的位置,只要不小于4px就ok了,但是我们要实现的是单侧投影！</p>
+<h4 id="扩张半径"><a href="#扩张半径" class="headerlink" title="扩张半径"></a>扩张半径</h4><p>事实上box-shadow还有第四个长度参数,叫扩张半径。这个参数可以根据你指定的值去扩大或者缩小投影的尺寸,ex:一个-4px的扩张半径会把投影的宽度和高度各减少8px(左右和上下)</p>
+<p>从套路上来说,如果扩张半径刚好等于模糊半径,对的,那么我们将看不到任何的偏移量。因此,我们只要给一个正的垂直偏移量,我们就会在底部看到一道投影,而另外三边是没有的。这正是我们要的效果</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.demo</span>&#123;</div><div class="line">  <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">10px</span> <span class="number">4px</span> -<span class="number">4px</span> <span class="number">#000</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<iframe style="width: 100%; height: 150px" src="http://sandbox.runjs.cn/show/iizyebjv" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<h2 id="邻边投影"><a href="#邻边投影" class="headerlink" title="邻边投影"></a>邻边投影</h2><p>跟单边投影一样的道理,邻边投影只要设置2个偏移量,并且值要大于或等于模糊半径的一半,因为我们想把投影藏进元素下面.<br>ex:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.demo</span>&#123;</div><div class="line">  <span class="attribute">box-shadow</span>: <span class="number">10px</span> <span class="number">10px</span> <span class="number">4px</span> -<span class="number">2px</span> <span class="number">#000</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<iframe style="width: 100%; height: 150px" src="http://sandbox.runjs.cn/show/9o5gpore" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<p>还有一点就是我们只是把一边都投影藏进一侧,剩下的一边露出。所以这里的扩张半径不应该是模糊半径的相反值,而应该是模糊半径的一半</p>
+<h2 id="双侧投影"><a href="#双侧投影" class="headerlink" title="双侧投影"></a>双侧投影</h2><p>假设我们有一个把投影设置在元素对边的需求(上下或左右)。这就有点麻烦了,扩张半径在每个方向上是均等的,也就是说我们没有办法让投影在水平方向放大,垂直方向缩小。目前的方法只有把单侧投影运用两次</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.demo</span> &#123;</div><div class="line">  <span class="attribute">box-shadow</span>: <span class="number">10px</span> <span class="number">0</span> <span class="number">4px</span> -<span class="number">4px</span> <span class="number">#000</span>,</div><div class="line">              -<span class="number">10px</span> <span class="number">0</span> <span class="number">4px</span> -<span class="number">4px</span> <span class="number">#000</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<iframe style="width: 100%; height: 150px" src="http://sandbox.runjs.cn/show/tcmnyaen" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2>
+                </div>
+                
+<nav id="article-nav">
+  
+    <a href="/2016/10/23/《css揭秘》读书笔记系列-根据兄弟元素数量设置样式/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title">
+        
+          《css揭秘》读书笔记系列-根据兄弟元素数量设置样式 >
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/08/01/用clip-path画图形/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"> < 用clip-path画图形</div>
+    </a>
+  
+</nav>
+
+
+            </div>
+        </div>
+        
+            <div id="disqus_thread"></div>
+<script>
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document,
+            s = d.createElement('script');
+
+        s.src = '//yzzting.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script id="dsq-count-scr" src="//yzzting.disqus.com/count.js" async></script>
+
+        
+        
+</article>
+
+
+
+		</div>
+		<div id="heart"></div>
+
+    <footer class="blog-footer" id="blog-footer">
+        <div id="footer-info" class="inner">
+            Made with ♥ by <a href="https://github.com/yzzting/hexo-theme-MyFairLady" target="_blank">MyFairLady</a>
+        </div>
+    </footer>
+    <script src="/js/sidebar.js"></script>
+    <script src="/js/toTop.js"></script>
+    <script src="/js/bookmark.js"></script>
+	</body>
+	</html>

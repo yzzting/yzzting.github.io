@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>
+      
+        “💩”.length === 2 |
+          
+            YzzTing
+    </title>
+    <!-- 主css -->
+    <link rel="stylesheet" href="/sass/main.css">
+      <!-- seo -->
+      <meta name="description" content="“💩”.length === 2原文地址 一篇有趣的文章,关于Unicode字符集 对的,在javaScript中 “💩”.length === 2.你可以在Chrome调试控制台中或者Node.JS REPL中自己试试看.但是又为什么’⛳’.length === 1? 这一切都归结于码点还有Unicode字符集.如果你对Unicode字符集有点陌生,可以先戳这里 (又是英文的不看 ^-^)">
+<meta name="keywords" content="javascript,Unicode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="“💩”.length === 2">
+<meta property="og:url" content="http://www.yzz1995.cn/2017/03/11/Unicode字符集/index.html">
+<meta property="og:site_name" content="YzzTing">
+<meta property="og:description" content="“💩”.length === 2原文地址 一篇有趣的文章,关于Unicode字符集 对的,在javaScript中 “💩”.length === 2.你可以在Chrome调试控制台中或者Node.JS REPL中自己试试看.但是又为什么’⛳’.length === 1? 这一切都归结于码点还有Unicode字符集.如果你对Unicode字符集有点陌生,可以先戳这里 (又是英文的不看 ^-^)">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:image" content="http://blog.jonnew.com/assets/poo-unicode/why1.jpg">
+<meta property="og:image" content="http://blog.jonnew.com/assets/poo-unicode/makeitstop.gif">
+<meta property="og:updated_time" content="2017-08-22T07:02:58.145Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="“💩”.length === 2">
+<meta name="twitter:description" content="“💩”.length === 2原文地址 一篇有趣的文章,关于Unicode字符集 对的,在javaScript中 “💩”.length === 2.你可以在Chrome调试控制台中或者Node.JS REPL中自己试试看.但是又为什么’⛳’.length === 1? 这一切都归结于码点还有Unicode字符集.如果你对Unicode字符集有点陌生,可以先戳这里 (又是英文的不看 ^-^)">
+<meta name="twitter:image" content="http://blog.jonnew.com/assets/poo-unicode/why1.jpg">
+        <!-- facicon -->
+        
+          <link rel="icon" href="http://7xp1k3.com1.z0.glb.clouddn.com/octocat-de-los-muertos.jpg">
+          
+            <!-- 统计 -->
+            
+              <script>
+                var _hmt = _hmt || [];
+                (function () {
+                  var hm = document.createElement("script");
+                  hm.src = "//hm.baidu.com/hm.js?c21994907883f37ffd80e13627dd4faa";
+                  var s = document.getElementsByTagName("script")[0];
+                  s.parentNode.insertBefore(hm, s);
+                })();
+              </script>
+              
+                
+                    <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+</head>
+	<body>
+		<div class="main">
+			<div id="mobile-bar">
+    <a class="menu-button"></a>
+    <a class="logo" href="/">
+        Yzz
+    </a>
+</div>
+<header class="nav-header">
+    <a href="/" class="logo-link">
+        Yzz
+    </a>
+    
+        
+            <ul class="nav nav-list">
+                <li class="nav-list-item">
+                    <a href="/">
+                        Home
+                    </a>
+                </li>
+                
+                    
+                            
+        
+                        <li class="nav-list-item">
+                            <a href="/about">
+                                About
+                            </a>
+                        </li>
+                        
+                            
+        
+                        <li class="nav-list-item">
+                            <a href="/tags">
+                                Tags
+                            </a>
+                        </li>
+                        
+                            
+        
+                        <li class="nav-list-item">
+                            <a href="/archives">
+                                Archives
+                            </a>
+                        </li>
+                        
+                            
+            </ul>
+</header>
+<div class="sidebar">
+    
+            
+    <ul class="main-menu">
+        <li class="main-menu-item"><a href="/">Home</a></li>
+        
+            
+        
+            
+        <li class="main-menu-item"><a href="/about">About</a></li>
+            
+        
+            
+        <li class="main-menu-item"><a href="/tags">Tags</a></li>
+            
+        
+            
+        <li class="main-menu-item"><a href="/archives">Archives</a></li>
+            
+        
+    </ul>
+</div>
+
+    <h1 class="blog-title">The
+        Yzz Blog</h1>
+			
+<article class="article-main" itemscope itemprop="blogPost">
+        <div class="articleCon">
+            <header class="article-header">
+                <h1 itemprop="name">
+                    <a href="/2017/03/11/Unicode字符集/" class="article-title">“💩”.length === 2</a>
+                </h1>
+            </header>
+            <div class="article-meta">
+                <div class="article-dateTime">
+    <a href="/2017/03/11/Unicode字符集/" class="article-date">
+        <time datetime="3月 11日 2017" itemprop="datePublished">
+            3月 11日 2017
+        </time>
+    </a>
+</div>
+
+            </div>
+            <div class="article-inner">
+                <div class="article-entry" itemprop="articleBody">
+                    <h2 id="“💩”-length-2"><a href="#“💩”-length-2" class="headerlink" title="“💩”.length === 2"></a>“💩”.length === 2</h2><p><a href="http://blog.jonnew.com/posts/poo-dot-length-equals-two" target="_blank" rel="external">原文地址</a></p>
+<p>一篇有趣的文章,关于Unicode字符集</p>
+<p>对的,在javaScript中 “💩”.length === 2.你可以在Chrome调试控制台中或者Node.JS REPL中自己试试看.但是又为什么’⛳’.length === 1?</p>
+<p>这一切都归结于码点还有Unicode字符集.如果你对Unicode字符集有点陌生,可以先戳这里 (又是英文的不看 ^-^)</p>
+<a id="more"></a>
+<p>接下来几个段落是<a href="https://mathiasbynens.be/notes/javascript-unicode" target="_blank" rel="external">javaScript Unicode</a>这篇文章的摘要,虽然是5年前的文章.</p>
+<p>Unicode是目前绝大多数程序使用的字符编码,定义也很简单,用一个码点(code point)映射一个字符.码点值的范围是从U+0000到U+10FFFF,可以表示超过110万个符号.Unicode最前面的65536个字符位,称为基本平面（BMP-—Basic Multilingual Plane）,它的码点范围是从U+0000到U+FFFF.最常见的字符都放在这个平面,这是Unicode最先定义和公布的一个平面.</p>
+<p>剩下的字符都放在补充平面（Supplementary Plane）,码点范围从U+010000一直到U+10FFFF,共16个.</p>
+<p>我们可以用两种不同的方式表示字符, “A” === “\u0041” === “\x41” === “\u{41}” .这些是转义序列. \x可以用于大多数（但不是全部）基本多语言平面,具体为U+0000 〜 U+00FF. \u可用于任何Unicode字符,如果有多于4个十六进制数字,则需要花括号,否则为可选.当然这只是javaScript/HTML的规则,其他语言有自己的规则.</p>
+<p>可以在<a href="https://codepoints.net/U+1F4A9" target="_blank" rel="external">codepoints.net</a>查到💩的码点 “💩” === “\u{1F4A9}”不幸的是,”💩” === “\uD83D\uDCA9”.所有码点都可以用代理对来表示,这是为了向后兼容.这就是为什么有一个公式来计算码点对应的代理对,反之亦然.</p>
+<p>给定大于0xFFFF的码点C,它对应于代理对.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">H = <span class="built_in">Math</span>.floor((C - <span class="number">0x10000</span>) / <span class="number">0x400</span>) + <span class="number">0xD800</span></div><div class="line">L = (C - <span class="number">0x10000</span>) % <span class="number">0x400</span> + <span class="number">0xDC00</span></div></pre></td></tr></table></figure>
+<p>因此,我们可以得到:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">C = <span class="number">0x1F4A9</span></div><div class="line">H = (<span class="built_in">Math</span>.floor((<span class="number">0x1F4A9</span> - <span class="number">0x10000</span>) / <span class="number">0x400</span>) + <span class="number">0xD800</span>).toSring(<span class="number">16</span>) = <span class="number">0xD83D</span></div><div class="line">L = ((<span class="number">0x1F4A9</span> - <span class="number">0x10000</span>) % <span class="number">0x400</span> + <span class="number">0xDC00</span>).toString(<span class="number">16</span>)</div></pre></td></tr></table></figure>
+<p>toString(16)将字符转为16进制,最终得到的答案对应于上面的\uD83D\uDCA9</p>
+<p>我注意到表情符号被计为多个.事实上,如果您在密码字段中粘贴💩,您会看到:</p>
+<p>另外这里有一篇讨论表情符号密码好处的<a href="https://medium.com/@hvost/why-you-should-not-use-emojis-in-your-passwords-b8db0607e169#.ee3f1qr43" target="_blank" rel="external">文章</a></p>
+<p>那么到底有没有一种方法可以正确的计数呢?<a href="https://mathiasbynens.be/notes/javascript-unicode#accounting-for-astral-symbols" target="_blank" rel="external">Bynens</a>列出了几种方法,ES6中的Array.from也有几种方式支持对代理对的解析,不过请不要在IE11以下尝试!!</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Array</span>.from(<span class="string">"💩"</span>).length === <span class="number">1</span>; <span class="comment">//hooray!</span></div></pre></td></tr></table></figure>
+<p>however</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Array</span>.from(<span class="string">"❤️"</span>).length === <span class="number">2</span>; <span class="comment">//boooo!</span></div></pre></td></tr></table></figure>
+<p><img src="http://blog.jonnew.com/assets/poo-unicode/why1.jpg" alt=""></p>
+<p>从我的理解❤️包括两个码点:U+2764和U+FE0F.首先是黑桃 然后是Variation Selector 16改变前一个字符的外观,事实上,U+FE00到U+FE0F都可以改变前一个字符的外观.对于这个心的情况,只有U+ FE0F.其他心（💙,💚,💛,💜）每个都有自己的码点,但红色的心需要两个.我不知道为什么,所以我问Stack Overflow.</p>
+<p>为了适应这个,我必需改变我的代码:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fancyCount</span>(<span class="params">str</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="built_in">Array</span>.from(str.split(<span class="regexp">/[\ufe00-\ufe0f]/</span>).join(<span class="string">""</span>)).length;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>使用正则表达式In .split(/[\ufe00-\ufe0f]/).join(“”)排除了变化选择器(variation selectors 这样翻?</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">fancyCount(<span class="string">"💩"</span>) === <span class="number">1</span> <span class="comment">//hooray!</span></div><div class="line">fancyCount(<span class="string">"❤️"</span>) === <span class="number">1</span> <span class="comment">//hooray!</span></div></pre></td></tr></table></figure>
+<p>因此我们成功了么?不,这篇文章我写得越多,漏洞就越多.我把把女人,心,吻,妇女emojis放在一起经常作为一个单一的表情符号.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="string">"👩‍❤️‍💋‍👩"</span>.length === <span class="number">11</span></div><div class="line"><span class="built_in">Array</span>.from(<span class="string">"👩‍❤️‍💋‍👩"</span>).length === <span class="number">8</span></div><div class="line">fancyCount(<span class="string">"👩‍❤️‍💋‍👩"</span>) === <span class="number">7</span></div></pre></td></tr></table></figure>
+<p><img src="http://blog.jonnew.com/assets/poo-unicode/makeitstop.gif" alt=""></p>
+<p>👩❤️💋👩是通过在组件emojis之间有一个零宽度Joiner \u{200D} 字符创建的.所以我们可以这样做:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fancyCount2</span>(<span class="params">str</span>)</span>&#123;</div><div class="line">  <span class="keyword">const</span> joiner = <span class="string">"\u&#123;200D&#125;"</span>;</div><div class="line">  <span class="keyword">const</span> split = str.split(joiner);</div><div class="line">  <span class="keyword">let</span> count = <span class="number">0</span>;</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">const</span> s <span class="keyword">of</span> split)&#123;</div><div class="line">    <span class="comment">//removing the variation selectors</span></div><div class="line">    <span class="keyword">const</span> num = <span class="built_in">Array</span>.from(s.split(<span class="regexp">/[\ufe00-\ufe0f]/</span>).join(<span class="string">""</span>)).length;</div><div class="line">    count += num;</div><div class="line">  &#125;</div><div class="line">  <span class="comment">//assuming the joiners are used appropriately</span></div><div class="line">  <span class="keyword">return</span> count / split.length;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>so</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">fancyCount2(<span class="string">"💩"</span>) === <span class="number">1</span> <span class="comment">//hooray!</span></div><div class="line">fancyCount2(<span class="string">"❤️"</span>) === <span class="number">1</span> <span class="comment">//hooray!</span></div><div class="line">fancyCount2(<span class="string">"👩‍❤️‍💋‍👩"</span>) === <span class="number">1</span> <span class="comment">//hooray!</span></div></pre></td></tr></table></figure>
+<p>老实说,你最好永远都不要这样使用,并不是所有的浏览器,UI等,将👩❤️💋👩渲染为一个单一的符号.如果你有更好的计数方法请告诉我!</p>
+<p>翻译的时候有所删减</p>
+<p>文章整体思路</p>
+<ul>
+<li>先找出emojis的码点</li>
+<li>通过公式计算代理对</li>
+<li>利用正则排除变化选择器,算出字节长度</li>
+</ul>
+<p>参考资料</p>
+<p><a href="http://www.ruanyifeng.com/blog/2014/12/unicode.html" target="_blank" rel="external">Unicode与JavaScript详解</a></p>
+<p><a href="https://mathiasbynens.be/notes/javascript-unicode" target="_blank" rel="external">JavaScript has a Unicode problem</a></p>
+
+                </div>
+                
+<nav id="article-nav">
+  
+    <a href="/2017/04/23/Vue2.0组件通信方式总结/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title">
+        
+          Vue2.0组件通信方式总结 >
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/12/28/2016年杨滋滋年度总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"> < 2016年杨滋滋年度总结</div>
+    </a>
+  
+</nav>
+
+
+            </div>
+        </div>
+        
+            <div id="disqus_thread"></div>
+<script>
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document,
+            s = d.createElement('script');
+
+        s.src = '//yzzting.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script id="dsq-count-scr" src="//yzzting.disqus.com/count.js" async></script>
+
+        
+        
+</article>
+
+
+
+		</div>
+		<div id="heart"></div>
+
+    <footer class="blog-footer" id="blog-footer">
+        <div id="footer-info" class="inner">
+            Made with ♥ by <a href="https://github.com/yzzting/hexo-theme-MyFairLady" target="_blank">MyFairLady</a>
+        </div>
+    </footer>
+    <script src="/js/sidebar.js"></script>
+    <script src="/js/toTop.js"></script>
+    <script src="/js/bookmark.js"></script>
+	</body>
+	</html>

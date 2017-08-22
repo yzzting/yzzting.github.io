@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>
+      
+        Vue2.0组件通信方式总结 |
+          
+            YzzTing
+    </title>
+    <!-- 主css -->
+    <link rel="stylesheet" href="/sass/main.css">
+      <!-- seo -->
+      <meta name="description" content="Vue 2.0 组件通信方式总结最近在写一个基于Vue的markdown编辑器,在项目里难免有不同组件之间的数据共享,今天写这边文章总结一下Vue中几种组件通信方式.首先,列举3种通信情景  父组件向子组件通信 子组件向父组件通信 平行组件之间通信">
+<meta name="keywords" content="javascript,summary,Vue.js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue2.0组件通信方式总结">
+<meta property="og:url" content="http://www.yzz1995.cn/2017/04/23/Vue2.0组件通信方式总结/index.html">
+<meta property="og:site_name" content="YzzTing">
+<meta property="og:description" content="Vue 2.0 组件通信方式总结最近在写一个基于Vue的markdown编辑器,在项目里难免有不同组件之间的数据共享,今天写这边文章总结一下Vue中几种组件通信方式.首先,列举3种通信情景  父组件向子组件通信 子组件向父组件通信 平行组件之间通信">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:image" content="http://7xp1k3.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20170423012317.png">
+<meta property="og:updated_time" content="2017-08-22T07:02:58.146Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vue2.0组件通信方式总结">
+<meta name="twitter:description" content="Vue 2.0 组件通信方式总结最近在写一个基于Vue的markdown编辑器,在项目里难免有不同组件之间的数据共享,今天写这边文章总结一下Vue中几种组件通信方式.首先,列举3种通信情景  父组件向子组件通信 子组件向父组件通信 平行组件之间通信">
+<meta name="twitter:image" content="http://7xp1k3.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20170423012317.png">
+        <!-- facicon -->
+        
+          <link rel="icon" href="http://7xp1k3.com1.z0.glb.clouddn.com/octocat-de-los-muertos.jpg">
+          
+            <!-- 统计 -->
+            
+              <script>
+                var _hmt = _hmt || [];
+                (function () {
+                  var hm = document.createElement("script");
+                  hm.src = "//hm.baidu.com/hm.js?c21994907883f37ffd80e13627dd4faa";
+                  var s = document.getElementsByTagName("script")[0];
+                  s.parentNode.insertBefore(hm, s);
+                })();
+              </script>
+              
+                
+                    <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+</head>
+	<body>
+		<div class="main">
+			<div id="mobile-bar">
+    <a class="menu-button"></a>
+    <a class="logo" href="/">
+        Yzz
+    </a>
+</div>
+<header class="nav-header">
+    <a href="/" class="logo-link">
+        Yzz
+    </a>
+    
+        
+            <ul class="nav nav-list">
+                <li class="nav-list-item">
+                    <a href="/">
+                        Home
+                    </a>
+                </li>
+                
+                    
+                            
+        
+                        <li class="nav-list-item">
+                            <a href="/about">
+                                About
+                            </a>
+                        </li>
+                        
+                            
+        
+                        <li class="nav-list-item">
+                            <a href="/tags">
+                                Tags
+                            </a>
+                        </li>
+                        
+                            
+        
+                        <li class="nav-list-item">
+                            <a href="/archives">
+                                Archives
+                            </a>
+                        </li>
+                        
+                            
+            </ul>
+</header>
+<div class="sidebar">
+    
+            
+    <ul class="main-menu">
+        <li class="main-menu-item"><a href="/">Home</a></li>
+        
+            
+        
+            
+        <li class="main-menu-item"><a href="/about">About</a></li>
+            
+        
+            
+        <li class="main-menu-item"><a href="/tags">Tags</a></li>
+            
+        
+            
+        <li class="main-menu-item"><a href="/archives">Archives</a></li>
+            
+        
+    </ul>
+</div>
+
+    <h1 class="blog-title">The
+        Yzz Blog</h1>
+			
+<article class="article-main" itemscope itemprop="blogPost">
+        <div class="articleCon">
+            <header class="article-header">
+                <h1 itemprop="name">
+                    <a href="/2017/04/23/Vue2.0组件通信方式总结/" class="article-title">Vue2.0组件通信方式总结</a>
+                </h1>
+            </header>
+            <div class="article-meta">
+                <div class="article-dateTime">
+    <a href="/2017/04/23/Vue2.0组件通信方式总结/" class="article-date">
+        <time datetime="4月 23日 2017" itemprop="datePublished">
+            4月 23日 2017
+        </time>
+    </a>
+</div>
+
+            </div>
+            <div class="article-inner">
+                <div class="article-entry" itemprop="articleBody">
+                    <h2 id="Vue-2-0-组件通信方式总结"><a href="#Vue-2-0-组件通信方式总结" class="headerlink" title="Vue 2.0 组件通信方式总结"></a>Vue 2.0 组件通信方式总结</h2><p>最近在写一个基于Vue的markdown<a href="https://github.com/yzzting/vue-markdown-editor" target="_blank" rel="external">编辑器</a>,在项目里难免有不同组件之间的数据共享,今天写这边文章总结一下Vue中几种组件通信方式.首先,列举3种通信情景</p>
+<ul>
+<li>父组件向子组件通信</li>
+<li>子组件向父组件通信</li>
+<li>平行组件之间通信</li>
+</ul>
+<a id="more"></a>
+<blockquote>
+<p>文章的demo基于Vue-cli</p>
+</blockquote>
+<h3 id="父组件向子组件通信"><a href="#父组件向子组件通信" class="headerlink" title="父组件向子组件通信"></a>父组件向子组件通信</h3><p>先说第一种情景,直接上代码,Hello.vue</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">  &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"hello"</span>&gt;</div><div class="line">    &lt;h1&gt;&#123;&#123; msg &#125;&#125;&lt;<span class="regexp">/h1&gt;</span></div><div class="line"><span class="regexp">  &lt;/</span>div&gt;</div><div class="line">&lt;<span class="regexp">/template&gt;</span></div><div class="line"><span class="regexp"></span></div><div class="line"><span class="regexp">&lt;script&gt;</span></div><div class="line"><span class="regexp">export default &#123;</span></div><div class="line"><span class="regexp">  name: 'hello',</span></div><div class="line"><span class="regexp">  props:['msg']</span></div><div class="line"><span class="regexp">&#125;</span></div><div class="line"><span class="regexp">&lt;/</span>script&gt;</div><div class="line"></div><div class="line">&lt;!-- Add <span class="string">"scoped"</span> attribute to limit CSS to <span class="keyword">this</span> component only --&gt;</div><div class="line">&lt;style scoped&gt;</div><div class="line">&lt;<span class="regexp">/style&gt;</span></div></pre></td></tr></table></figure>
+<p>在父组件中引入Hello组件,在标签中给msg赋值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">  &lt;div id=<span class="string">"app"</span>&gt;</div><div class="line">    &lt;hello msg=<span class="string">'yzzting'</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">hello</span>&gt;</span></span></div><div class="line">  &lt;<span class="regexp">/div&gt;</span></div><div class="line"><span class="regexp">&lt;/</span>template&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line"><span class="keyword">import</span> Hello <span class="keyword">from</span> <span class="string">'./components/Hello'</span></div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</div><div class="line">  name: <span class="string">'app'</span>,</div><div class="line">  components: &#123;</div><div class="line">    Hello</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div><div class="line"><span class="regexp"></span></div><div class="line"><span class="regexp">&lt;style&gt;</span></div><div class="line"><span class="regexp">&lt;/</span>style&gt;</div></pre></td></tr></table></figure>
+<p>这个时候在浏览器中不出意外的话会出现会出现 yzzting （原谅我偷懒没有截图</p>
+<p>可以看到父组件成功将msg传给了子组件,所以你大可在父组件中对msg这个数据进行你所想的想法</p>
+<p>1.先在子组件定义props<br>2.父组件中引入子组件,并在子组件标签中添加props定义的属性<br>3.把你所想的数值赋值给该属性</p>
+<p>如果想要传递的是方法,或者说父组件调用子组件的方法,则可以用ref,通过ref可以直接访问子组件,官方的定义是:</p>
+<blockquote>
+<p>ref 被用来给元素或子组件注册引用信息。引用信息将会注册在父组件的 $refs 对象上。如果在普通的 DOM 元素上使用，引用指向的就是 DOM 元素; 如果用在子组件上，引用就指向组件实例</p>
+</blockquote>
+<p>上代码 父组件App.vue</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">  &lt;div id=<span class="string">"app"</span>&gt;</div><div class="line">    &lt;hello msg=<span class="string">'yzzting'</span> ref=<span class="string">"hello"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">hello</span>&gt;</span></span></div><div class="line">    &lt;button @click=<span class="string">"father"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></div><div class="line">  &lt;<span class="regexp">/div&gt;</span></div><div class="line"><span class="regexp">&lt;/</span>template&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line"><span class="keyword">import</span> Hello <span class="keyword">from</span> <span class="string">'./components/Hello'</span></div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</div><div class="line">  name: <span class="string">'app'</span>,</div><div class="line">  components: &#123;</div><div class="line">    Hello</div><div class="line">  &#125;,</div><div class="line">  methods:&#123;</div><div class="line">    father() &#123;</div><div class="line">      <span class="keyword">this</span>.$refs.hello.yzz()</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div><div class="line"><span class="regexp"></span></div><div class="line"><span class="regexp">&lt;style&gt;</span></div><div class="line"><span class="regexp">&lt;/</span>style&gt;</div></pre></td></tr></table></figure>
+<p>子组件 Hello.vue</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">  &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"hello"</span>&gt;</div><div class="line">    &lt;h1&gt;&#123;&#123; msg &#125;&#125;&lt;<span class="regexp">/h1&gt;</span></div><div class="line"><span class="regexp">  &lt;/</span>div&gt;</div><div class="line">&lt;<span class="regexp">/template&gt;</span></div><div class="line"><span class="regexp"></span></div><div class="line"><span class="regexp">&lt;script&gt;</span></div><div class="line"><span class="regexp">export default &#123;</span></div><div class="line"><span class="regexp">  name: 'hello',</span></div><div class="line"><span class="regexp">  props:['msg'],</span></div><div class="line"><span class="regexp">  methods:&#123;</span></div><div class="line"><span class="regexp">    yzz() &#123;</span></div><div class="line"><span class="regexp">      console.log('我是通过ref调用的')</span></div><div class="line"><span class="regexp">    &#125;</span></div><div class="line"><span class="regexp">  &#125;</span></div><div class="line"><span class="regexp">&#125;</span></div><div class="line"><span class="regexp">&lt;/</span>script&gt;</div><div class="line"></div><div class="line">&lt;!-- Add <span class="string">"scoped"</span> attribute to limit CSS to <span class="keyword">this</span> component only --&gt;</div><div class="line">&lt;style scoped&gt;</div><div class="line">&lt;<span class="regexp">/style&gt;</span></div></pre></td></tr></table></figure>
+<p>不出意外的话,应该会有下面这种效果</p>
+<p><img src="http://7xp1k3.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20170423012317.png" alt=""></p>
+<h3 id="子组件向父组件通信"><a href="#子组件向父组件通信" class="headerlink" title="子组件向父组件通信"></a>子组件向父组件通信</h3><p>还是直接上代码吧</p>
+<p>Hello.vue</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">  &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"hello"</span>&gt;</div><div class="line">    &lt;h1&gt;&#123;&#123; msg &#125;&#125;&lt;<span class="regexp">/h1&gt;</span></div><div class="line"><span class="regexp">    &lt;button @click="sengMsg"&gt;给父组件传值&lt;/</span>button&gt;</div><div class="line">  &lt;<span class="regexp">/div&gt;</span></div><div class="line"><span class="regexp">&lt;/</span>template&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</div><div class="line">  name: <span class="string">'hello'</span>,</div><div class="line">  props:[<span class="string">'msg'</span>],</div><div class="line">  methods:&#123;</div><div class="line">    yzz() &#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'我是通过ref调用的'</span>)</div><div class="line">    &#125;,</div><div class="line">    sengMsg() &#123;</div><div class="line">      <span class="keyword">this</span>.$emit(<span class="string">'sengYzz'</span>,<span class="string">'hello yzzting!'</span>)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div><div class="line"><span class="regexp"></span></div><div class="line"><span class="regexp">&lt;!-- Add "scoped" attribute to limit CSS to this component only --&gt;</span></div><div class="line"><span class="regexp">&lt;style scoped&gt;</span></div><div class="line"><span class="regexp">&lt;/</span>style&gt;</div></pre></td></tr></table></figure>
+<p>在Hello中定义一个方法,并使用$emit监听一个自定义事件</p>
+<p>vm.$emit( event, […args] )</p>
+<p>参数：</p>
+<p>{string} event<br>[…args]</p>
+<p>触发当前实例上的事件。附加参数都会传给监听器回调。</p>
+<p>这是定义</p>
+<p>然后在父组件中监听这个自定义事件</p>
+<p>App.vue</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">  &lt;div id=<span class="string">"app"</span>&gt;</div><div class="line">    &lt;hello msg=<span class="string">'yzzting'</span> ref=<span class="string">"hello"</span> v-on:sengYzz=<span class="string">"showMsg"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">hello</span>&gt;</span></span></div><div class="line">    &lt;button @click=<span class="string">"father"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></div><div class="line">  &lt;<span class="regexp">/div&gt;</span></div><div class="line"><span class="regexp">&lt;/</span>template&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line"><span class="keyword">import</span> Hello <span class="keyword">from</span> <span class="string">'./components/Hello'</span></div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</div><div class="line">  name: <span class="string">'app'</span>,</div><div class="line">  components: &#123;</div><div class="line">    Hello</div><div class="line">  &#125;,</div><div class="line">  methods:&#123;</div><div class="line">    father() &#123;</div><div class="line">      <span class="keyword">this</span>.$refs.hello.yzz()</div><div class="line">    &#125;,</div><div class="line">    showMsg(data) &#123;</div><div class="line">      <span class="built_in">console</span>.log(data)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div><div class="line"><span class="regexp"></span></div><div class="line"><span class="regexp">&lt;style&gt;</span></div><div class="line"><span class="regexp">&lt;/</span>style&gt;</div></pre></td></tr></table></figure>
+<p>不出意外控制台会输出hello yzzting！</p>
+<p>ok！子组件也向父组件成功传值了</p>
+<p>这种情景主要是通过自定义事件来实现,使用$emit就可以啦</p>
+<h3 id="平行组件之间通信"><a href="#平行组件之间通信" class="headerlink" title="平行组件之间通信"></a>平行组件之间通信</h3><p>这种情景其实比较特殊,google出来很多方法都是直接使用Vuex,但是我在我这个markdown编辑器的项目中遇到过一个问题,在计算属性computed中获取Vuex中转的数据，可在data中却无法调用,好像是data比computed先生成所导致… 所以不得不找一种方法取代Vuex</p>
+<p>还记得上面说的$emit么,通过他也可以在平行组件中传递数据</p>
+<p>首先 新建一个eventsBus.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Vue</div></pre></td></tr></table></figure>
+<p>然后在Hello中使用$emit定义一个自定义事件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">  &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"hello"</span>&gt;</div><div class="line">    &lt;h1&gt;&#123;&#123; msg &#125;&#125;&lt;<span class="regexp">/h1&gt;</span></div><div class="line"><span class="regexp">    &lt;button @click="sengMsg"&gt;给父组件传值&lt;/</span>button&gt;</div><div class="line">    &lt;button @click=<span class="string">"brother"</span>&gt;给兄弟传值&lt;<span class="regexp">/button&gt;</span></div><div class="line"><span class="regexp">  &lt;/</span>div&gt;</div><div class="line">&lt;<span class="regexp">/template&gt;</span></div><div class="line"><span class="regexp"></span></div><div class="line"><span class="regexp">&lt;script&gt;</span></div><div class="line"><span class="regexp"></span></div><div class="line"><span class="regexp">import bus from '../</span>assets/eventsBus<span class="string">'</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">export default &#123;</span></div><div class="line"><span class="string">  name: '</span>hello<span class="string">',</span></div><div class="line"><span class="string">  props:['</span>msg<span class="string">'],</span></div><div class="line"><span class="string">  methods:&#123;</span></div><div class="line"><span class="string">    yzz() &#123;</span></div><div class="line"><span class="string">      console.log('</span>我是通过ref调用的<span class="string">')</span></div><div class="line"><span class="string">    &#125;,</span></div><div class="line"><span class="string">    sengMsg() &#123;</span></div><div class="line"><span class="string">      this.$emit('</span>sengYzz<span class="string">','</span>hello yzzting!<span class="string">')</span></div><div class="line"><span class="string">    &#125;,</span></div><div class="line"><span class="string">    brother() &#123;</span></div><div class="line"><span class="string">      bus.$emit('</span>brotherYzz<span class="string">','</span>hello brother!!<span class="string">')</span></div><div class="line"><span class="string">    &#125;</span></div><div class="line"><span class="string">  &#125;</span></div><div class="line"><span class="string">&#125;</span></div><div class="line"><span class="string">&lt;/script&gt;</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">&lt;!-- Add "scoped" attribute to limit CSS to this component only --&gt;</span></div><div class="line"><span class="string">&lt;style scoped&gt;</span></div><div class="line"><span class="string">&lt;/style&gt;</span></div></pre></td></tr></table></figure>
+<p>新建一个brother.vue 写入</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">  &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"hello"</span>&gt;</div><div class="line">    &lt;h1&gt;&#123;&#123; data &#125;&#125;&lt;<span class="regexp">/h1&gt;</span></div><div class="line"><span class="regexp">  &lt;/</span>div&gt;</div><div class="line">&lt;<span class="regexp">/template&gt;</span></div><div class="line"><span class="regexp"></span></div><div class="line"><span class="regexp">&lt;script&gt;</span></div><div class="line"><span class="regexp"></span></div><div class="line"><span class="regexp">import bus from '../</span>assets/eventsBus<span class="string">'</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">export default &#123;</span></div><div class="line"><span class="string">  name: '</span>brother<span class="string">',</span></div><div class="line"><span class="string">  data() &#123;</span></div><div class="line"><span class="string">      return &#123;</span></div><div class="line"><span class="string">          data:'</span><span class="string">'</span></div><div class="line"><span class="string">      &#125; </span></div><div class="line"><span class="string">  &#125;,</span></div><div class="line"><span class="string">  mounted()&#123;</span></div><div class="line"><span class="string">      bus.$on('</span>brotherYzz<span class="string">',(data) =&gt; &#123;</span></div><div class="line"><span class="string">          this.data = data</span></div><div class="line"><span class="string">      &#125;)</span></div><div class="line"><span class="string">  &#125;</span></div><div class="line"><span class="string">&#125;</span></div><div class="line"><span class="string">&lt;/script&gt;</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">&lt;!-- Add "scoped" attribute to limit CSS to this component only --&gt;</span></div><div class="line"><span class="string">&lt;style scoped&gt;</span></div><div class="line"><span class="string">&lt;/style&gt;</span></div></pre></td></tr></table></figure>
+<p>不出意外的话,可以在浏览器看到hello brother!!</p>
+<p>ok！ 第三种情景也成功传值了</p>
+<p>其实根据这个思路我们可以把需要传递的数值传给同个父组件,再由父组件进行分发…</p>
+<p>当然,还有大杀器Vuex,我在markdown编辑器这个项目里大量使用,具体就不说啦,网上好多比我说得好的资料</p>
+<p>参考资料</p>
+<p><a href="http://www.jianshu.com/p/d946bd7c26f4" target="_blank" rel="external">Vue2.0组件之间通信</a></p>
+<p><a href="http://www.jianshu.com/p/2670ca096cf8" target="_blank" rel="external">Vue2.0子父组件通信</a></p>
+
+                </div>
+                
+<nav id="article-nav">
+  
+    <a href="/2017/05/04/Vue2-0生命周期与钩子/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title">
+        
+          Vue 2.0生命周期与钩子 >
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/03/11/Unicode字符集/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"> < “💩”.length === 2</div>
+    </a>
+  
+</nav>
+
+
+            </div>
+        </div>
+        
+            <div id="disqus_thread"></div>
+<script>
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document,
+            s = d.createElement('script');
+
+        s.src = '//yzzting.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script id="dsq-count-scr" src="//yzzting.disqus.com/count.js" async></script>
+
+        
+        
+</article>
+
+
+
+		</div>
+		<div id="heart"></div>
+
+    <footer class="blog-footer" id="blog-footer">
+        <div id="footer-info" class="inner">
+            Made with ♥ by <a href="https://github.com/yzzting/hexo-theme-MyFairLady" target="_blank">MyFairLady</a>
+        </div>
+    </footer>
+    <script src="/js/sidebar.js"></script>
+    <script src="/js/toTop.js"></script>
+    <script src="/js/bookmark.js"></script>
+	</body>
+	</html>

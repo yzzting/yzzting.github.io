@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>
+      
+        Angular.js实现即时搜索 |
+          
+            YzzTing
+    </title>
+    <!-- 主css -->
+    <link rel="stylesheet" href="/sass/main.css">
+      <!-- seo -->
+      <meta name="description" content="Angular.js实现即时搜索现在是2015.12.18凌晨24点31分，突然想起之前做过一个Angular写的即时搜索，就当是一个复习吧，在这篇博文里把实现过程记下来！我还在学Angular1.x这个版本中，听说Angular2 beta版已经放出来了！啦啦啦啦啦，不过我对于es6，Typescript，还是傻乎乎的~~~MrSunny在这篇文章里写到Angular2 简介  我希望你学习 A">
+<meta name="keywords" content="AngularJS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Angular.js实现即时搜索">
+<meta property="og:url" content="http://www.yzz1995.cn/2015/12/18/Angular-js实现即时搜索/index.html">
+<meta property="og:site_name" content="YzzTing">
+<meta property="og:description" content="Angular.js实现即时搜索现在是2015.12.18凌晨24点31分，突然想起之前做过一个Angular写的即时搜索，就当是一个复习吧，在这篇博文里把实现过程记下来！我还在学Angular1.x这个版本中，听说Angular2 beta版已经放出来了！啦啦啦啦啦，不过我对于es6，Typescript，还是傻乎乎的~~~MrSunny在这篇文章里写到Angular2 简介  我希望你学习 A">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2017-08-22T07:02:58.144Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Angular.js实现即时搜索">
+<meta name="twitter:description" content="Angular.js实现即时搜索现在是2015.12.18凌晨24点31分，突然想起之前做过一个Angular写的即时搜索，就当是一个复习吧，在这篇博文里把实现过程记下来！我还在学Angular1.x这个版本中，听说Angular2 beta版已经放出来了！啦啦啦啦啦，不过我对于es6，Typescript，还是傻乎乎的~~~MrSunny在这篇文章里写到Angular2 简介  我希望你学习 A">
+        <!-- facicon -->
+        
+          <link rel="icon" href="http://7xp1k3.com1.z0.glb.clouddn.com/octocat-de-los-muertos.jpg">
+          
+            <!-- 统计 -->
+            
+              <script>
+                var _hmt = _hmt || [];
+                (function () {
+                  var hm = document.createElement("script");
+                  hm.src = "//hm.baidu.com/hm.js?c21994907883f37ffd80e13627dd4faa";
+                  var s = document.getElementsByTagName("script")[0];
+                  s.parentNode.insertBefore(hm, s);
+                })();
+              </script>
+              
+                
+                    <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+</head>
+	<body>
+		<div class="main">
+			<div id="mobile-bar">
+    <a class="menu-button"></a>
+    <a class="logo" href="/">
+        Yzz
+    </a>
+</div>
+<header class="nav-header">
+    <a href="/" class="logo-link">
+        Yzz
+    </a>
+    
+        
+            <ul class="nav nav-list">
+                <li class="nav-list-item">
+                    <a href="/">
+                        Home
+                    </a>
+                </li>
+                
+                    
+                            
+        
+                        <li class="nav-list-item">
+                            <a href="/about">
+                                About
+                            </a>
+                        </li>
+                        
+                            
+        
+                        <li class="nav-list-item">
+                            <a href="/tags">
+                                Tags
+                            </a>
+                        </li>
+                        
+                            
+        
+                        <li class="nav-list-item">
+                            <a href="/archives">
+                                Archives
+                            </a>
+                        </li>
+                        
+                            
+            </ul>
+</header>
+<div class="sidebar">
+    
+            
+    <ul class="main-menu">
+        <li class="main-menu-item"><a href="/">Home</a></li>
+        
+            
+        
+            
+        <li class="main-menu-item"><a href="/about">About</a></li>
+            
+        
+            
+        <li class="main-menu-item"><a href="/tags">Tags</a></li>
+            
+        
+            
+        <li class="main-menu-item"><a href="/archives">Archives</a></li>
+            
+        
+    </ul>
+</div>
+
+    <h1 class="blog-title">The
+        Yzz Blog</h1>
+			
+<article class="article-main" itemscope itemprop="blogPost">
+        <div class="articleCon">
+            <header class="article-header">
+                <h1 itemprop="name">
+                    <a href="/2015/12/18/Angular-js实现即时搜索/" class="article-title">Angular.js实现即时搜索</a>
+                </h1>
+            </header>
+            <div class="article-meta">
+                <div class="article-dateTime">
+    <a href="/2015/12/18/Angular-js实现即时搜索/" class="article-date">
+        <time datetime="12月 18日 2015" itemprop="datePublished">
+            12月 18日 2015
+        </time>
+    </a>
+</div>
+
+            </div>
+            <div class="article-inner">
+                <div class="article-entry" itemprop="articleBody">
+                    <h1 id="Angular-js实现即时搜索"><a href="#Angular-js实现即时搜索" class="headerlink" title="Angular.js实现即时搜索"></a>Angular.js实现即时搜索</h1><p>现在是2015.12.18凌晨24点31分，突然想起之前做过一个Angular写的即时搜索，就当是一个复习吧，在这篇博文里把实现过程记下来！<br>我还在学Angular1.x这个版本中，听说Angular2 beta版已经放出来了！啦啦啦啦啦，不过我对于es6，Typescript，还是傻乎乎的~~~<br><strong>MrSunny</strong>在这篇文章里写到<a href="http://zhuanlan.zhihu.com/FrontendMagazine/20058966" target="_blank" rel="external">Angular2 简介</a></p>
+<blockquote>
+<p>我希望你学习 Angular 2 能比学图片中的单词还要快 :)</p>
+</blockquote>
+<a id="more"></a>
+<p>希望真的如此吧！:)</p>
+<p>好了，进入干货！</p>
+<h1 id="服务框架"><a href="#服务框架" class="headerlink" title="服务框架"></a>服务框架</h1><p>为了让项目可以跟后台通信，这里我们采用Nodejs的Express框架来搭建。<br>老规矩</p>
+<p><code>$sudo npm install express</code></p>
+<p>在express4.0以上的版本，必须装多express的命令行工具，否则，express不了项目。</p>
+<p><code>$sudo npm install express-generator</code></p>
+<p>然后create一个项目- <code>$ express -e search</code></p>
+<p>我偷懒了，直接 <code>$ npm start</code></p>
+<p>嗯，项目启动了！</p>
+<h2 id="bower"><a href="#bower" class="headerlink" title="bower"></a>bower</h2><p>现在github上很多例程都使用<a href="http://bower.io/" target="_blank" rel="external">bower</a>来管理前端的通用依赖库，比如jquery, bootstarp, angularjs等等。一句命令，可以把我们需要的库，导入项目中，特别方便！</p>
+<p><strong>这里要说一下通过bower下载库，说到底就是在git clone。所以对于linux系统没什么好说，先装个git，然后没问题了。对于window，装完git后，最好用git bash 来执行bower install，或者把git目录加入windows的环境变量中，再在命令行中执行bower install命令，不要问我为什么，window好多游戏好好玩！</strong></p>
+<p>先cd到search/public 目录下，然后通过bower来安装Angular.js<br><code>$bower install angualr --save</code></p>
+<p>–save 参数可以把bower依赖添加到bower.json</p>
+<p>在views/index.ejs 文件里引入Angular.js（再说点别的，可以在项目根目录，建一个.bowerrc的文件，写入<code>{&quot;directory&quot;:&quot;public/components&quot;}</code><br>指定依赖库的安装路径）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script src=&quot;public/components/angular/angular.min.js&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
+<h2 id="组件列表"><a href="#组件列表" class="headerlink" title="组件列表"></a>组件列表</h2><ul>
+<li><p>指令</p>
+</li>
+<li><p>控制器<br><strong>ng-controller: 定义应用程序的控制器；<br>ng-init: 初始化应用程序数据；<br>ng-click: 定义元素被点击的行为；<br>ng-show: 控制元素显示(true)、隐藏(false)；<br>ng-hide: 控制元素显示(false)、隐藏(true);</strong></p>
+</li>
+<li>过滤器</li>
+</ul>
+<p>下面将会定义一个rule的自定义过滤器</p>
+<ul>
+<li>$http 通信</li>
+</ul>
+<h2 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h2><ul>
+<li>index.ejs</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">  &lt;head&gt;</div><div class="line">    &lt;title&gt;&lt;%= title %&gt;&lt;/title&gt;</div><div class="line">    &lt;link rel=&quot;stylesheet&quot; href=&quot;/stylesheets/style.css&quot;&gt;</div><div class="line">    &lt;script src=&quot;public/components/angular/angular.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">    &lt;script src=&quot;public/javascripts/app.js&quot;&gt;&lt;/script&gt;</div><div class="line">  &lt;/head&gt;</div><div class="line">  &lt;body&gt;</div><div class="line">    &lt;div ng-app=&quot;yzzApp&quot; ng-controller=&quot;searchCtrl&quot; class=&quot;container&quot;&gt;</div><div class="line">        &lt;input type=&quot;text&quot; ng-model=&quot;rule&quot; ng-change=&quot;switch()&quot;&gt;</div><div class="line">        &lt;div ng-show=&quot;show&quot; class=&quot;list&quot;&gt;</div><div class="line">            &lt;!-- 遍历数据集合，并通过过滤器筛选 --&gt;</div><div class="line">            &lt;div ng-repeat=&quot;x in people | filter:rule&quot; class=&quot;list-item&quot;&gt;</div><div class="line">                &#123;&#123; x.name + &apos;-&apos; + x.age &#125;&#125;</div><div class="line">            &lt;/div&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">  &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li>app.js</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> app = angular.module(<span class="string">'yzzApp'</span>, []);</div><div class="line">       <span class="keyword">var</span> peopleArr = [];</div><div class="line">       <span class="comment">// 在控制器中引入 http 服务</span></div><div class="line">       app.controller(<span class="string">'searchCtrl'</span>,[<span class="string">'$scope'</span>, <span class="string">'$http'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">$scope, $http</span>) </span>&#123;</div><div class="line">           $scope.show = <span class="literal">false</span>;</div><div class="line">           $scope.rule = <span class="string">''</span>;</div><div class="line">           $scope.people = [];</div><div class="line">           $scope.switch = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">              <span class="keyword">if</span>($scope.rule.length &gt; <span class="number">0</span>) &#123;</div><div class="line">                   $scope.show = <span class="literal">true</span>;</div><div class="line">                   $scope.people = peopleArr;</div><div class="line">              &#125; <span class="keyword">else</span> &#123;</div><div class="line">                   $scope.show = <span class="literal">false</span>;</div><div class="line">                   $scope.people = [];</div><div class="line">              &#125;</div><div class="line">           &#125;</div><div class="line"></div><div class="line">           <span class="comment">// 使用 http 服务获取数据</span></div><div class="line">           $http(&#123;</div><div class="line">               method: <span class="string">'GET'</span>,</div><div class="line">               url: <span class="string">'/data/data.json'</span></div><div class="line">           &#125;).then(<span class="function"><span class="keyword">function</span> <span class="title">successCallback</span>(<span class="params">res</span>) </span>&#123;</div><div class="line">               res.data.people.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">i</span>) </span>&#123;</div><div class="line">                   peopleArr.push(i);</div><div class="line">               &#125;)</div><div class="line">           &#125;,<span class="function"><span class="keyword">function</span> <span class="title">error</span>(<span class="params">res</span>) </span>&#123;</div><div class="line">               <span class="built_in">console</span>.log(res);</div><div class="line">           &#125;)</div><div class="line">       &#125;])</div></pre></td></tr></table></figure>
+<h2 id="为了模拟实际业务场景，我们在public-data文件里，new一个data-json-文件用于保存业务数据"><a href="#为了模拟实际业务场景，我们在public-data文件里，new一个data-json-文件用于保存业务数据" class="headerlink" title="为了模拟实际业务场景，我们在public/data文件里，new一个data.json 文件用于保存业务数据"></a>为了模拟实际业务场景，我们在public/data文件里，new一个data.json 文件用于保存业务数据</h2><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"people"</span>: [</div><div class="line">        &#123;</div><div class="line">            <span class="attr">"name"</span>:<span class="string">"james"</span>,<span class="attr">"age"</span>:<span class="number">12</span></div><div class="line">        &#125;,</div><div class="line">        &#123;</div><div class="line">            <span class="attr">"name"</span>:<span class="string">"jack"</span>,<span class="attr">"age"</span>:<span class="number">22</span></div><div class="line">        &#125;,</div><div class="line">        &#123;</div><div class="line">            <span class="attr">"name"</span>:<span class="string">"tony"</span>,<span class="attr">"age"</span>:<span class="number">21</span></div><div class="line">        &#125;,</div><div class="line">        &#123;</div><div class="line">           <span class="attr">"name"</span>:<span class="string">"Yzz"</span>,<span class="attr">"age"</span>:<span class="number">31</span></div><div class="line">	   &#125;,</div><div class="line">        &#123;</div><div class="line">            <span class="attr">"name"</span>:<span class="string">"alex"</span>,<span class="attr">"age"</span>:<span class="number">25</span></div><div class="line">        &#125;</div><div class="line">    ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>style.css</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.container</span> &#123;</div><div class="line">    <span class="attribute">margin</span>: <span class="number">50px</span> <span class="number">0</span>;</div><div class="line">    <span class="attribute">text-align</span>: center;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.container</span> <span class="selector-tag">input</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</div><div class="line">    <span class="attribute">border-radius</span>: <span class="number">5px</span>;</div><div class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#ccc</span>;</div><div class="line">    <span class="attribute">padding</span>: <span class="number">5px</span> <span class="number">10px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.list</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">220px</span>;</div><div class="line">    <span class="attribute">text-align</span>: left;</div><div class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#ccc</span>;</div><div class="line">    <span class="attribute">margin</span>: <span class="number">0</span> auto;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.list</span> <span class="selector-class">.list-item</span> &#123;</div><div class="line">    <span class="attribute">border-bottom</span>: <span class="number">1px</span> solid <span class="number">#eee</span>;</div><div class="line">    <span class="attribute">padding</span>: <span class="number">5px</span> <span class="number">10px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.list</span> <span class="selector-class">.list-item</span><span class="selector-pseudo">:hover</span> &#123;</div><div class="line">    <span class="attribute">background-color</span>: <span class="number">#eee</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="一个最简陋的Angular-js即时搜索就完成了"><a href="#一个最简陋的Angular-js即时搜索就完成了" class="headerlink" title="一个最简陋的Angular.js即时搜索就完成了"></a>一个最简陋的Angular.js即时搜索就完成了</h2><p>28行代码搞定，也许这就是<strong>angular</strong>的魅力所在吧！</p>
+<h1 id="晚安"><a href="#晚安" class="headerlink" title="晚安"></a>晚安</h1>
+                </div>
+                
+<nav id="article-nav">
+  
+    <a href="/2015/12/30/杨滋滋2015年度总结/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title">
+        
+          杨滋滋2015年度总结 >
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/12/12/杨滋滋的由来/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"> < 杨滋滋的由来</div>
+    </a>
+  
+</nav>
+
+
+            </div>
+        </div>
+        
+            <div id="disqus_thread"></div>
+<script>
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document,
+            s = d.createElement('script');
+
+        s.src = '//yzzting.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script id="dsq-count-scr" src="//yzzting.disqus.com/count.js" async></script>
+
+        
+        
+</article>
+
+
+
+		</div>
+		<div id="heart"></div>
+
+    <footer class="blog-footer" id="blog-footer">
+        <div id="footer-info" class="inner">
+            Made with ♥ by <a href="https://github.com/yzzting/hexo-theme-MyFairLady" target="_blank">MyFairLady</a>
+        </div>
+    </footer>
+    <script src="/js/sidebar.js"></script>
+    <script src="/js/toTop.js"></script>
+    <script src="/js/bookmark.js"></script>
+	</body>
+	</html>

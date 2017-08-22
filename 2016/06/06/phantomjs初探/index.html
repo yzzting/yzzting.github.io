@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>
+      
+        phantomjs初探 |
+          
+            YzzTing
+    </title>
+    <!-- 主css -->
+    <link rel="stylesheet" href="/sass/main.css">
+      <!-- seo -->
+      <meta name="description" content="前言大家都这么说PhantomJs的  Phantom JS是一个服务器端的JavaScript API的WebKit。其支持各种Web标准:DOM处理、CSS选择器、JSON、Canvas和SVG  安装其实网上蛮多安装方法的，或者直接看看官网的指南。我一开始没弄明白直接下载那个二进制包怎么用，自己跑去编译了。">
+<meta name="keywords" content="javascript,phantomjs">
+<meta property="og:type" content="article">
+<meta property="og:title" content="phantomjs初探">
+<meta property="og:url" content="http://www.yzz1995.cn/2016/06/06/phantomjs初探/index.html">
+<meta property="og:site_name" content="YzzTing">
+<meta property="og:description" content="前言大家都这么说PhantomJs的  Phantom JS是一个服务器端的JavaScript API的WebKit。其支持各种Web标准:DOM处理、CSS选择器、JSON、Canvas和SVG  安装其实网上蛮多安装方法的，或者直接看看官网的指南。我一开始没弄明白直接下载那个二进制包怎么用，自己跑去编译了。">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2017-08-22T07:02:58.149Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="phantomjs初探">
+<meta name="twitter:description" content="前言大家都这么说PhantomJs的  Phantom JS是一个服务器端的JavaScript API的WebKit。其支持各种Web标准:DOM处理、CSS选择器、JSON、Canvas和SVG  安装其实网上蛮多安装方法的，或者直接看看官网的指南。我一开始没弄明白直接下载那个二进制包怎么用，自己跑去编译了。">
+        <!-- facicon -->
+        
+          <link rel="icon" href="http://7xp1k3.com1.z0.glb.clouddn.com/octocat-de-los-muertos.jpg">
+          
+            <!-- 统计 -->
+            
+              <script>
+                var _hmt = _hmt || [];
+                (function () {
+                  var hm = document.createElement("script");
+                  hm.src = "//hm.baidu.com/hm.js?c21994907883f37ffd80e13627dd4faa";
+                  var s = document.getElementsByTagName("script")[0];
+                  s.parentNode.insertBefore(hm, s);
+                })();
+              </script>
+              
+                
+                    <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+</head>
+	<body>
+		<div class="main">
+			<div id="mobile-bar">
+    <a class="menu-button"></a>
+    <a class="logo" href="/">
+        Yzz
+    </a>
+</div>
+<header class="nav-header">
+    <a href="/" class="logo-link">
+        Yzz
+    </a>
+    
+        
+            <ul class="nav nav-list">
+                <li class="nav-list-item">
+                    <a href="/">
+                        Home
+                    </a>
+                </li>
+                
+                    
+                            
+        
+                        <li class="nav-list-item">
+                            <a href="/about">
+                                About
+                            </a>
+                        </li>
+                        
+                            
+        
+                        <li class="nav-list-item">
+                            <a href="/tags">
+                                Tags
+                            </a>
+                        </li>
+                        
+                            
+        
+                        <li class="nav-list-item">
+                            <a href="/archives">
+                                Archives
+                            </a>
+                        </li>
+                        
+                            
+            </ul>
+</header>
+<div class="sidebar">
+    
+            
+    <ul class="main-menu">
+        <li class="main-menu-item"><a href="/">Home</a></li>
+        
+            
+        
+            
+        <li class="main-menu-item"><a href="/about">About</a></li>
+            
+        
+            
+        <li class="main-menu-item"><a href="/tags">Tags</a></li>
+            
+        
+            
+        <li class="main-menu-item"><a href="/archives">Archives</a></li>
+            
+        
+    </ul>
+</div>
+
+    <h1 class="blog-title">The
+        Yzz Blog</h1>
+			
+<article class="article-main" itemscope itemprop="blogPost">
+        <div class="articleCon">
+            <header class="article-header">
+                <h1 itemprop="name">
+                    <a href="/2016/06/06/phantomjs初探/" class="article-title">phantomjs初探</a>
+                </h1>
+            </header>
+            <div class="article-meta">
+                <div class="article-dateTime">
+    <a href="/2016/06/06/phantomjs初探/" class="article-date">
+        <time datetime="6月 6日 2016" itemprop="datePublished">
+            6月 6日 2016
+        </time>
+    </a>
+</div>
+
+            </div>
+            <div class="article-inner">
+                <div class="article-entry" itemprop="articleBody">
+                    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>大家都这么说PhantomJs的</p>
+<blockquote>
+<p>Phantom JS是一个服务器端的JavaScript API的WebKit。其支持各种Web标准:DOM处理、CSS选择器、JSON、Canvas和SVG</p>
+</blockquote>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>其实网上蛮多安装方法的，或者直接看看官网的<a href="http://phantomjs.org/download.html" target="_blank" rel="external">指南</a><br>。我一开始没弄明白直接下载那个二进制包怎么用，自己跑去<a href="http://phantomjs.org/build.html" target="_blank" rel="external">编译</a>了。</p>
+<a id="more"></a>
+<h3 id="先试试看PhantomJs的厉害"><a href="#先试试看PhantomJs的厉害" class="headerlink" title="先试试看PhantomJs的厉害"></a>先试试看PhantomJs的厉害</h3><p>我们通过几行代码把github的首页截下来</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> page = <span class="built_in">require</span>(<span class="string">'webpage'</span>).create();</div><div class="line"><span class="comment">//创建一个web page对象</span></div><div class="line">page.open(<span class="string">'http://github.com/'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  page.render(<span class="string">'github.png'</span>);</div><div class="line">  phantom.exit();</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>将上面这段代码写进screen.js然后</p>
+<p>在终端里执行 <strong>phantomjs screen.js</strong></p>
+<p><a href="http://7xp1k3.com1.z0.glb.clouddn.com/githubphone.png" target="_blank" rel="external">篇幅的原因点这里看效果</a></p>
+<p>这里截取的是手机版的页面，我们可以加上一句<br><strong>page.viewportSize = { width: 1920, height: 1080 };</strong></p>
+<p>设置width和height就可以截到pc版的页面</p>
+<p><a href="http://7xp1k3.com1.z0.glb.clouddn.com/github.png" target="_blank" rel="external">篇幅的原因点这里看效果</a></p>
+<h3 id="页面自动化"><a href="#页面自动化" class="headerlink" title="页面自动化"></a>页面自动化</h3><p>页面自动化也是PhantomJs一大feature,这里我们用来模拟登陆,登陆京东试试看</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> page = <span class="built_in">require</span>(<span class="string">'webpage'</span>).create();</div><div class="line"></div><div class="line">page.onLoadStarted =<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    loadInProgress =<span class="literal">true</span>;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"load started"</span>);</div><div class="line">&#125;;</div><div class="line"></div><div class="line">page.onLoadFinished = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    loadInProgress = <span class="literal">false</span>;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"load finished"</span>);</div><div class="line">&#125;;</div><div class="line">page.onUrlChanged = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"onUrlChanged"</span>);</div><div class="line">&#125;;</div><div class="line"> page.open(<span class="string">'https://passport.jd.com/new/login.aspx'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    page.includeJs(<span class="string">"http://libs.useso.com/js/jquery/2.1.1/jquery.min.js"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> rect = page.evaluate(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            $(<span class="string">'#loginname'</span>).val(<span class="string">'ma sai ke'</span>);</div><div class="line">            $(<span class="string">'#nloginpwd'</span>).val(<span class="string">'ma sai ke'</span>);</div><div class="line">            $(<span class="string">'#loginsubmit'</span>)[<span class="number">0</span>].click();</div><div class="line">            <span class="keyword">return</span> <span class="built_in">document</span>.title;</div><div class="line">        &#125;);</div><div class="line">        <span class="comment">//若引入jQuery 则用这种方法来实现click</span></div><div class="line">        page.sendEvent(<span class="string">'click'</span>, rect.left + rect.width / <span class="number">2</span>, rect.top + rect.height / <span class="number">2</span>);</div><div class="line">        <span class="built_in">console</span>.log(rect);</div><div class="line">        <span class="keyword">var</span> clock =setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            page.render(<span class="string">'jdlogin.png'</span>);</div><div class="line">            phantom.exit();</div><div class="line">        &#125;,<span class="number">2000</span>);</div><div class="line">    &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p><a href="http://7xp1k3.com1.z0.glb.clouddn.com/jdLogin.png" target="_blank" rel="external">篇幅的原因点这里看效果</a></p>
+<p>在上面代码里填入用户名和密码就行了。这样就可以登陆，不过总觉得这种方式怪怪的。。不大安全的感觉</p>
+<p>##参考资料</p>
+<p><a href="http://phantomjs.org/documentation/" target="_blank" rel="external">PhantomJS 官方文档</a><br><a href="http://phantomjs.org/api/" target="_blank" rel="external">PhantomJS 官方 API</a></p>
+
+                </div>
+                
+<nav id="article-nav">
+  
+    <a href="/2016/06/08/总结Hover-css/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title">
+        
+          总结Hover-css >
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/05/13/面试总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"> < 面试总结</div>
+    </a>
+  
+</nav>
+
+
+            </div>
+        </div>
+        
+            <div id="disqus_thread"></div>
+<script>
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document,
+            s = d.createElement('script');
+
+        s.src = '//yzzting.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script id="dsq-count-scr" src="//yzzting.disqus.com/count.js" async></script>
+
+        
+        
+</article>
+
+
+
+		</div>
+		<div id="heart"></div>
+
+    <footer class="blog-footer" id="blog-footer">
+        <div id="footer-info" class="inner">
+            Made with ♥ by <a href="https://github.com/yzzting/hexo-theme-MyFairLady" target="_blank">MyFairLady</a>
+        </div>
+    </footer>
+    <script src="/js/sidebar.js"></script>
+    <script src="/js/toTop.js"></script>
+    <script src="/js/bookmark.js"></script>
+	</body>
+	</html>

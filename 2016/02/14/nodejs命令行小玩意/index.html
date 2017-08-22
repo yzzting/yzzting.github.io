@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>
+      
+        nodejs命令行小玩意 |
+          
+            YzzTing
+    </title>
+    <!-- 主css -->
+    <link rel="stylesheet" href="/sass/main.css">
+      <!-- seo -->
+      <meta name="description" content="一个用nodejs写的一个命令行的小玩意大家新年好，这里给大家拜个晚年啦！（不跑题了 偶然的npm社区看到这个prompt的库，对于node.js的一个美丽的命令行提示符。地址在这里prompt稍微看了下（其实是懒 ，写了个小小的答题的命令行版。 当然了老规矩，登陆功能还是有的，crud不能忘了！ 我简单的说下这个库的使用">
+<meta name="keywords" content="nodejs,prompt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="nodejs命令行小玩意">
+<meta property="og:url" content="http://www.yzz1995.cn/2016/02/14/nodejs命令行小玩意/index.html">
+<meta property="og:site_name" content="YzzTing">
+<meta property="og:description" content="一个用nodejs写的一个命令行的小玩意大家新年好，这里给大家拜个晚年啦！（不跑题了 偶然的npm社区看到这个prompt的库，对于node.js的一个美丽的命令行提示符。地址在这里prompt稍微看了下（其实是懒 ，写了个小小的答题的命令行版。 当然了老规矩，登陆功能还是有的，crud不能忘了！ 我简单的说下这个库的使用">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2017-08-22T07:02:58.148Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="nodejs命令行小玩意">
+<meta name="twitter:description" content="一个用nodejs写的一个命令行的小玩意大家新年好，这里给大家拜个晚年啦！（不跑题了 偶然的npm社区看到这个prompt的库，对于node.js的一个美丽的命令行提示符。地址在这里prompt稍微看了下（其实是懒 ，写了个小小的答题的命令行版。 当然了老规矩，登陆功能还是有的，crud不能忘了！ 我简单的说下这个库的使用">
+        <!-- facicon -->
+        
+          <link rel="icon" href="http://7xp1k3.com1.z0.glb.clouddn.com/octocat-de-los-muertos.jpg">
+          
+            <!-- 统计 -->
+            
+              <script>
+                var _hmt = _hmt || [];
+                (function () {
+                  var hm = document.createElement("script");
+                  hm.src = "//hm.baidu.com/hm.js?c21994907883f37ffd80e13627dd4faa";
+                  var s = document.getElementsByTagName("script")[0];
+                  s.parentNode.insertBefore(hm, s);
+                })();
+              </script>
+              
+                
+                    <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+</head>
+	<body>
+		<div class="main">
+			<div id="mobile-bar">
+    <a class="menu-button"></a>
+    <a class="logo" href="/">
+        Yzz
+    </a>
+</div>
+<header class="nav-header">
+    <a href="/" class="logo-link">
+        Yzz
+    </a>
+    
+        
+            <ul class="nav nav-list">
+                <li class="nav-list-item">
+                    <a href="/">
+                        Home
+                    </a>
+                </li>
+                
+                    
+                            
+        
+                        <li class="nav-list-item">
+                            <a href="/about">
+                                About
+                            </a>
+                        </li>
+                        
+                            
+        
+                        <li class="nav-list-item">
+                            <a href="/tags">
+                                Tags
+                            </a>
+                        </li>
+                        
+                            
+        
+                        <li class="nav-list-item">
+                            <a href="/archives">
+                                Archives
+                            </a>
+                        </li>
+                        
+                            
+            </ul>
+</header>
+<div class="sidebar">
+    
+            
+    <ul class="main-menu">
+        <li class="main-menu-item"><a href="/">Home</a></li>
+        
+            
+        
+            
+        <li class="main-menu-item"><a href="/about">About</a></li>
+            
+        
+            
+        <li class="main-menu-item"><a href="/tags">Tags</a></li>
+            
+        
+            
+        <li class="main-menu-item"><a href="/archives">Archives</a></li>
+            
+        
+    </ul>
+</div>
+
+    <h1 class="blog-title">The
+        Yzz Blog</h1>
+			
+<article class="article-main" itemscope itemprop="blogPost">
+        <div class="articleCon">
+            <header class="article-header">
+                <h1 itemprop="name">
+                    <a href="/2016/02/14/nodejs命令行小玩意/" class="article-title">nodejs命令行小玩意</a>
+                </h1>
+            </header>
+            <div class="article-meta">
+                <div class="article-dateTime">
+    <a href="/2016/02/14/nodejs命令行小玩意/" class="article-date">
+        <time datetime="2月 14日 2016" itemprop="datePublished">
+            2月 14日 2016
+        </time>
+    </a>
+</div>
+
+            </div>
+            <div class="article-inner">
+                <div class="article-entry" itemprop="articleBody">
+                    <h2 id="一个用nodejs写的一个命令行的小玩意"><a href="#一个用nodejs写的一个命令行的小玩意" class="headerlink" title="一个用nodejs写的一个命令行的小玩意"></a>一个用nodejs写的一个命令行的小玩意</h2><p>大家新年好，这里给大家拜个晚年啦！（不跑题了</p>
+<p>偶然的npm社区看到这个prompt的库，对于node.js的一个美丽的命令行提示符。地址在这里<a href="https://github.com/flatiron/prompt" target="_blank" rel="external">prompt</a>稍微看了下（其实是懒 ，写了个小小的答题的命令行版。 当然了老规矩，登陆功能还是有的，crud不能忘了！</p>
+<p>我简单的说下这个库的使用</p>
+<a id="more"></a>
+<h3 id="首先-0x00-启动这个库"><a href="#首先-0x00-启动这个库" class="headerlink" title="首先 0x00,启动这个库"></a>首先 0x00,启动这个库</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> prompt = <span class="built_in">require</span>(<span class="string">'prompt'</span>);</div><div class="line">prompt.start();</div></pre></td></tr></table></figure>
+<h3 id="0x01-程序的主入口"><a href="#0x01-程序的主入口" class="headerlink" title="0x01,程序的主入口"></a>0x01,程序的主入口</h3><p>用主入口函数来做栗子</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">main</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"输入你的想要的模式:1.答题模式 2.编辑模式"</span>);</div><div class="line">    prompt.get([<span class="string">'number'</span>], <span class="function"><span class="keyword">function</span>(<span class="params">err, value</span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> num = value.number;</div><div class="line">        <span class="keyword">if</span> (num === <span class="string">'1'</span>) &#123;</div><div class="line">            data.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item, index</span>) </span>&#123;</div><div class="line">                <span class="built_in">console</span>.log(index + <span class="number">1</span>, item[<span class="number">0</span>]);</div><div class="line">            &#125;);</div><div class="line">            aw();</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (num === <span class="string">'2'</span>) &#123;</div><div class="line">            aks();</div><div class="line">        &#125;</div><div class="line">    &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这里的</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">prompt.get([<span class="string">'number'</span>],<span class="function"><span class="keyword">function</span>(<span class="params">err,value</span>))</span>&#123;&#125;</div></pre></td></tr></table></figure>
+<p>number 就是一前缀名，或者说记录了用户的输入值，然后用value.number来获取到一个字符串，ok！用户输入的获取到了，剩下的就是一些程序的逻辑控制而已</p>
+<h3 id="0x02-当然不会这么快就结束！"><a href="#0x02-当然不会这么快就结束！" class="headerlink" title="0x02 当然不会这么快就结束！"></a>0x02 当然不会这么快就结束！</h3><p>我们来看下<strong>login()</strong>这个函数<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">login</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    prompt.get([&#123;</div><div class="line">        name: <span class="string">'username'</span>,</div><div class="line">        required: <span class="literal">true</span></div><div class="line">    &#125;, &#123;</div><div class="line">        name: <span class="string">'password'</span>,</div><div class="line">        hidden: <span class="literal">true</span>,</div><div class="line">        conform: <span class="function"><span class="keyword">function</span>(<span class="params">value</span>) </span>&#123;</div><div class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;], <span class="function"><span class="keyword">function</span>(<span class="params">err, value</span>) </span>&#123;</div><div class="line"></div><div class="line">        <span class="keyword">var</span> username = value.username;</div><div class="line">        <span class="keyword">var</span> password = value.password;</div><div class="line"></div><div class="line">        <span class="keyword">if</span> (username === <span class="string">'yzz'</span> &amp;&amp; password === <span class="string">'5982'</span>) &#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">'login success'</span>.blue);</div><div class="line">            message();</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">'login error!'</span>.red);</div><div class="line">            login()</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这个<strong>prompt.get([])</strong>里面多了一些东西，加了一些限制。根据字面意思，用户名必填，密码隐藏之类的。当然了，你也可以写点正则表达式什么的，反正我不会.更多的用法请参考作者的文档还有demo。</p>
+<h3 id="0x03-end"><a href="#0x03-end" class="headerlink" title="0x03 end"></a>0x03 end</h3><p>还有一个东西</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">prompt.message = <span class="string">''</span>;</div><div class="line">prompt.delimter = <span class="string">''</span>;</div></pre></td></tr></table></figure>
+<p>这两句把显示number的时候前面的prompt给去掉了，当然你想换掉的话在空字符串里写就ok。</p>
+<p>代码写的好丑，逻辑也好low。大家看看开心就好，给个<a href="https://github.com/yzzting/nodejs-prompt" target="_blank" rel="external">地址</a>，如果有好想法就帮我pr一下</p>
+<h2 id="晚安"><a href="#晚安" class="headerlink" title="晚安"></a>晚安</h2>
+                </div>
+                
+<nav id="article-nav">
+  
+    <a href="/2016/03/20/设计hexo主题/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title">
+        
+          设计hexo主题 >
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/12/30/杨滋滋2015年度总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"> < 杨滋滋2015年度总结</div>
+    </a>
+  
+</nav>
+
+
+            </div>
+        </div>
+        
+            <div id="disqus_thread"></div>
+<script>
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document,
+            s = d.createElement('script');
+
+        s.src = '//yzzting.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script id="dsq-count-scr" src="//yzzting.disqus.com/count.js" async></script>
+
+        
+        
+</article>
+
+
+
+		</div>
+		<div id="heart"></div>
+
+    <footer class="blog-footer" id="blog-footer">
+        <div id="footer-info" class="inner">
+            Made with ♥ by <a href="https://github.com/yzzting/hexo-theme-MyFairLady" target="_blank">MyFairLady</a>
+        </div>
+    </footer>
+    <script src="/js/sidebar.js"></script>
+    <script src="/js/toTop.js"></script>
+    <script src="/js/bookmark.js"></script>
+	</body>
+	</html>

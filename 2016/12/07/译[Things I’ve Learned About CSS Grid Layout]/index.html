@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>
+      
+        译[Things I’ve Learned About CSS Grid Layout] |
+          
+            YzzTing
+    </title>
+    <!-- 主css -->
+    <link rel="stylesheet" href="/sass/main.css">
+      <!-- seo -->
+      <meta name="description" content="原文地址 以下是Oliver Williams写的文章.Oliver一直以来都在学习CSS网格布局,也学到了很多知识.在这篇文章里,他将会讨论他在这段旅途中学到的不同概念.通过每一个小例子学习到关于网格布局的知识.我喜欢这样的想法.这也使得学习网格布局这件事轻松很多">
+<meta name="keywords" content="css,translation">
+<meta property="og:type" content="article">
+<meta property="og:title" content="译[Things I’ve Learned About CSS Grid Layout]">
+<meta property="og:url" content="http://www.yzz1995.cn/2016/12/07/译[Things I’ve Learned About CSS Grid Layout]/index.html">
+<meta property="og:site_name" content="YzzTing">
+<meta property="og:description" content="原文地址 以下是Oliver Williams写的文章.Oliver一直以来都在学习CSS网格布局,也学到了很多知识.在这篇文章里,他将会讨论他在这段旅途中学到的不同概念.通过每一个小例子学习到关于网格布局的知识.我喜欢这样的想法.这也使得学习网格布局这件事轻松很多">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:image" content="https://cdn.css-tricks.com/wp-content/uploads/2016/10/no-tetris.png">
+<meta property="og:updated_time" content="2017-08-22T07:02:58.153Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="译[Things I’ve Learned About CSS Grid Layout]">
+<meta name="twitter:description" content="原文地址 以下是Oliver Williams写的文章.Oliver一直以来都在学习CSS网格布局,也学到了很多知识.在这篇文章里,他将会讨论他在这段旅途中学到的不同概念.通过每一个小例子学习到关于网格布局的知识.我喜欢这样的想法.这也使得学习网格布局这件事轻松很多">
+<meta name="twitter:image" content="https://cdn.css-tricks.com/wp-content/uploads/2016/10/no-tetris.png">
+        <!-- facicon -->
+        
+          <link rel="icon" href="http://7xp1k3.com1.z0.glb.clouddn.com/octocat-de-los-muertos.jpg">
+          
+            <!-- 统计 -->
+            
+              <script>
+                var _hmt = _hmt || [];
+                (function () {
+                  var hm = document.createElement("script");
+                  hm.src = "//hm.baidu.com/hm.js?c21994907883f37ffd80e13627dd4faa";
+                  var s = document.getElementsByTagName("script")[0];
+                  s.parentNode.insertBefore(hm, s);
+                })();
+              </script>
+              
+                
+                    <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+</head>
+	<body>
+		<div class="main">
+			<div id="mobile-bar">
+    <a class="menu-button"></a>
+    <a class="logo" href="/">
+        Yzz
+    </a>
+</div>
+<header class="nav-header">
+    <a href="/" class="logo-link">
+        Yzz
+    </a>
+    
+        
+            <ul class="nav nav-list">
+                <li class="nav-list-item">
+                    <a href="/">
+                        Home
+                    </a>
+                </li>
+                
+                    
+                            
+        
+                        <li class="nav-list-item">
+                            <a href="/about">
+                                About
+                            </a>
+                        </li>
+                        
+                            
+        
+                        <li class="nav-list-item">
+                            <a href="/tags">
+                                Tags
+                            </a>
+                        </li>
+                        
+                            
+        
+                        <li class="nav-list-item">
+                            <a href="/archives">
+                                Archives
+                            </a>
+                        </li>
+                        
+                            
+            </ul>
+</header>
+<div class="sidebar">
+    
+            
+    <ul class="main-menu">
+        <li class="main-menu-item"><a href="/">Home</a></li>
+        
+            
+        
+            
+        <li class="main-menu-item"><a href="/about">About</a></li>
+            
+        
+            
+        <li class="main-menu-item"><a href="/tags">Tags</a></li>
+            
+        
+            
+        <li class="main-menu-item"><a href="/archives">Archives</a></li>
+            
+        
+    </ul>
+</div>
+
+    <h1 class="blog-title">The
+        Yzz Blog</h1>
+			
+<article class="article-main" itemscope itemprop="blogPost">
+        <div class="articleCon">
+            <header class="article-header">
+                <h1 itemprop="name">
+                    <a href="/2016/12/07/译[Things I’ve Learned About CSS Grid Layout]/" class="article-title">译[Things I’ve Learned About CSS Grid Layout]</a>
+                </h1>
+            </header>
+            <div class="article-meta">
+                <div class="article-dateTime">
+    <a href="/2016/12/07/译[Things I’ve Learned About CSS Grid Layout]/" class="article-date">
+        <time datetime="12月 7日 2016" itemprop="datePublished">
+            12月 7日 2016
+        </time>
+    </a>
+</div>
+
+            </div>
+            <div class="article-inner">
+                <div class="article-entry" itemprop="articleBody">
+                    <p><a href="https://css-tricks.com/things-ive-learned-css-grid-layout/?utm_source=mybridge&amp;utm_medium=email&amp;utm_campaign=read_more" target="_blank" rel="external">原文地址</a></p>
+<p>以下是Oliver Williams写的文章.Oliver一直以来都在学习CSS网格布局,也学到了很多知识.在这篇文章里,他将会讨论他在这段旅途中学到的不同概念.通过每一个小例子学习到关于网格布局的知识.我喜欢这样的想法.这也使得学习网格布局这件事轻松很多</p>
+<a id="more"></a>
+<p>CSS网格可能在2017年初在浏览器上使用.在此之前你可能需要手动的开启这个功能才可以工作.(除非是在Firefox Nightly里默认就开启了它)Chrome Canary版本目前具有最佳实现.同时,Firefox有一个非常有价值的附加组件叫CSS网格检查器,它可以显示网格的线.它是目前唯一有这样一个工具的浏览器.</p>
+<p>在Chrome中,在地址栏中输入“chrome:// flags”,找到“启用实验性网络平台功能”,然后点击启用.IE和Edge不兼容,因此不建议在此时间点对网格进行实验.</p>
+<h2 id="不能有俄罗斯方块一样的图形"><a href="#不能有俄罗斯方块一样的图形" class="headerlink" title="不能有俄罗斯方块一样的图形"></a>不能有俄罗斯方块一样的图形</h2><h4 id="你很快就明白了"><a href="#你很快就明白了" class="headerlink" title="你很快就明白了"></a>你很快就明白了</h4><p><img sizes="(max-width: 1080px) 100vw, 1080px" srcset="https://cdn.css-tricks.com/wp-content/uploads/2016/10/no-tetris.png 1080w, https://cdn.css-tricks.com/wp-content/uploads/2016/10/no-tetris-300x198.png 300w, https://cdn.css-tricks.com/wp-content/uploads/2016/10/no-tetris-768x506.png 768w, https://cdn.css-tricks.com/wp-content/uploads/2016/10/no-tetris-1024x675.png 1024w" src="https://cdn.css-tricks.com/wp-content/uploads/2016/10/no-tetris.png" alt=""></p>
+<p>在网格区域中只能是矩形(如左),而不是任意多边形(如右)</p>
+<h2 id="网格系统是用来和flexbox一起使用-而不是代替它"><a href="#网格系统是用来和flexbox一起使用-而不是代替它" class="headerlink" title="网格系统是用来和flexbox一起使用,而不是代替它"></a>网格系统是用来和flexbox一起使用,而不是代替它</h2><p>网格的原理和flexbox类似,你可能看到人们使用flexbox来构建网格系统,但这不是flexbox的设计目的.这有一篇文章值得一看<a href="https://jakearchibald.com/2014/dont-use-flexbox-for-page-layout/" target="_blank" rel="external">Don’t use flexbox for overall page layout</a></p>
+<p>简单来说:</p>
+<pre><code>* Flexbox用于一维布局(行和列)
+* CSS网格是二维布局
+</code></pre><p>Rachel Andrews <a href="https://rachelandrew.co.uk/archives/2016/03/30/should-i-use-grid-or-flexbox/" target="_blank" rel="external">说</a></p>
+<blockquote>
+<p>Flexbox is essentially for laying out items in a single dimension – in a row OR a column. Grid is for layout of items in two dimensions – rows AND columns.</p>
+<p>Flexbox本质上是用于在单个维度中布置项目 - 在行和列中<br>网格用于在二维中的项目布局 - 行和列</p>
+</blockquote>
+<p>它们也可以组合.你可以将网格项转换为flex容器.你可以将flex项目转换为网格.</p>
+<p>让我们举一个有用的例子.我们想要在一个网格项内垂直居中文本，但我们想要背景（无论是颜色，渐变还是图像）覆盖项目整个网格区域。我们可以将align-items值设为center,但现在背景不会填充整个区域。align-items的默认值是stretch,只要将它设置为其他值,他就不在填充该空间.让我们将他设置为拉伸并将我的网格项转换为flex容器</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.grid</span> &#123;</div><div class="line">    <span class="attribute">align-items</span>: stretch;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.griditem</span> &#123;</div><div class="line">    <span class="attribute">display</span>: flex;</div><div class="line">    <span class="attribute">align-items</span>: center;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="使用负值的行数可以有很大的帮助"><a href="#使用负值的行数可以有很大的帮助" class="headerlink" title="使用负值的行数可以有很大的帮助"></a>使用负值的行数可以有很大的帮助</h2><p>设想一个具有12列网格的CSS网格框架.在小屏幕上,不是减少列数,而是将内容合并所有12列,给人一个全宽列的印象.</p>
+<p>你可以这样写</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* For small screens */</span></div><div class="line"><span class="selector-class">.span4</span>, <span class="selector-class">.span6</span>, <span class="selector-class">.spanAll</span> &#123;</div><div class="line">  <span class="attribute">grid-column-end</span>: span <span class="number">12</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/* For large screens */</span></div><div class="line">@<span class="keyword">media</span> (min-width: <span class="number">650px</span>) &#123;</div><div class="line">  <span class="selector-class">.span4</span> &#123;</div><div class="line">    <span class="attribute">grid-column-end</span>: span <span class="number">4</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-class">.span6</span> &#123;</div><div class="line">    <span class="attribute">grid-column-end</span>: span <span class="number">6</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这种方法没有错,然而使用CSS网格,重新定义列数也很容易.通过使用-1,你可以确保你的内容将横跨所有列.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* For small screens */</span></div><div class="line"><span class="selector-class">.span4</span>, <span class="selector-class">.span6</span>, <span class="selector-class">.spanAll</span> &#123;</div><div class="line">  <span class="attribute">grid-column-end</span>: -<span class="number">1</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="待续"><a href="#待续" class="headerlink" title="待续"></a>待续</h2>
+                </div>
+                
+<nav id="article-nav">
+  
+    <a href="/2016/12/28/2016年杨滋滋年度总结/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title">
+        
+          2016年杨滋滋年度总结 >
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/11/25/译《DEPENDENCY INJECTION IN ANGULAR 2》/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"> < 译[dependency injection in angular2]</div>
+    </a>
+  
+</nav>
+
+
+            </div>
+        </div>
+        
+            <div id="disqus_thread"></div>
+<script>
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document,
+            s = d.createElement('script');
+
+        s.src = '//yzzting.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<script id="dsq-count-scr" src="//yzzting.disqus.com/count.js" async></script>
+
+        
+        
+</article>
+
+
+
+		</div>
+		<div id="heart"></div>
+
+    <footer class="blog-footer" id="blog-footer">
+        <div id="footer-info" class="inner">
+            Made with ♥ by <a href="https://github.com/yzzting/hexo-theme-MyFairLady" target="_blank">MyFairLady</a>
+        </div>
+    </footer>
+    <script src="/js/sidebar.js"></script>
+    <script src="/js/toTop.js"></script>
+    <script src="/js/bookmark.js"></script>
+	</body>
+	</html>
